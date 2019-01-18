@@ -8,7 +8,8 @@ var app = new Vue({
       notes: [
         { text: '' , updatedAt: ''},
       ],
-      newNote: ''
+      newNote: '',
+      displayNewNoteForm: false
     },
 
 
@@ -20,10 +21,14 @@ var app = new Vue({
             this.updatedAt = ' mis à jour le ' + date.format('lll')
             this.notes.push({text: this.newNote, updatedAt: this.updatedAt})
             this.newNote= ''
+            this.displayNewNoteForm = false
         },
         markdownToHtml: function (markdown) {
             var converter = new showdown.Converter()
             return converter.makeHtml(markdown)
+        },
+        displayNoteForm: function () {
+            this.displayNewNoteForm = true
         }
     }
   })

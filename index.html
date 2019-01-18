@@ -21,8 +21,11 @@
                 {{ note.updatedAt }}
             </li>
         </ul>
-        Nouvelle note : <textarea v-model="newNote"> </textarea>
+        <button @click="displayNoteForm" v-if="!displayNewNoteForm">Nouvelle note</button>
+        <div id="note-form" v-if="displayNewNoteForm">
+            <textarea v-model="newNote"> </textarea>
             <button @Click="addNote">Enregistrer</button>
+        </div>
     </div>
 
     <script src="scripts/extlibs/vue.js"></script>

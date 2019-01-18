@@ -10,3 +10,7 @@ li {
     padding-left: 15px;
     list-style-type: none;
 }
+
+#display-form {
+    display: none;
+}

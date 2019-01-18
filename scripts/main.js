@@ -1,5 +1,8 @@
 /* eslint-disable */
+moment.locale('fr')
+
 var app = new Vue({
+
     el: '#app',
     data: {
       notes: [
@@ -8,11 +11,15 @@ var app = new Vue({
       newNote: '',
       dateSave: ''
     },
+
+
+
     methods: {
         addNewNote: function () {
+            var date = moment()
             this.notes.push({text: this.newNote, done: false})
             this.newNote= ''
-            this.dateSave = 'last updated ' + new Date().toLocaleString()
+            this.dateSave = 'mis à jour le ' + date.format('lll')
         },
         /* getDoneCount: function () {
             var doneCount = 0

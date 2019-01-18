@@ -5,21 +5,20 @@ var app = new Vue({
 
     el: '#app',
     data: {
-      notes: [
-        { text: '' , updatedAt: ''},
-      ],
+      notes: [],
       newNote: '',
       displayNewNoteForm: false
     },
-
-
 
     methods: {
         addNote: function () {
             var date = moment()
 
             this.updatedAt = ' mis à jour le ' + date.format('lll')
-            this.notes.push({text: this.newNote, updatedAt: this.updatedAt})
+
+            var note = {text: this.newNote, updatedAt: this.updatedAt}
+            this.notes.push(note)
+            localStorage.setItem('notes', JSON.stringify(this.notes))
             this.newNote= ''
             this.displayNewNoteForm = false
         },
@@ -31,4 +30,7 @@ var app = new Vue({
             this.displayNewNoteForm = true
         }
     }
+
   })
+  var stringNotes = localStorage.getItem('notes')
+  app.notes = stringNotes ? JSON.parse(stringNotes) : []

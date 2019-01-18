@@ -6,30 +6,20 @@ var app = new Vue({
     el: '#app',
     data: {
       notes: [
-        { text: '', done: false },
+        { text: '' , updatedAt: ''},
       ],
-      newNote: '',
-      dateSave: ''
+      newNote: ''
     },
 
 
 
     methods: {
-        addNewNote: function () {
+        addNote: function () {
             var date = moment()
-            this.notes.push({text: this.newNote, done: false})
+
+            this.updatedAt = ' mis à jour le ' + date.format('lll')
+            this.notes.push({text: this.newNote, updatedAt: this.updatedAt})
             this.newNote= ''
-            this.dateSave = 'mis à jour le ' + date.format('lll')
-        },
-        /* getDoneCount: function () {
-            var doneCount = 0
-            for (var todo of this.todos) {
-                if (todo.done) {
-                    doneCount++
-                }
-            }
-            return doneCount
         }
-        */
     }
   })

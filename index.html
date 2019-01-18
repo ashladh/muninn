@@ -13,9 +13,13 @@
 <body>
 
     <div id="app">
-
-        Nouvelle note : <textarea v-model="newNote"> </textarea> {{ dateSave }}
-            <button @Click="addNewNote">Enregistrer</button>
+        <ul>
+            <li v-for="note in notes" v-if="note.text !== ''">
+                {{note.text + note.updatedAt}}
+            </li>
+        </ul>
+        Nouvelle note : <textarea v-model="newNote"> </textarea>
+            <button @Click="addNote">Enregistrer</button>
     </div>
 
     <script src="scripts/extlibs/vue.js"></script>

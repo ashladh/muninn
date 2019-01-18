@@ -6,8 +6,7 @@ var app = new Vue({
         { text: '', done: false },
       ],
       newNote: '',
-      dateSave: '',
-      displayDone: true
+      dateSave: ''
     },
     methods: {
         addNewNote: function () {

@@ -7,6 +7,8 @@
     <meta name="author" content="Muneen">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="stylesheets/main.css">
 
 
 </head>
@@ -15,7 +17,8 @@
     <div id="app">
         <ul>
             <li v-for="note in notes" v-if="note.text !== ''">
-                {{note.text + note.updatedAt}}
+                <span v-html="markdownToHtml(note.text)"></span>
+                {{ note.updatedAt }}
             </li>
         </ul>
         Nouvelle note : <textarea v-model="newNote"> </textarea>
@@ -24,6 +27,7 @@
 
     <script src="scripts/extlibs/vue.js"></script>
     <script src="scripts/extlibs/moment-with-locales.js"></script>
+    <script src="scripts/extlibs/showdown.min.js"></script>
     <script src="scripts/main.js"></script>
     
 </body>

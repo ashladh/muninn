@@ -1,0 +1,12 @@
+body {
+    background-color: #e6e6e6;
+    font-family: 'Open Sans', sans-serif;
+}
+
+li {
+    background-color: white;
+    border-radius: 10px;
+    width: 60%;
+    padding-left: 15px;
+    list-style-type: none;
+}

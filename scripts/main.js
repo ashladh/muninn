@@ -20,6 +20,10 @@ var app = new Vue({
             this.updatedAt = ' mis à jour le ' + date.format('lll')
             this.notes.push({text: this.newNote, updatedAt: this.updatedAt})
             this.newNote= ''
+        },
+        markdownToHtml: function (markdown) {
+            var converter = new showdown.Converter()
+            return converter.makeHtml(markdown)
         }
     }
   })

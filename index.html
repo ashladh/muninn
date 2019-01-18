@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Muneen Base</title>
+    <title>Muninn</title>
 
     <meta charset="utf-8">
     <meta name="author" content="Muneen">
@@ -12,8 +12,21 @@
 </head>
 <body>
 
-        <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
-        <script src="main.js"></script>
+    <div id="app">
+        <ol>
+            <li v-for="todo in todos" v-if="!todo.done || (todo.done && displayDone)">
+                <input type="checkbox" v-model="todo.done">
+                <span v-bind:class="{ done: todo.done }">{{ todo.text }}</span>
+            </li>
+        </ol>
+        new todo: <textarea v-model="newTodo"> </textarea> {{ dateSave }}
+            <button @Click="addNewTodo">Submit</button>
+            Il y a {{ todos.length }} todos, dont {{ getDoneCount() }} accomplis.
+            <input type="checkbox" v-model="displayDone">Afficher tout
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script src="scripts/main.js"></script>
     
 </body>
 </html>

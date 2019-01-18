@@ -13,15 +13,9 @@
 <body>
 
     <div id="app">
-        <ol>
-            <li v-for="todo in todos" v-if="!todo.done || (todo.done && displayDone)">
-                <input type="checkbox" v-model="todo.done">
-                <span v-bind:class="{ done: todo.done }">{{ todo.text }}</span>
-            </li>
-        </ol>
-        new todo: <textarea v-model="newTodo"> </textarea> {{ dateSave }}
-            <button @Click="addNewTodo">Submit</button>
-            Il y a {{ todos.length }} todos, dont {{ getDoneCount() }} accomplis.
+        
+        New note : <textarea v-model="newNote"> </textarea> {{ dateSave }}
+            <button @Click="addNewNote">Submit</button>
             <input type="checkbox" v-model="displayDone">Afficher tout
     </div>
 

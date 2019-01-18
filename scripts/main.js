@@ -2,20 +2,20 @@
 var app = new Vue({
     el: '#app',
     data: {
-      todos: [
+      notes: [
         { text: '', done: false },
       ],
-      newTodo: '',
+      newNote: '',
       dateSave: '',
       displayDone: true
     },
     methods: {
-        addNewTodo: function () {
-            this.todos.push({text: this.newTodo, done: false})
-            this.newTodo = ''
+        addNewNote: function () {
+            this.notes.push({text: this.newNote, done: false})
+            this.newNote= ''
             this.dateSave = 'last updated ' + new Date().toLocaleString()
         },
-        getDoneCount: function () {
+        /* getDoneCount: function () {
             var doneCount = 0
             for (var todo of this.todos) {
                 if (todo.done) {
@@ -24,5 +24,6 @@ var app = new Vue({
             }
             return doneCount
         }
+        */
     }
   })

@@ -31,6 +31,6 @@ var app = new Vue({
         }
     }
 
-  })
-  var stringNotes = localStorage.getItem('notes')
-  app.notes = stringNotes ? JSON.parse(stringNotes) : []
+})
+var stringNotes = localStorage.getItem('notes')
+app.notes = stringNotes ? JSON.parse(stringNotes) : []

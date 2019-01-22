@@ -21,15 +21,20 @@
     <div id="app">
 
         <button @click="displayNoteForm" v-if="!displayNewNoteForm" >Nouvelle note <i class="fas fa-plus"></i></button>
-        <div id="note-form" v-if="displayNewNoteForm">
+        <div id="note-form" v-show="displayNewNoteForm">
             <textarea id="new-note" v-model="newNote"> </textarea>
             <button @Click="addNote">Enregistrer</button>
+        </div>
+
+        <div id="note-edit" v-if="displayEditMode">
+            <textarea v-model="editedNote.text"></textarea>
+            <button @click="saveNote">Enregistrer</button>
         </div>
 
         <div id="notes-container">
             <div class="indiv-note" v-for="note in notes" v-if="note.text !== ''">
                 <span class="far fa-eye"></span>
-                <span class="fas fa-edit"></span>
+                <span class="fas fa-edit" @click="editNote(note)"></span>
                 <div class="note-content" v-html="markdownToHtml(note.text)"></div>
                 <span class="update">mis à jour le {{ note.updatedAt }}</span>
             </div>

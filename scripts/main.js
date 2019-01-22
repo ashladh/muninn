@@ -14,9 +14,9 @@ var app = new Vue({
         addNote: function () {
             var date = moment()
 
-            this.updatedAt = ' mis à jour le ' + date.format('lll')
+            var updatedAt = date.format('lll')
 
-            var note = {text: this.newNote, updatedAt: this.updatedAt}
+            var note = {text: this.newNote, updatedAt: updatedAt}
             this.notes.push(note)
             localStorage.setItem('notes', JSON.stringify(this.notes))
             this.newNote= ''

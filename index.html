@@ -7,7 +7,11 @@
     <meta name="author" content="Muneen">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <!--<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
     <link rel="stylesheet" href="stylesheets/main.css">
 
 
@@ -15,17 +19,22 @@
 <body>
 
     <div id="app">
-        <ul>
-            <li v-for="note in notes" v-if="note.text !== ''">
-                <span v-html="markdownToHtml(note.text)"></span>
-                {{ note.updatedAt }}
-            </li>
-        </ul>
-        <button @click="displayNoteForm" v-if="!displayNewNoteForm">Nouvelle note</button>
+
+        <button @click="displayNoteForm" v-if="!displayNewNoteForm" >Nouvelle note <i class="fas fa-plus"></i></button>
         <div id="note-form" v-if="displayNewNoteForm">
-            <textarea v-model="newNote"> </textarea>
+            <textarea id="new-note" v-model="newNote"> </textarea>
             <button @Click="addNote">Enregistrer</button>
         </div>
+
+        <div id="notes-container">
+            <div class="indiv-note" v-for="note in notes" v-if="note.text !== ''">
+                <span class="far fa-eye"></span>
+                <span class="fas fa-edit"></span>
+                <div class="note-content" v-html="markdownToHtml(note.text)"></div>
+                <span class="update">mis à jour le {{ note.updatedAt }}</span>
+            </div>
+        </div>
+
     </div>
 
     <script src="scripts/extlibs/vue.js"></script>

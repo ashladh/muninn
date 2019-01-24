@@ -1,11 +1,6 @@
 /* eslint-disable */
 moment.locale('fr')
-var notePreviewTemplate = '<div class="indiv-note" v-if="note.text !== \'\'">' +
-    '<fa-icon name="eye"></fa-icon>' +
-    '<fa-icon name="edit" @click="editNote(note)"></fa-icon>' +
-    '<div class="note-content" v-html="markdownToHtml(note.text)"></div>' +
-    '<span class="update">mis à jour le {{ note.updatedAt }}</span>' +
-    '</div>'
+var notePreviewTemplate = document.getElementById('note-preview-template').innerHTML
 
 Vue.component('note-preview', {
     props: ['note'],

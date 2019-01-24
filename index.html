@@ -40,12 +40,12 @@
     <script type="text/template" id="note-preview-template">
         <div class="indiv-note" v-if="note.text !== ''">
             <fa-icon name="eye"></fa-icon>
-            <fa-icon name="edit" @click="editNote(note)"></fa-icon>
+            <span @click="editNote(note)"><fa-icon name="edit"></fa-icon></span>
             <div class="note-content" v-html="markdownToHtml(note.text)"></div>
             <span class="update">mis à jour le {{ note.updatedAt }}</span>
         </div>
     </script>
-    
+
     <script src="scripts/extlibs/vue.js"></script>
     <script src="scripts/extlibs/moment-with-locales.js"></script>
     <script src="scripts/extlibs/showdown.min.js"></script>

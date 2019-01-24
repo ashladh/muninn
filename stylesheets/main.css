@@ -1,6 +1,7 @@
 body {
     background-color: #fbeed7;
     font-family: 'Raleway', sans-serif;
+    font-size: 17px;
 }
 
 #new-note {
@@ -26,7 +27,7 @@ body {
 
 .indiv-note .update {
     font-style: italic;
-    font-size: 0.7em;
+    font-size: 0.6em;
     float: right;
     padding-right: 5px;
 }
@@ -49,6 +50,7 @@ body {
     font-size: 2em;
     color: #ffba5a;
 }
+
 
 button {
     display: block;

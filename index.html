@@ -32,12 +32,7 @@
         </div>
 
         <div id="notes-container">
-            <div class="indiv-note" v-for="note in notes" v-if="note.text !== ''">
-                <span class="far fa-eye"></span>
-                <span class="fas fa-edit" @click="editNote(note)"></span>
-                <div class="note-content" v-html="markdownToHtml(note.text)"></div>
-                <span class="update">mis à jour le {{ note.updatedAt }}</span>
-            </div>
+            <note-preview v-for="note in notes" v-bind:note="note"></note-preview>
         </div>
 
     </div>

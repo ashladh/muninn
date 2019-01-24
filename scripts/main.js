@@ -1,5 +1,41 @@
 /* eslint-disable */
 moment.locale('fr')
+var notePreviewTemplate = '<div class="indiv-note" v-if="note.text !== \'\'">' +
+    '<fa-icon name="eye"></fa-icon>' +
+    '<fa-icon name="edit" @click="editNote(note)"></fa-icon>' +
+    '<div class="note-content" v-html="markdownToHtml(note.text)"></div>' +
+    '<span class="update">mis à jour le {{ note.updatedAt }}</span>' +
+    '</div>'
+
+Vue.component('note-preview', {
+    props: ['note'],
+
+    template: notePreviewTemplate,
+    methods: {
+        markdownToHtml: function (markdown) {
+            return app.markdownToHtml(markdown)
+        },
+        editNote: function (note) {
+            app.editNote(note)
+        }
+    }
+})
+
+Vue.component('fa-icon', {
+    props: ['name'],
+    data: function () {
+        return {
+            prefix: 'far',
+        }
+    },
+    computed: {
+        iconName: function () {
+            return 'fa-' + this.name
+        }
+    },
+    template: '<span v-bind:class="[prefix, iconName]"></span>'
+
+})
 
 var app = new Vue({
 
@@ -16,7 +52,7 @@ var app = new Vue({
         addNote: function () {
             var date = moment()
             var updatedAt = date.format('lll')
-            
+
             var note = {text: this.newNote, updatedAt: updatedAt}
 
             this.notes.push(note)

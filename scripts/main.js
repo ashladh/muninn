@@ -14,7 +14,8 @@ Vue.component('note-preview', {
             app.deleteNote(note)
         },
         displayNote: function (note) {
-            app.displayNote(note)
+            dataNoteShow.note = note
+            app.currentRoute = 'noteShow'
         }
     }
 })
@@ -39,6 +40,16 @@ var koin = {
     template: '<h1>Koin</h1>'
 }
 
+var dataNoteShow = {
+    note: {}
+}
+
+var noteShow = {
+    data: function () {
+        return dataNoteShow
+    },
+    template: document.getElementById('display-note-template').innerHTML
+}
 
 var globalNotes = []
 
@@ -88,17 +99,18 @@ var homepage = {
         displayNote: function (note) {
             this.displayMode = true
             this.displayedNote = note
+            app.currentRoute = 'noteShow'
         },
         goToKoin: function () {
             app.currentRoute = 'koin'
         }
-
     }
 }
 
 var routes = {
     homepage: homepage,
-    koin: koin
+    koin: koin,
+    noteShow: noteShow
 }
 
 Vue.directive('markdown-to-html', function(el) {

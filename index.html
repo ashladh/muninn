@@ -18,11 +18,7 @@
 </head>
 <body>
 
-    <div id="app">
-
-
-
-    </div>
+    <div id="app"></div>
 
     <script type="text/template" id="note-preview-template">
         <div class="indiv-note" v-if="note.text !== ''">
@@ -44,7 +40,7 @@
             </div>
 
             <div id="note-display" v-if="displayMode">
-                    <div class="displayed-note-content" v-markdown-to-html>{{ displayedNote.text }}</div>
+
             </div>
 
             <div id="note-edit" v-if="displayEditMode">
@@ -55,6 +51,12 @@
             <div id="notes-container">
                 <note-preview v-for="note in notes" v-bind:note="note"></note-preview>
             </div>
+        </div>
+    </script>
+
+    <script type="text/template" id="display-note-template">
+        <div>
+            <div class="displayed-note-content" v-markdown-to-html>{{ note.text }}</div>
         </div>
     </script>
 

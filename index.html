@@ -26,6 +26,10 @@
             <button @Click="addNote">Enregistrer</button>
         </div>
 
+        <div id="note-display" v-if="displayMode">
+                <div class="displayed-note-content" v-html="markdownToHtml(displayedNote.text)"></div>
+        </div>
+
         <div id="note-edit" v-if="displayEditMode">
             <textarea v-model="editedNote.text"></textarea>
             <button @click="saveNote">Enregistrer</button>
@@ -39,7 +43,7 @@
 
     <script type="text/template" id="note-preview-template">
         <div class="indiv-note" v-if="note.text !== ''">
-            <fa-icon name="eye"></fa-icon>
+            <span @click="displayNote(note)"><fa-icon name="eye"></fa-icon></span>
             <span @click="editNote(note)"><fa-icon name="edit"></fa-icon></span>
             <span @click="deleteNote(note)"><fa-icon name="trash-alt"></fa-icon></span>
             <div class="note-content" v-html="markdownToHtml(note.text)"></div>

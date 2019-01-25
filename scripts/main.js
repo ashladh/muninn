@@ -11,7 +11,10 @@ Vue.component('note-preview', {
             app.editNote(note)
         },
         deleteNote: function (note) {
-
+            app.deleteNote(note)
+        },
+        displayNote: function (note) {
+            app.displayNote(note)
         }
     }
 })
@@ -54,7 +57,9 @@ var app = new Vue({
       newNote: '',
       displayNewNoteForm: false,
       displayEditMode: false,
-      editedNote: false
+      editedNote: false,
+      displayMode: false,
+      displayedNote: false
     },
 
     methods: {
@@ -81,6 +86,15 @@ var app = new Vue({
         editNote: function (note) {
             this.displayEditMode = true
             this.editedNote = note
+        },
+        deleteNote: function (note) {
+           var index = this.notes.indexOf(note)
+           this.notes.splice(index, 1)
+           saveNotesToLocalStorage(this.notes)
+        },
+        displayNote: function (note) {
+            this.displayMode = true
+            this.displayedNote = note
         }
 
     }

@@ -36,18 +36,16 @@ Vue.component('fa-icon', {
 })
 
 
-Vue.mixin({
-    methods: {
-        formatDate: function(date) {
-            return moment(date).format('lll')
-        },
-        markdownToHtml: function (markdown) {
-            var converter = new showdown.Converter()
-            return converter.makeHtml(markdown)
-        }
-    }
+Vue.directive('format-date', function(el) {
+    var rawDate = el.innerHTML
+    el.innerHTML = moment(rawDate).format('lll')
 })
 
+Vue.directive('markdown-to-html', function(el) {
+    var markdown = el.innerHTML
+    var converter = new showdown.Converter()
+    el.innerHTML = converter.makeHtml(markdown)
+})
 
 var app = new Vue({
 

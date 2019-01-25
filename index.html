@@ -46,8 +46,8 @@
             <span @click="displayNote(note)"><fa-icon name="eye"></fa-icon></span>
             <span @click="editNote(note)"><fa-icon name="edit"></fa-icon></span>
             <span @click="deleteNote(note)"><fa-icon name="trash-alt"></fa-icon></span>
-            <div class="note-content" v-html="markdownToHtml(note.text)"></div>
-            <span class="update">mis à jour le {{ formatDate(note.updatedAt) }}</span>
+            <div class="note-content" v-markdown-to-html>{{ note.text }}</div>
+            <span class="update">mis à jour le  <span v-format-date>{{ note.updatedAt }}</span></span>
         </div>
     </script>
 

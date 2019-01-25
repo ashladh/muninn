@@ -33,7 +33,6 @@ Vue.component('fa-icon', {
         }
     },
     template: '<span v-bind:class="[prefix, iconName]"></span>'
-
 })
 
 var koin = {
@@ -54,7 +53,6 @@ var noteShow = {
 var globalNotes = []
 
 var homepage = {
-
     data: function() {
         return {
             notes: globalNotes,
@@ -81,26 +79,31 @@ var homepage = {
         displayNoteForm: function () {
             this.displayNewNoteForm = true
         },
+
         saveNote: function () {
             this.editedNote.update()
             this.displayEditMode = false
             this.editedNote = false
             saveNotesToLocalStorage(this.notes)
         },
+
         editNote: function (note) {
             this.displayEditMode = true
             this.editedNote = note
         },
+
         deleteNote: function (note) {
            var index = this.notes.indexOf(note)
            this.notes.splice(index, 1)
            saveNotesToLocalStorage(this.notes)
         },
+
         displayNote: function (note) {
             this.displayMode = true
             this.displayedNote = note
             app.currentRoute = 'noteShow'
         },
+
         goToKoin: function () {
             app.currentRoute = 'koin'
         }
@@ -136,7 +139,6 @@ var app = new Vue({
     render: function (h) {
         return h(this.currentComponent)
     }
-
 })
 
 
@@ -153,8 +155,6 @@ function Note (params) {
     else {
         this.updatedAt = moment()
     }
-
-
 }
 
 Note.prototype.formattedDate = function () {
@@ -164,6 +164,7 @@ Note.prototype.formattedDate = function () {
 Note.prototype.update = function () {
     this.updatedAt = moment()
 }
+
 
 function importNotes () {
     var stringNotes = localStorage.getItem('notes')

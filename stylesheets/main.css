@@ -4,6 +4,40 @@ body {
     font-size: 17px;
 }
 
+#navbar {
+    background-color: #ffba5a;
+    position: absolute;
+    height: 50px;
+    width: 100%;
+    color: white;
+    list-style-type: none;
+    margin: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+#navbar li {
+    float: left;
+}
+
+#navbar li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+#navbar li a:hover {
+    background-color: #ff7657;
+}
+
+#navbar .active {
+    background-color: #665c84;
+}
+
+
 #new-note {
     height: 200px;
     width: 60%;

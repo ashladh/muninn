@@ -17,6 +17,14 @@
 
 </head>
 <body>
+    <header>
+        <ul id="navbar">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">Notes</a></li>
+            <li><a href="#">Todos</a></li>
+            <li><a href="#">About</a></li>
+        </ul>
+    </header>
 
     <div id="app"></div>
 
@@ -39,9 +47,7 @@
                 <button @click="addNote">Enregistrer</button>
             </div>
 
-            <div id="note-display" v-if="displayMode">
-
-            </div>
+            <div id="note-display" v-if="displayMode"></div>
 
             <div id="note-edit" v-if="displayEditMode">
                 <textarea v-model="editedNote.text"></textarea>

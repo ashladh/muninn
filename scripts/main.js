@@ -32,6 +32,16 @@ Vue.component('fa-icon', {
 
 })
 
+
+Vue.mixin({
+    methods: {
+        formatDate: function(date) {
+            return moment(date).format('lll')
+        }
+    }
+})
+
+
 var app = new Vue({
 
     el: '#app',
@@ -45,10 +55,9 @@ var app = new Vue({
 
     methods: {
         addNote: function () {
-            var date = moment()
-            var updatedAt = date.format('lll')
 
-            var note = {text: this.newNote, updatedAt: updatedAt}
+            var note = new Note({text: this.newNote})
+
 
             this.notes.push(note)
             saveNotesToLocalStorage(this.notes)
@@ -63,10 +72,7 @@ var app = new Vue({
             this.displayNewNoteForm = true
         },
         saveNote: function () {
-            var date = moment()
-            var updatedAt = date.format('lll')
-
-            this.editedNote.updatedAt = updatedAt
+            this.editedNote.update()
             this.displayEditMode = false
             this.editedNote = false
             saveNotesToLocalStorage(this.notes)
@@ -85,5 +91,34 @@ function saveNotesToLocalStorage (notes) {
     localStorage.setItem('notes', JSON.stringify(notes))
 }
 
-var stringNotes = localStorage.getItem('notes')
-app.notes = stringNotes ? JSON.parse(stringNotes) : []
+
+function Note (params) {
+    this.text = params.text
+    if ('updatedAt' in params) {
+        this.updatedAt = params.updatedAt
+    }
+    else {
+        this.updatedAt = moment()
+    }
+
+
+}
+
+Note.prototype.formattedDate = function () {
+    return moment(this.updatedAt).format('lll')
+}
+
+Note.prototype.update = function () {
+    this.updatedAt = moment()
+}
+
+function importNotes () {
+    var stringNotes = localStorage.getItem('notes')
+    var notes = stringNotes ? JSON.parse(stringNotes) : []
+
+    notes.forEach(function (noteData) {
+        app.notes.push(new Note(noteData))
+    })
+}
+
+importNotes()

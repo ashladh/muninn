@@ -7,11 +7,11 @@ Vue.component('note-preview', {
 
     template: notePreviewTemplate,
     methods: {
-        markdownToHtml: function (markdown) {
-            return app.markdownToHtml(markdown)
-        },
         editNote: function (note) {
             app.editNote(note)
+        },
+        deleteNote: function (note) {
+
         }
     }
 })
@@ -37,6 +37,10 @@ Vue.mixin({
     methods: {
         formatDate: function(date) {
             return moment(date).format('lll')
+        },
+        markdownToHtml: function (markdown) {
+            var converter = new showdown.Converter()
+            return converter.makeHtml(markdown)
         }
     }
 })
@@ -64,10 +68,7 @@ var app = new Vue({
             this.newNote= ''
             this.displayNewNoteForm = false
         },
-        markdownToHtml: function (markdown) {
-            var converter = new showdown.Converter()
-            return converter.makeHtml(markdown)
-        },
+
         displayNoteForm: function () {
             this.displayNewNoteForm = true
         },

@@ -36,15 +36,14 @@ Vue.component('fa-icon', {
 })
 
 
-Vue.directive('format-date', function(el) {
-    var rawDate = el.innerHTML
-    el.innerHTML = moment(rawDate).format('lll')
-})
-
 Vue.directive('markdown-to-html', function(el) {
     var markdown = el.innerHTML
     var converter = new showdown.Converter()
     el.innerHTML = converter.makeHtml(markdown)
+})
+
+Vue.filter('formatDate', function (date) {
+    return moment(date).format('lll')
 })
 
 var app = new Vue({

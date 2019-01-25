@@ -27,7 +27,7 @@
         </div>
 
         <div id="note-display" v-if="displayMode">
-                <div class="displayed-note-content" v-html="markdownToHtml(displayedNote.text)"></div>
+                <div class="displayed-note-content" v-markdown-to-html>{{ displayedNote.text }}</div>
         </div>
 
         <div id="note-edit" v-if="displayEditMode">
@@ -47,7 +47,7 @@
             <span @click="editNote(note)"><fa-icon name="edit"></fa-icon></span>
             <span @click="deleteNote(note)"><fa-icon name="trash-alt"></fa-icon></span>
             <div class="note-content" v-markdown-to-html>{{ note.text }}</div>
-            <span class="update">mis à jour le  <span v-format-date>{{ note.updatedAt }}</span></span>
+            <span class="update">mis à jour le  {{ note.updatedAt | formatDate }}</span>
         </div>
     </script>
 

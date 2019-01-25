@@ -35,36 +35,32 @@ Vue.component('fa-icon', {
 
 })
 
+var koin = {
+    template: '<h1>Koin</h1>'
+}
 
-Vue.directive('markdown-to-html', function(el) {
-    var markdown = el.innerHTML
-    var converter = new showdown.Converter()
-    el.innerHTML = converter.makeHtml(markdown)
-})
 
-Vue.filter('formatDate', function (date) {
-    return moment(date).format('lll')
-})
+var globalNotes = []
 
-var app = new Vue({
+var homepage = {
 
-    el: '#app',
-    data: {
-      notes: [],
-      newNote: '',
-      displayNewNoteForm: false,
-      displayEditMode: false,
-      editedNote: false,
-      displayMode: false,
-      displayedNote: false
+    data: function() {
+        return {
+            notes: globalNotes,
+            newNote: '',
+            displayNewNoteForm: false,
+            displayEditMode: false,
+            editedNote: false,
+            displayMode: false,
+            displayedNote: false
+        }
     },
+
+    template: document.getElementById('homepage-template').innerHTML,
 
     methods: {
         addNote: function () {
-
             var note = new Note({text: this.newNote})
-
-
             this.notes.push(note)
             saveNotesToLocalStorage(this.notes)
             this.newNote= ''
@@ -92,8 +88,41 @@ var app = new Vue({
         displayNote: function (note) {
             this.displayMode = true
             this.displayedNote = note
+        },
+        goToKoin: function () {
+            app.currentRoute = 'koin'
         }
 
+    }
+}
+
+var routes = {
+    homepage: homepage,
+    koin: koin
+}
+
+Vue.directive('markdown-to-html', function(el) {
+    var markdown = el.innerHTML
+    var converter = new showdown.Converter()
+    el.innerHTML = converter.makeHtml(markdown)
+})
+
+Vue.filter('formatDate', function (date) {
+    return moment(date).format('lll')
+})
+
+var app = new Vue({
+    el: '#app',
+    data: {
+        currentRoute: 'homepage'
+    },
+    computed: {
+        currentComponent: function () {
+            return routes[this.currentRoute]
+        }
+    },
+    render: function (h) {
+        return h(this.currentComponent)
     }
 
 })
@@ -129,7 +158,7 @@ function importNotes () {
     var notes = stringNotes ? JSON.parse(stringNotes) : []
 
     notes.forEach(function (noteData) {
-        app.notes.push(new Note(noteData))
+        globalNotes.push(new Note(noteData))
     })
 }
 

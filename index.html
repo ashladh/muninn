@@ -20,24 +20,7 @@
 
     <div id="app">
 
-        <button @click="displayNoteForm" v-if="!displayNewNoteForm" >Nouvelle note <i class="fas fa-plus"></i></button>
-        <div id="note-form" v-show="displayNewNoteForm">
-            <textarea id="new-note" v-model="newNote"> </textarea>
-            <button @Click="addNote">Enregistrer</button>
-        </div>
 
-        <div id="note-display" v-if="displayMode">
-                <div class="displayed-note-content" v-markdown-to-html>{{ displayedNote.text }}</div>
-        </div>
-
-        <div id="note-edit" v-if="displayEditMode">
-            <textarea v-model="editedNote.text"></textarea>
-            <button @click="saveNote">Enregistrer</button>
-        </div>
-
-        <div id="notes-container">
-            <note-preview v-for="note in notes" v-bind:note="note"></note-preview>
-        </div>
 
     </div>
 
@@ -48,6 +31,30 @@
             <span @click="deleteNote(note)"><fa-icon name="trash-alt"></fa-icon></span>
             <div class="note-content" v-markdown-to-html>{{ note.text }}</div>
             <span class="update">mis à jour le  {{ note.updatedAt | formatDate }}</span>
+        </div>
+    </script>
+
+    <script type="text/template" id="homepage-template">
+        <div>
+            <button @click="goToKoin">Koin</button>
+            <button @click="displayNoteForm" v-if="!displayNewNoteForm" >Nouvelle note <i class="fas fa-plus"></i></button>
+            <div id="note-form" v-show="displayNewNoteForm">
+                <textarea id="new-note" v-model="newNote"> </textarea>
+                <button @click="addNote">Enregistrer</button>
+            </div>
+
+            <div id="note-display" v-if="displayMode">
+                    <div class="displayed-note-content" v-markdown-to-html>{{ displayedNote.text }}</div>
+            </div>
+
+            <div id="note-edit" v-if="displayEditMode">
+                <textarea v-model="editedNote.text"></textarea>
+                <button @click="saveNote">Enregistrer</button>
+            </div>
+
+            <div id="notes-container">
+                <note-preview v-for="note in notes" v-bind:note="note"></note-preview>
+            </div>
         </div>
     </script>
 

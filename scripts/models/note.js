@@ -16,10 +16,6 @@ function Note (params) {
     }
 }
 
-Note.prototype.formattedDate = function () {
-    return moment(this.updatedAt).format('lll')
-}
-
 Note.prototype.update = function () {
     this.updatedAt = moment()
 }

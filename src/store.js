@@ -36,3 +36,12 @@ function findNote (id) {
     })
     return foundNote
 }
+
+
+export default {
+    globalNotes,
+    saveNotesToLocalStorage,
+    importNotes,
+    getNextId,
+    findNote
+}

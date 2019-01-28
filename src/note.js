@@ -19,3 +19,5 @@ function Note (params) {
 Note.prototype.update = function () {
     this.updatedAt = moment()
 }
+
+export default Note

@@ -17,17 +17,18 @@
 
 </head>
 <body>
-    <header>
-        <ul id="navbar">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="#">Notes</a></li>
-            <li><a href="#">Todos</a></li>
-            <li><a href="#">About</a></li>
-        </ul>
-    </header>
-
-    <div id="wrapper">
-        <div id="app"></div>
+    <div id="app">
+        <header>
+            <ul id="navbar">
+                <li><router-link to="/">Home</router-link></li>
+                <li><router-link to="/koin">Notes</router-link></li>
+                <li><a href="#">Todos</a></li>
+                <li><a href="#">About</a></li>
+            </ul>
+        </header>
+        <div id="wrapper">
+            <router-view></router-view>
+        </div>
     </div>
 
     <script type="text/template" id="note-preview-template">

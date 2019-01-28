@@ -110,11 +110,22 @@ var homepage = {
     }
 }
 
-var routes = {
+/*var routes = {
     homepage: homepage,
     koin: koin,
     noteShow: noteShow
 }
+*/
+
+const routes = [
+    { path: '/', component: homepage },
+    { path: '/noteshow', component: noteShow },
+    { path: '/koin', component: koin }
+]
+
+const router = new VueRouter({
+    routes: routes
+})
 
 Vue.directive('markdown-to-html', function(el) {
     var markdown = el.innerHTML
@@ -126,20 +137,23 @@ Vue.filter('formatDate', function (date) {
     return moment(date).format('lll')
 })
 
-var app = new Vue({
-    el: '#app',
-    data: {
-        currentRoute: 'homepage'
-    },
-    computed: {
-        currentComponent: function () {
-            return routes[this.currentRoute]
-        }
-    },
-    render: function (h) {
-        return h(this.currentComponent)
-    }
-})
+const app = new Vue({
+    router: router
+}).$mount('#app')
+// var app = new Vue({
+//     el: '#app',
+//     data: {
+//         currentRoute: 'homepage'
+//     },
+//     computed: {
+//         currentComponent: function () {
+//             return routes[this.currentRoute]
+//         }
+//     },
+//     render: function (h) {
+//         return h(this.currentComponent)
+//     }
+// })
 
 
 function saveNotesToLocalStorage (notes) {

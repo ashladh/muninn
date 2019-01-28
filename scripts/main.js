@@ -139,20 +139,7 @@ Vue.filter('formatDate', function (date) {
 const app = new Vue({
     router: router
 }).$mount('#app')
-// var app = new Vue({
-//     el: '#app',
-//     data: {
-//         currentRoute: 'homepage'
-//     },
-//     computed: {
-//         currentComponent: function () {
-//             return routes[this.currentRoute]
-//         }
-//     },
-//     render: function (h) {
-//         return h(this.currentComponent)
-//     }
-// })
+
 
 
 function saveNotesToLocalStorage (notes) {
@@ -160,30 +147,7 @@ function saveNotesToLocalStorage (notes) {
 }
 
 
-function Note (params) {
-    this.text = params.text
-    if('id' in params) {
-        this.id = params.id
-    }
-    else {
-        this.id = getNextId()
-    }
 
-    if ('updatedAt' in params) {
-        this.updatedAt = params.updatedAt
-    }
-    else {
-        this.updatedAt = moment()
-    }
-}
-
-Note.prototype.formattedDate = function () {
-    return moment(this.updatedAt).format('lll')
-}
-
-Note.prototype.update = function () {
-    this.updatedAt = moment()
-}
 
 
 function importNotes () {

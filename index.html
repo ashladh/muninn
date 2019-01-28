@@ -20,8 +20,8 @@
     <div id="app">
         <header>
             <ul id="navbar">
-                <li><router-link to="/">Home</router-link></li>
-                <li><router-link to="/koin">Notes</router-link></li>
+                <li><router-link to="/" exact>Home</router-link></li>
+                <li><router-link to="/koin" exact>Notes</router-link></li>
                 <li><a href="#">Todos</a></li>
                 <li><a href="#">About</a></li>
             </ul>
@@ -33,7 +33,7 @@
 
     <script type="text/template" id="note-preview-template">
         <div class="indiv-note" v-if="note.text !== ''">
-            <span @click="displayNote(note)"><fa-icon name="eye"></fa-icon></span>
+            <span><router-link :to="{ name: 'note', params: { id: note.id }}"><fa-icon name="eye"></fa-icon></router-link></span>
             <span @click="editNote(note)"><fa-icon name="edit"></fa-icon></span>
             <span @click="deleteNote(note)"><fa-icon name="trash-alt"></fa-icon></span>
             <div class="note-content" v-markdown-to-html>{{ note.text }}</div>
@@ -58,7 +58,7 @@
             </div>
 
             <div id="notes-container">
-                <note-preview v-for="note in notes" v-bind:note="note"></note-preview>
+                <note-preview v-for="note in notes" v-bind:note="note" :key="note.id"></note-preview>
             </div>
         </div>
     </script>

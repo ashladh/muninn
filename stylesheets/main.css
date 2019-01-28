@@ -35,7 +35,7 @@ body {
     background-color: #ff7657;
 }
 
-#navbar .active {
+#navbar .router-link-active {
     background-color: #665c84;
 }
 

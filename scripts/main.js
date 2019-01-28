@@ -39,15 +39,13 @@ var koin = {
     template: '<h1>Koin</h1>'
 }
 
-var dataNoteShow = {
-    note: {}
-}
-
 var noteShow = {
-    data: function () {
-        return dataNoteShow
-    },
-    template: document.getElementById('display-note-template').innerHTML
+    template: document.getElementById('display-note-template').innerHTML,
+    computed: {
+        note: function () {
+            return findNote(this.$route.params.id)
+        }
+    }
 }
 
 var globalNotes = []
@@ -70,6 +68,7 @@ var homepage = {
     methods: {
         addNote: function () {
             var note = new Note({text: this.newNote})
+
             this.notes.push(note)
             saveNotesToLocalStorage(this.notes)
             this.newNote= ''
@@ -119,7 +118,7 @@ var homepage = {
 
 const routes = [
     { path: '/', component: homepage },
-    { path: '/noteshow', component: noteShow },
+    { path: '/notes/:id', name: 'note', component: noteShow },
     { path: '/koin', component: koin }
 ]
 
@@ -163,6 +162,13 @@ function saveNotesToLocalStorage (notes) {
 
 function Note (params) {
     this.text = params.text
+    if('id' in params) {
+        this.id = params.id
+    }
+    else {
+        this.id = getNextId()
+    }
+
     if ('updatedAt' in params) {
         this.updatedAt = params.updatedAt
     }
@@ -187,6 +193,28 @@ function importNotes () {
     notes.forEach(function (noteData) {
         globalNotes.push(new Note(noteData))
     })
+}
+
+
+function getNextId () {
+    var currentId = localStorage.getItem('currentId')
+    if(!currentId) {
+        currentId = 0
+    }
+    currentId++
+    localStorage.setItem('currentId', currentId)
+    return currentId
+}
+
+
+function findNote (id) {
+    var foundNote
+    globalNotes.forEach(function (note) {
+        if (note.id === id) {
+           foundNote = note
+        }
+    })
+    return foundNote
 }
 
 importNotes()

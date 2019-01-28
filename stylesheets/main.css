@@ -12,7 +12,7 @@ body {
     color: white;
     list-style-type: none;
     margin: 0;
-    position: fixed;
+    padding: 0;
     top: 0;
     left: 0;
 }
@@ -27,6 +27,8 @@ body {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
 }
 
 #navbar li a:hover {
@@ -35,6 +37,14 @@ body {
 
 #navbar .active {
     background-color: #665c84;
+}
+
+
+#wrapper {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
 }
 
 

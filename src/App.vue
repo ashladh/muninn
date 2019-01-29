@@ -72,54 +72,6 @@ body {
 }
 
 
-#new-note {
-    height: 200px;
-    width: 60%;
-    border-radius: 10px;
-    border: 5px solid #ff7657;
-    outline-style: none;
-}
-
-.indiv-note {
-    background-color: white;
-    border-radius: 10px;
-    height: 100px;
-    width: 60%;
-    padding-left: 15px;
-    margin: 10px;
-    border-left: 5px solid #ff7657;
-    border-right: 5px solid #ff7657;
-    list-style-type: none;
-    overflow: auto;
-}
-
-.indiv-note .update {
-    font-style: italic;
-    font-size: 0.6em;
-    float: right;
-    padding-right: 5px;
-}
-
-.indiv-note .note-content {
-    height: 80px;
-    overflow: hidden;
-}
-
-.indiv-note .far {
-    float: right;
-    padding-right: 5px;
-    font-size: 2em;
-    color: #ffba5a;
-}
-
-.indiv-note .fas {
-    float: right;
-    padding-right: 5px;
-    font-size: 2em;
-    color: #ffba5a;
-}
-
-
 button {
     display: block;
     height: 50px;
@@ -133,21 +85,5 @@ button {
 
 button i {
     float: right;
-}
-
-#note-edit textarea {
-    height: 200px;
-    width: 60%;
-    border-radius: 10px;
-    border: 3px solid #ff7657;
-    outline-style: none;
-}
-
-#note-display {
-    border-radius: 10px;
-    border: 5px solid #ff7657;
-    background-color: white;
-    height: auto;
-    padding: 10px;
 }
 </style>

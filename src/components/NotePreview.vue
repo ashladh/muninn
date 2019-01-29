@@ -1,7 +1,7 @@
 <template>
   <div class="indiv-note" v-if="note.text !== ''">
-        <span><router-link :to="{ name: 'note', params: { id: note.id }}"><fa-icon name="eye"></fa-icon></router-link></span>
-        <span @click="editNote(note)"><fa-icon name="edit"></fa-icon></span>
+        <span><router-link :to="{ name: 'NoteShow', params: { id: note.id }}"><fa-icon name="eye"></fa-icon></router-link></span>
+        <span><router-link :to="{ name: 'NoteEdit', params: { id: note.id }}"><fa-icon name="edit"></fa-icon></router-link></span>
         <span @click="deleteNote(note)"><fa-icon name="trash-alt"></fa-icon></span>
         <div class="note-content" v-markdown-to-html>{{ note.text }}</div>
         <span class="update">mis à jour le  {{ note.updatedAt | formatDate }}</span>
@@ -31,5 +31,29 @@ export default {
 
 
 <style scoped>
+.indiv-note .update {
+    font-style: italic;
+    font-size: 0.6em;
+    float: right;
+    padding-right: 5px;
+}
 
+.indiv-note .note-content {
+    height: 80px;
+    overflow: hidden;
+}
+
+.indiv-note .far {
+    float: right;
+    padding-right: 5px;
+    font-size: 2em;
+    color: #ffba5a;
+}
+
+.indiv-note .fas {
+    float: right;
+    padding-right: 5px;
+    font-size: 2em;
+    color: #ffba5a;
+}
 </style>

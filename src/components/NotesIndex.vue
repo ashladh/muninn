@@ -1,18 +1,11 @@
 <template>
   <div>
 
-    <button @click="displayNoteForm" v-if="!displayNewNoteForm" >Nouvelle note <i class="fas fa-plus"></i></button>
-    <div id="note-form" v-show="displayNewNoteForm">
-      <textarea id="new-note" v-model="newNote"> </textarea>
-      <button @click="addNote">Enregistrer</button>
-    </div>
+    <button @click="displayNoteForm" v-if="!displayNewNoteForm">Nouvelle note <i class="fas fa-plus"></i></button>
+
+    <note-new  v-show="displayNewNoteForm" v-on:note-added="onNoteAdded"></note-new>
 
     <div id="note-display" v-if="displayMode"></div>
-
-    <div id="note-edit" v-if="displayEditMode">
-      <textarea v-model="editedNote.text"></textarea>
-      <button @click="saveNote">Enregistrer</button>
-    </div>
 
     <div id="notes-container">
       <note-preview v-for="note in notes" v-bind:note="note" :key="note.id"></note-preview>
@@ -25,45 +18,29 @@
 import store from '../store'
 import Note from '../models/note'
 import NotePreview from '@/components/NotePreview'
+import NoteNew from '@/components/NoteNew'
+import NoteEdit from '@/components/NoteEdit'
 
 export default {
     name: 'NotesIndex',
-    components: {NotePreview},
+    components: {NotePreview, NoteNew, NoteEdit},
     data: function () {
         return {
             notes: store.notes,
             newNote: '',
             displayNewNoteForm: false,
-            displayEditMode: false,
-            editedNote: false,
             displayMode: false,
             displayedNote: false
         }
     },
-    methods: {
-        addNote: function () {
-            var note = new Note({text: this.newNote})
 
-            this.notes.push(note)
-            Note.saveToLocalStorage()
-            this.newNote = ''
+    methods: {
+        onNoteAdded: function () {
             this.displayNewNoteForm = false
         },
 
         displayNoteForm: function () {
             this.displayNewNoteForm = true
-        },
-
-        saveNote: function () {
-            this.editedNote.update()
-            this.displayEditMode = false
-            this.editedNote = false
-            Note.saveToLocalStorage()
-        },
-
-        editNote: function (note) {
-            this.displayEditMode = true
-            this.editedNote = note
         },
 
         deleteNote: function (note) {
@@ -83,5 +60,17 @@ export default {
 
 
 <style scoped>
+.indiv-note {
+    background-color: white;
+    border-radius: 10px;
+    height: 100px;
+    width: 60%;
+    padding-left: 15px;
+    margin: 10px;
+    border-left: 5px solid #ff7657;
+    border-right: 5px solid #ff7657;
+    list-style-type: none;
+    overflow: auto;
+}
 
 </style>

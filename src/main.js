@@ -4,6 +4,7 @@ import Note from './models/note'
 import router from './router'
 import {DateTime} from 'luxon'
 import showdown from 'showdown'
+import Contact from './models/contact'
 
 Vue.config.productionTip = false
 
@@ -11,6 +12,7 @@ new Vue({
   router,
   mounted: function () {
     Note.importFromLocalStorage()
+    Contact.importFromLocalStorage()
   },
   render: h => h(App),
 }).$mount('#app')

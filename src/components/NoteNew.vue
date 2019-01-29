@@ -20,7 +20,6 @@ export default {
     methods: {
         addNote: function () {
             var note = new Note({text: this.newNote})
-
             this.notes.push(note)
             Note.saveToLocalStorage()
             this.newNote = ''

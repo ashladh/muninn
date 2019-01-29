@@ -1,5 +1,5 @@
 import store from '../store'
-import {DateTime} from "luxon";
+import {DateTime} from 'luxon'
 
 function Note (params) {
     this.text = params.text
@@ -15,6 +15,12 @@ function Note (params) {
     }
     else {
         this.updatedAt = DateTime.local().toISO()
+    }
+    if ('createdAt' in params) {
+        this.createdAt = params.createdAt
+    }
+    else {
+        this.createdAt = DateTime.local().toISO()
     }
 }
 

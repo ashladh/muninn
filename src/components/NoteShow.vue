@@ -40,9 +40,9 @@ export default {
     color:#ff7657;
 }
 
-#icons {
+#showmode-icons {
     margin: auto;
-    width: 50%;
+    width: 95%;
     text-align: center;
     padding-bottom: 30px;
     padding-top: 15px;

@@ -5,7 +5,7 @@
     <contact-new  v-show="displayNewContactForm" v-on:contact-added="onContactAdded"></contact-new>
 
     <div id="contacts-container">
-      <!--<contact-preview v-for="contact in contacts" v-bind:contact="contact" :key="contact.id"></contact-preview>-->
+      <contact-preview v-for="contact in contacts" v-bind:contact="contact" :key="contact.id"></contact-preview>
     </div>
 
   </div>
@@ -15,6 +15,7 @@
 <script>
 import store from '../store'
 import ContactNew from '@/components/ContactNew'
+import ContactPreview from '@/components/ContactPreview'
 
 export default {
     name: 'ContactsIndex',
@@ -24,7 +25,7 @@ export default {
         contacts: store.contacts
       }
     },
-    components: {ContactNew},
+    components: {ContactNew, ContactPreview},
     methods: {
       onContactAdded: function () {
         this.displayNewContactForm = false
@@ -37,6 +38,17 @@ export default {
 </script>
 
 <style scoped>
-
+.indiv-contact {
+    background-color: white;
+    border-radius: 10px;
+    height: 120px;
+    width: 40%;
+    padding-left: 15px;
+    margin: 10px;
+    border-left: 5px solid #ff7657;
+    border-right: 5px solid #ff7657;
+    list-style-type: none;
+    overflow: auto;
+}
 </style>
 

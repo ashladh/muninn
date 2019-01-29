@@ -5,6 +5,7 @@ import NotesIndex from '@/components/NotesIndex'
 import NoteShow from '@/components/NoteShow'
 import NoteEdit from '@/components/NoteEdit'
 import ContactsIndex from '@/components/ContactsIndex'
+import ContactEdit from '@/components/ContactEdit'
 
 Vue.use(Router)
 
@@ -25,6 +26,10 @@ export default new Router({
         path: '/contacts',
         name: 'ContactsIndex',
         component: ContactsIndex
+    }, {
+        path: '/contacts/:id/edit',
+        name: 'ContactEdit',
+        component: ContactEdit
     }]
 })
 

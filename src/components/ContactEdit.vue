@@ -1,10 +1,40 @@
 <template>
     <div id="contact-edit">
-        <input placeholder="Nom" v-model="contact.lastname">
-        <input placeholder="Prénom" v-model="contact.firstname">
-        <input placeholder="Email" v-model="contact.email">
-        <input placeholder="Téléphone" v-model="contact.phone">
-        <textarea placeholder="Informations diverses" v-model="contact.misc"> </textarea>
+        <span class="input input--jiro">
+            <input class="input__field input__field--jiro" type="text" v-model="contact.lastname" />
+            <label class="input__label input__label--jiro" for="input-10">
+            <span class="input__label-content input__label-content--jiro">Nom</span>
+            </label>
+        </span>
+
+        <span class="input input--jiro">
+            <input class="input__field input__field--jiro" type="text" v-model="contact.firstname" />
+            <label class="input__label input__label--jiro" for="input-10">
+            <span class="input__label-content input__label-content--jiro">Prénom</span>
+            </label>
+        </span>
+
+
+        <span class="input input--jiro">
+            <input class="input__field input__field--jiro" type="text" v-model="contact.email" />
+            <label class="input__label input__label--jiro" for="input-10">
+            <span class="input__label-content input__label-content--jiro">Email</span>
+            </label>
+        </span>
+
+        <span class="input input--jiro">
+            <input class="input__field input__field--jiro" type="text" v-model="contact.phone" />
+            <label class="input__label input__label--jiro" for="input-10">
+            <span class="input__label-content input__label-content--jiro">Téléphone</span>
+            </label>
+        </span>
+
+        <span class="input input--jiro">
+            <textarea class="input__field input__field--jiro" type="text" v-model="contact.misc"></textarea>
+            <label class="input__label input__label--jiro" for="input-10">
+            <span class="input__label-content input__label-content--jiro">Informations diverses</span>
+            </label>
+        </span>
         <button @click="saveContact">Enregistrer</button>
     </div>
 </template>
@@ -20,7 +50,7 @@ export default {
         saveContact: function () {
             this.contact.update()
             Contact.saveToLocalStorage()
-            router.push({name: 'ContactIndex'})
+            router.push({name: 'ContactsIndex'})
         }
     },
     computed: {
@@ -31,6 +61,155 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
+#contact-edit {
+    background-color: white;
+}
+
+.bgcolor-7 { background: white }
+.input {
+	position: relative;
+	display: inline-block;
+	margin: 1em;
+	max-width: 400px;
+	width: 10%;
+    vertical-align: top;
+    z-index: 1;
+}
+
+.input__field {
+	position: relative;
+	display: block;
+	float: right;
+	padding: 0.8em;
+	width: 60%;
+	border: none;
+	border-radius: 0;
+	background: #fbeed7;
+	color: #665c84;
+	font-weight: bold;
+	-webkit-appearance: none; /* for box shadows to show on iOS */
+}
+
+.input__field:focus {
+	outline: none;
+}
+
+.input__label {
+	display: inline-block;
+	float: right;
+	padding: 0 1em;
+	width: 40%;
+	color: #ff7657;
+	font-weight: bold;
+	font-size: 70.25%;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.input__label-content {
+	position: relative;
+	display: block;
+	padding: 1.6em 0;
+	width: 100%;
+}
+.input--jiro {
+	margin-top: 2em;
+}
+
+.input__field--jiro {
+	padding: 0.85em 0.5em;
+	width: 100%;
+	background: transparent;
+	color: #ff7657;
+	opacity: 0;
+	-webkit-transition: opacity 0.3s;
+	transition: opacity 0.3s;
+}
+
+.input__label--jiro {
+	position: absolute;
+	left: 0;
+	padding: 0 0.85em;
+	width: 100%;
+	height: 100%;
+	text-align: left;
+	pointer-events: none;
+}
+
+.input__label-content--jiro {
+	-webkit-transition: -webkit-transform 0.3s 0.3s;
+	transition: transform 0.3s 0.3s;
+}
+
+.input__label--jiro::before,
+.input__label--jiro::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	-webkit-transition: -webkit-transform 0.3s;
+	transition: transform 0.3s;
+}
+
+.input__label--jiro::before {
+	border-top: 2px solid #ff7657;
+	-webkit-transform: translate3d(0, 100%, 0) translate3d(0, -2px, 0);
+	transform: translate3d(0, 100%, 0) translate3d(0, -2px, 0);
+	-webkit-transition-delay: 0.3s;
+	transition-delay: 0.3s;
+}
+
+.input__label--jiro::after {
+	z-index: -1;
+	background: #fbeed7;
+	-webkit-transform: scale3d(1, 0, 1);
+	transform: scale3d(1, 0, 1);
+	-webkit-transform-origin: 50% 0%;
+	transform-origin: 50% 0%;
+}
+
+.input__field--jiro:focus,
+.input--filled .input__field--jiro {
+	opacity: 1;
+	-webkit-transition-delay: 0.3s;
+	transition-delay: 0.3s;
+}
+
+.input__field--jiro:focus + .input__label--jiro .input__label-content--jiro,
+.input--filled .input__label-content--jiro {
+	-webkit-transform: translate3d(0, -80%, 0);
+	transform: translate3d(0, -80%, 0);
+	-webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+	transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.input__field--jiro:focus + .input__label--jiro::before,
+.input--filled .input__label--jiro::before {
+	-webkit-transition-delay: 0s;
+	transition-delay: 0s;
+}
+
+.input__field--jiro:focus + .input__label--jiro::before,
+.input--filled .input__label--jiro::before {
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+}
+
+.input__field--jiro:focus + .input__label--jiro::after,
+.input--filled .input__label--jiro::after {
+	-webkit-transform: scale3d(1, 1, 1);
+	transform: scale3d(1, 1, 1);
+	-webkit-transition-delay: 0.3s;
+	transition-delay: 0.3s;
+	-webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+	transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+}
 
 </style>

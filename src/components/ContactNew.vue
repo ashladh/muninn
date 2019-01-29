@@ -1,10 +1,43 @@
 <template>
     <div id="contact-form">
-        <input placeholder="Nom" v-model="lastname">
-        <input placeholder="Prénom" v-model="firstname">
-        <input placeholder="Email" v-model="email">
-        <input placeholder="Téléphone" v-model="phone">
-        <textarea placeholder="Informations diverses" v-model="misc"> </textarea>
+
+        <span class="input input--jiro">
+            <input class="input__field input__field--jiro" type="text" v-model="contact.lastname" />
+            <label class="input__label input__label--jiro" for="input-10">
+            <span class="input__label-content input__label-content--jiro">Nom</span>
+            </label>
+        </span>
+
+        <span class="input input--jiro">
+            <input class="input__field input__field--jiro" type="text" v-model="contact.firstname" />
+            <label class="input__label input__label--jiro" for="input-10">
+            <span class="input__label-content input__label-content--jiro">Prénom</span>
+            </label>
+        </span>
+
+
+        <span class="input input--jiro">
+            <input class="input__field input__field--jiro" type="text" v-model="contact.email" />
+            <label class="input__label input__label--jiro" for="input-10">
+            <span class="input__label-content input__label-content--jiro">Email</span>
+            </label>
+        </span>
+
+        <span class="input input--jiro">
+            <input class="input__field input__field--jiro" type="text" v-model="contact.phone" />
+            <label class="input__label input__label--jiro" for="input-10">
+            <span class="input__label-content input__label-content--jiro">Téléphone</span>
+            </label>
+        </span>
+
+        <span class="input input--jiro">
+            <textarea class="input__field input__field--jiro" type="text" v-model="contact.misc"></textarea>
+            <label class="input__label input__label--jiro" for="input-10">
+            <span class="input__label-content input__label-content--jiro">Informations diverses</span>
+            </label>
+        </span>
+        <button @click="saveContact">Enregistrer</button>
+    
         <button @click="addContact">Enregistrer</button>
     </div>
 </template>

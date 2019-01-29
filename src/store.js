@@ -1,7 +1,8 @@
 const notes = []
-
+const contacts = []
 
 
 export default {
-    notes
+    notes,
+    contacts
 }

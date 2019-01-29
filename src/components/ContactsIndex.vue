@@ -4,10 +4,8 @@
 
     <contact-new  v-show="displayNewContactForm" v-on:contact-added="onContactAdded"></contact-new>
 
-    <div id="contact-display" v-if="displayMode"></div>
-
     <div id="contacts-container">
-      <contact-preview v-for="contact in contacts" v-bind:contact="contact" :key="contact.id"></contact-preview>
+      <!--<contact-preview v-for="contact in contacts" v-bind:contact="contact" :key="contact.id"></contact-preview>-->
     </div>
 
   </div>
@@ -20,7 +18,21 @@ import ContactNew from '@/components/ContactNew'
 
 export default {
     name: 'ContactsIndex',
-    components: {ContactNew}
+    data: function () {
+      return {
+        displayNewContactForm: false,
+        contacts: store.contacts
+      }
+    },
+    components: {ContactNew},
+    methods: {
+      onContactAdded: function () {
+        this.displayNewContactForm = false
+      },
+      displayContactForm: function () {
+        this.displayNewContactForm = true
+      }
+    }
 }
 </script>
 

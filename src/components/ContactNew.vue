@@ -1,29 +1,42 @@
 <template>
     <div id="contact-form">
-        <textarea id="new-contact"> </textarea>
-        <button @click="addNote">Enregistrer</button>
+        <input placeholder="Nom" v-model="lastname">
+        <input placeholder="Prénom" v-model="firstname">
+        <input placeholder="Email" v-model="email">
+        <input placeholder="Téléphone" v-model="phone">
+        <textarea placeholder="Informations diverses" v-model="misc"> </textarea>
+        <button @click="addContact">Enregistrer</button>
     </div>
 </template>
 
 <script>
 import store from '../store'
-import Note from '../models/note'
+import Contact from '../models/contact'
 
 export default {
     name: 'ContactNew',
     data: function () {
         return {
-            notes: store.notes,
-            newNote: '',
+            contacts: store.contacts,
+            lastname: '',
+            firstname: '',
+            email: '',
+            phone: '',
+            misc: ''
         }
     },
     methods: {
-        addNote: function () {
-            var note = new Note({text: this.newNote})
-            this.notes.push(note)
-            Note.saveToLocalStorage()
-            this.newNote = ''
-            this.$emit('note-added')
+        addContact: function () {
+            var contact = new Contact({
+                lastname: this.lastname,
+                firstname: this.firstname,
+                email: this.email,
+                phone: this.phone,
+                misc: this.misc
+            })
+            this.contacts.push(contact)
+            Contact.saveToLocalStorage()
+            this.$emit('contact-added')
         }
     }
 }

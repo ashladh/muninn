@@ -4,7 +4,7 @@
         <span><router-link :to="{ name: 'NoteEdit', params: { id: note.id }}"><fa-icon name="edit"></fa-icon></router-link></span>
         <span @click="deleteNote(note)"><fa-icon name="trash-alt"></fa-icon></span>
         <div class="note-content" v-markdown-to-html>{{ note.text }}</div>
-        <span class="update">mis à jour le  {{ note.updatedAt | formatDate }}</span>
+        <span class="update">créé le {{ note.createdAt | formatDate }}, mis à jour le  {{ note.updatedAt | formatDate }}</span>
     </div>
 </template>
 

@@ -2,7 +2,7 @@
   <div class="indiv-contact">
         <span><router-link :to="{ name: 'ContactShow', params: { id: contact.id }}"><fa-icon name="eye"></fa-icon></router-link></span>
         <span><router-link :to="{ name: 'ContactEdit', params: { id: contact.id }}"><fa-icon name="edit"></fa-icon></router-link></span>
-        <span @click="deleteContact(contact)"><fa-icon name="trash-alt"></fa-icon></span>
+        <span class="delete-button" @click="deleteContact(contact)"><fa-icon name="trash-alt"></fa-icon></span>
         <div class="contact-content">
             <div class="contact-lastname">{{ contact.lastname }}</div>
             <div class="contact-firstname">{{ contact.firstname}}</div>
@@ -14,20 +14,15 @@
 
 <script>
 import FaIcon from '@/components/FaIcon'
+import Contact from '../models/contact'
 
 export default {
     name: 'ContactPreview',
     components: {FaIcon},
     props: ['contact'],
     methods: {
-        editContact: function (contact) {
-            console.log('edit', contact)
-        },
         deleteContact: function (contact) {
-            console.log('delete', contact)
-        },
-        displayContact: function (contact) {
-            console.log('show', contact)
+            Contact.delete(contact)
         }
     }
 }

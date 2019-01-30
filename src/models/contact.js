@@ -1,6 +1,8 @@
 import store from '../store'
 import {DateTime} from 'luxon'
 
+var attributes = ['lastname', 'firstname', 'email', 'phone', 'misc']
+
 function Contact (params) {
     this.lastname = params.lastname
     this.firstname = params.firstname
@@ -33,6 +35,11 @@ Contact.prototype.update = function () {
     this.updatedAt = DateTime.local().toISO()
 }
 
+Contact.delete = function (contact) {
+    var index = store.contacts.indexOf(contact)
+    store.contacts.splice(index, 1)
+    Contact.saveToLocalStorage(store.contacts)
+}
 
 Contact.find = function (id) {
     var foundContact

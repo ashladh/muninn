@@ -95,4 +95,8 @@ button i {
     float: left;
     margin: 3px;
 }
+
+.delete-button {
+    cursor: pointer;
+}
 </style>

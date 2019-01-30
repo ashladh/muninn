@@ -30,6 +30,12 @@ Note.prototype.update = function () {
 }
 
 
+Note.delete = function (note) {
+    var index = store.notes.indexOf(note)
+    store.notes.splice(index, 1)
+    Note.saveToLocalStorage(store.notes)
+}
+
 Note.find = function (id) {
     var foundNote
 

@@ -1,0 +1,75 @@
+<template>
+  <div>
+
+    <button @click="displayProjectForm" v-if="!displayNewProjectForm">Nouveau projet <i class="fas fa-plus"></i></button>
+
+    <note-new  v-show="displayNewProjectForm" v-on:note-added="onProjectAdded"></note-new>
+
+    <div id="project-display" v-if="displayMode"></div>
+
+    <div id="projects-container">
+      <project-preview v-for="project in projects" v-bind:note="project" :key="project.id"></project-preview>
+    </div>
+
+  </div>
+</template>
+
+<script>
+import store from '../store'
+import Project from '../models/project'
+import ProjectPreview from '@/components/ProjectPreview'
+import ProjectNew from '@/components/ProjectNew'
+import ProjectEdit from '@/components/ProjectEdit'
+
+export default {
+    name: 'ProjectsIndex',
+    components: {ProjectPreview, ProjectNew, ProjectEdit},
+    data: function () {
+        return {
+            projects: store.projects,
+            newProject: '',
+            displayNewProjectForm: false,
+            displayMode: false,
+            displayedProject: false
+        }
+    },
+
+    methods: {
+        onProjectAdded: function () {
+            this.displayNewProjectForm = false
+        },
+
+        displayProjectForm: function () {
+            this.displayNewProjectForm = true
+        },
+
+        deleteProject: function (project) {
+           var index = this.projects.indexOf(project)
+           this.projects.splice(index, 1)
+           Project.saveToLocalStorage()
+        },
+
+        displayProject: function (project) {
+            this.displayMode = true
+            this.displayedProject = project
+        }
+
+    }
+}
+</script>
+
+
+<style scoped>
+.indiv-project {
+    background-color: white;
+    border-radius: 10px;
+    height: 100px;
+    width: 60%;
+    padding-left: 15px;
+    margin: 10px;
+    border-left: 5px solid #ff7657;
+    border-right: 5px solid #ff7657;
+    list-style-type: none;
+    overflow: auto;
+}
+</style>

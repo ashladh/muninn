@@ -36,8 +36,7 @@
             <span class="input__label-content input__label-content--jiro">Informations diverses</span>
             </label>
         </span>
-        <button @click="saveContact">Enregistrer</button>
-    
+
         <button @click="addContact">Enregistrer</button>
     </div>
 </template>
@@ -51,21 +50,23 @@ export default {
     data: function () {
         return {
             contacts: store.contacts,
-            lastname: '',
-            firstname: '',
-            email: '',
-            phone: '',
-            misc: ''
+            contact: {
+                lastname: '',
+                firstname: '',
+                email: '',
+                phone: '',
+                misc: ''
+            }
         }
     },
     methods: {
         addContact: function () {
             var contact = new Contact({
-                lastname: this.lastname,
-                firstname: this.firstname,
-                email: this.email,
-                phone: this.phone,
-                misc: this.misc
+                lastname: this.contact.lastname,
+                firstname: this.contact.firstname,
+                email: this.contact.email,
+                phone: this.contact.phone,
+                misc: this.contact.misc
             })
             this.contacts.push(contact)
             Contact.saveToLocalStorage()

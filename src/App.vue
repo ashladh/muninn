@@ -5,7 +5,7 @@
       <ul id="navbar">
         <img id="logo" src="../muninn-logo01-color.png" alt="logo">
         <li><router-link to="/" exact>Home</router-link></li>
-        <li><router-link to="/koin" exact>Notes</router-link></li>
+        <li><router-link to="/notes" exact>Notes</router-link></li>
         <li><router-link to="/contacts" exact>Contacts</router-link></li>
         <li><a href="#">Todos</a></li>
         <li><a href="#">About</a></li>
@@ -93,5 +93,6 @@ button i {
 #logo {
     height: 50px;
     float: left;
+    margin: 3px;
 }
 </style>

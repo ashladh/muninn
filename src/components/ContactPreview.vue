@@ -3,10 +3,10 @@
         <span><router-link :to="{ name: 'ContactShow', params: { id: contact.id }}"><fa-icon name="eye"></fa-icon></router-link></span>
         <span><router-link :to="{ name: 'ContactEdit', params: { id: contact.id }}"><fa-icon name="edit"></fa-icon></router-link></span>
         <span @click="deleteContact(contact)"><fa-icon name="trash-alt"></fa-icon></span>
-        <div class="contact-content" v-markdown-to-html>
-            {{ contact.lastname }}
-            {{ contact.firstname}}
-            {{ contact.email }}
+        <div class="contact-content">
+            <div class="contact-lastname">{{ contact.lastname }}</div>
+            <div class="contact-firstname">{{ contact.firstname}}</div>
+            <div class="contact-email">{{ contact.email }}</div>
         </div>
         <span class="update">créé le {{ contact.createdAt | formatDate }}, mis à jour le  {{ contact.updatedAt | formatDate }}</span>
     </div>

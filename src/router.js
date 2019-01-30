@@ -12,6 +12,10 @@ Vue.use(Router)
 export default new Router({
     routes: [{
         path: '/',
+        name: 'Homepage',
+        component: NotesIndex
+    }, {
+        path:'/notes',
         name: 'NotesIndex',
         component: NotesIndex
     }, {

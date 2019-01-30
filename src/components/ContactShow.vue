@@ -5,7 +5,11 @@
             <span class="delete-button" @click="deleteContact(contact)"><fa-icon name="trash-alt"></fa-icon></span>
         </div>
         <div id="contact-display" class="displayed-contact-content" >
-
+            <div class="contact-display-lastname">{{ contact.lastname }}</div>
+            <div class="contact-display-firstname">{{ contact.firstname }}</div>
+            <div class="contact-display-email">{{ contact.email }}</div>
+            <div class="contact-display-phone">{{ contact.phone }}</div>
+            <div class="contact-display-misc">{{ contact.misc }}</div>
         </div>
     </div>
 </template>
@@ -13,6 +17,7 @@
 
 <script>
 import Contact from '../models/contact'
+import router from '../router'
 import FaIcon from '@/components/FaIcon'
 import ContactPreview from '@/components/ContactPreview'
 
@@ -22,6 +27,12 @@ export default {
     computed: {
         contact: function () {
             return Contact.find(this.$route.params.id)
+        }
+    },
+    methods: {
+        deleteContact: function (contact) {
+            Contact.delete(contact)
+            router.push({name: 'ContactsIndex'})
         }
     }
 }

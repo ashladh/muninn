@@ -8,6 +8,9 @@ import ContactsIndex from '@/components/ContactsIndex'
 import ContactEdit from '@/components/ContactEdit'
 import ContactShow from '@/components/ContactShow'
 import ProjectsIndex from '@/components/ProjectsIndex'
+import ProjectEdit from '@/components/ProjectEdit'
+import ProjectShow from '@/components/ProjectShow'
+
 
 
 
@@ -46,6 +49,14 @@ export default new Router({
         path:'/projects',
         name: 'ProjectsIndex',
         component: ProjectsIndex
+    }, {
+        path:'/projects/:id/edit',
+        name: 'ProjectEdit',
+        component: ProjectEdit
+    }, {
+        path:'/projects/:id',
+        name: 'ProjectShow',
+        component: ProjectShow
     }]
 })
 

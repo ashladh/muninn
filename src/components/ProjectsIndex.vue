@@ -3,12 +3,12 @@
 
     <button @click="displayProjectForm" v-if="!displayNewProjectForm">Nouveau projet <i class="fas fa-plus"></i></button>
 
-    <note-new  v-show="displayNewProjectForm" v-on:note-added="onProjectAdded"></note-new>
+    <project-new  v-show="displayNewProjectForm" v-on:project-added="onProjectAdded"></project-new>
 
     <div id="project-display" v-if="displayMode"></div>
 
     <div id="projects-container">
-      <project-preview v-for="project in projects" v-bind:note="project" :key="project.id"></project-preview>
+      <project-preview v-for="project in projects" v-bind:project="project" :key="project.id"></project-preview>
     </div>
 
   </div>

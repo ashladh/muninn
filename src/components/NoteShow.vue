@@ -1,8 +1,8 @@
 <template>
     <div>
-        <div id="showmode-icons">
+        <div class="showmode-icons">
             <router-link :to="{ name: 'NoteEdit', params: { id: note.id }}"><fa-icon name="edit"></fa-icon></router-link>
-            <span @click="deleteNote(note)"><fa-icon name="trash-alt"></fa-icon></span>
+            <span class="delete-button" @click="deleteNote(note)"><fa-icon name="trash-alt"></fa-icon></span>
         </div>
         <div id="note-display" class="displayed-note-content" v-markdown-to-html>{{ note.text }}</div>
     </div>
@@ -11,14 +11,22 @@
 
 <script>
 import Note from '../models/note'
+import router from '../router'
 import FaIcon from '@/components/FaIcon'
+import NotePreview from '@/components/NotePreview'
 
 export default {
-    components: {FaIcon},
+    components: {FaIcon, NotePreview},
     name: 'NoteShow',
     computed: {
         note: function () {
             return Note.find(this.$route.params.id)
+        }
+    },
+    methods: {
+        deleteNote: function (note) {
+            Note.delete(note)
+            router.push({name: 'NotesIndex'})
         }
     }
 }
@@ -40,7 +48,7 @@ export default {
     color:#ff7657;
 }
 
-#showmode-icons {
+.showmode-icons {
     margin: auto;
     width: 95%;
     text-align: center;

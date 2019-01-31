@@ -2,7 +2,7 @@
   <div class="indiv-note" v-if="note.text !== ''">
         <span><router-link :to="{ name: 'NoteShow', params: { id: note.id }}"><fa-icon name="eye"></fa-icon></router-link></span>
         <span><router-link :to="{ name: 'NoteEdit', params: { id: note.id }}"><fa-icon name="edit"></fa-icon></router-link></span>
-        <span class="delete-button" @click="deleteNote(note)"><fa-icon name="trash-alt"></fa-icon></span>
+        <delete-link :item="note"></delete-link>
         <div class="note-content" v-markdown-to-html>{{ note.text }}</div>
         <span class="update">créé le {{ note.createdAt | formatDate }}, mis à jour le  {{ note.updatedAt | formatDate }}</span>
     </div>
@@ -10,11 +10,12 @@
 
 <script>
 import FaIcon from '@/components/FaIcon'
+import DeleteLink from '@/components/DeleteLink'
 import Note from '@/models/note'
 
 export default {
     name: 'NotePreview',
-    components: {FaIcon},
+    components: {FaIcon, DeleteLink},
     props: ['note'],
     methods: {
         deleteNote: function (note) {
@@ -25,7 +26,7 @@ export default {
 </script>
 
 
-<style scoped>
+<style>
 .indiv-note .update {
     font-style: italic;
     font-size: 0.6em;

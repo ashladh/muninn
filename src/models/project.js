@@ -31,8 +31,8 @@ Project.prototype.update = function () {
 }
 
 
-Project.delete = function (project) {
-    var index = store.projects.indexOf(project)
+Project.prototype.remove = function () {
+    var index = store.projects.indexOf(this)
 
     if (index != -1) {
         store.projects.splice(index, 1)

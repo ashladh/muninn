@@ -2,7 +2,7 @@
   <div class="indiv-project" v-if="project.title !== ''">
         <span><router-link :to="{ name: 'ProjectShow', params: { id: project.id }}"><fa-icon name="eye"></fa-icon></router-link></span>
         <span><router-link :to="{ name: 'ProjectEdit', params: { id: project.id }}"><fa-icon name="edit"></fa-icon></router-link></span>
-        <delete-project-link :project="project"></delete-project-link>
+        <delete-link :item="project"></delete-link>
         <div class="project-content" v-markdown-to-html>
             <div class="project-content-title">{{ project.title }}</div>
             <div class="project-content-text">{{ project.content }}</div>
@@ -13,19 +13,19 @@
 
 <script>
 import FaIcon from '@/components/FaIcon'
-import DeleteProjectLink from '@/components/DeleteProjectLink'
+import DeleteLink from '@/components/DeleteLink'
 import Project from '@/models/project'
 
 export default {
     name: 'ProjectPreview',
-    components: {FaIcon, DeleteProjectLink},
+    components: {FaIcon, DeleteLink},
     props: ['project']
 
 }
 </script>
 
 
-<style scoped>
+<style>
 .indiv-project .update {
     font-style: italic;
     font-size: 0.6em;

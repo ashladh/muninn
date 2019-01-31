@@ -2,7 +2,7 @@
   <div class="indiv-project" v-if="project.title !== ''">
         <span><router-link :to="{ name: 'ProjectShow', params: { id: project.id }}"><fa-icon name="eye"></fa-icon></router-link></span>
         <span><router-link :to="{ name: 'ProjectEdit', params: { id: project.id }}"><fa-icon name="edit"></fa-icon></router-link></span>
-        <span class="delete-button" @click="deleteProject(project)"><fa-icon name="trash-alt"></fa-icon></span>
+        <delete-project-link :project="project"></delete-project-link>
         <div class="project-content" v-markdown-to-html>
             <div class="project-content-title">{{ project.title }}</div>
             <div class="project-content-text">{{ project.content }}</div>
@@ -13,17 +13,14 @@
 
 <script>
 import FaIcon from '@/components/FaIcon'
+import DeleteProjectLink from '@/components/DeleteProjectLink'
 import Project from '@/models/project'
 
 export default {
     name: 'ProjectPreview',
-    components: {FaIcon},
-    props: ['project'],
-    methods: {
-        deleteProject: function (project) {
-            Project.delete(project)
-        }
-    }
+    components: {FaIcon, DeleteProjectLink},
+    props: ['project']
+
 }
 </script>
 

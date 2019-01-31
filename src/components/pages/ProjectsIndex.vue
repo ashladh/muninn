@@ -8,7 +8,7 @@
     <div id="project-display" v-if="displayMode"></div>
 
     <div id="projects-container">
-      <project-preview v-for="project in projects" v-bind:project="project" :key="project.id"></project-preview>
+      <project-preview v-for="project in projects" :project="project" :key="project.id"></project-preview>
     </div>
 
   </div>

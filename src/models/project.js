@@ -33,9 +33,13 @@ Project.prototype.update = function () {
 
 Project.delete = function (project) {
     var index = store.projects.indexOf(project)
-    store.projects.splice(index, 1)
-    Project.saveToLocalStorage(store.projects)
+
+    if (index != -1) {
+        store.projects.splice(index, 1)
+        Project.saveToLocalStorage(store.projects)
+    }
 }
+
 
 Project.find = function (id) {
     var foundProject

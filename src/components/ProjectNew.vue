@@ -7,8 +7,8 @@
 </template>
 
 <script>
-import store from '../store'
-import Project from '../models/project'
+import store from '@/store'
+import Project from '@/models/project'
 
 export default {
     name: 'ProjectNew',

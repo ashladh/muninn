@@ -10,7 +10,7 @@
 
 <script>
 import FaIcon from '@/components/FaIcon'
-import Note from '../models/note'
+import Note from '@/models/note'
 
 export default {
     name: 'NotePreview',

@@ -6,8 +6,8 @@
 </template>
 
 <script>
-import store from '../store'
-import Note from '../models/note'
+import store from '@/store'
+import Note from '@/models/note'
 
 export default {
     name: 'NoteNew',

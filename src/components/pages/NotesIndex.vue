@@ -15,15 +15,15 @@
 </template>
 
 <script>
-import store from '../store'
-import Note from '../models/note'
+import store from '@/store'
+import Note from '@/models/note'
 import NotePreview from '@/components/NotePreview'
 import NoteNew from '@/components/NoteNew'
-import NoteEdit from '@/components/NoteEdit'
+
 
 export default {
     name: 'NotesIndex',
-    components: {NotePreview, NoteNew, NoteEdit},
+    components: {NotePreview, NoteNew},
     data: function () {
         return {
             notes: store.notes,

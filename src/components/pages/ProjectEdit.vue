@@ -8,8 +8,8 @@
 
 <script>
 
-import Project from '../models/project'
-import router from '../router'
+import Project from '@/models/project'
+import router from '@/router'
 
 export default {
     name:'ProjectEdit',

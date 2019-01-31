@@ -42,8 +42,8 @@
 </template>
 
 <script>
-import store from '../store'
-import Contact from '../models/contact'
+import store from '@/store'
+import Contact from '@/models/contact'
 
 export default {
     name: 'ContactNew',

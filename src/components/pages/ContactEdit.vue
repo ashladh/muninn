@@ -40,9 +40,9 @@
 </template>
 
 <script>
-import store from '../store'
-import Contact from '../models/contact'
-import router from '../router'
+import store from '@/store'
+import Contact from '@/models/contact'
+import router from '@/router'
 
 export default {
     name:'ContactEdit',

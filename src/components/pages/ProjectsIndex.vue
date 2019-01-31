@@ -15,15 +15,15 @@
 </template>
 
 <script>
-import store from '../store'
-import Project from '../models/project'
+import store from '@/store'
+import Project from '@/models/project'
 import ProjectPreview from '@/components/ProjectPreview'
 import ProjectNew from '@/components/ProjectNew'
-import ProjectEdit from '@/components/ProjectEdit'
+
 
 export default {
     name: 'ProjectsIndex',
-    components: {ProjectPreview, ProjectNew, ProjectEdit},
+    components: {ProjectPreview, ProjectNew},
     data: function () {
         return {
             projects: store.projects,

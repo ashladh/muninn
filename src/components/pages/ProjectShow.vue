@@ -17,8 +17,8 @@
 
 
 <script>
-import Project from '../models/project'
-import router from '../router'
+import Project from '@/models/project'
+import router from '@/router'
 import FaIcon from '@/components/FaIcon'
 import ProjectPreview from '@/components/ProjectPreview'
 

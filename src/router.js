@@ -1,15 +1,15 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-import NotesIndex from '@/components/NotesIndex'
-import NoteShow from '@/components/NoteShow'
-import NoteEdit from '@/components/NoteEdit'
-import ContactsIndex from '@/components/ContactsIndex'
-import ContactEdit from '@/components/ContactEdit'
-import ContactShow from '@/components/ContactShow'
-import ProjectsIndex from '@/components/ProjectsIndex'
-import ProjectEdit from '@/components/ProjectEdit'
-import ProjectShow from '@/components/ProjectShow'
+import NotesIndex from '@/components/pages/NotesIndex'
+import NoteShow from '@/components/pages/NoteShow'
+import NoteEdit from '@/components/pages/NoteEdit'
+import ContactsIndex from '@/components/pages/ContactsIndex'
+import ContactEdit from '@/components/pages/ContactEdit'
+import ContactShow from '@/components/pages/ContactShow'
+import ProjectsIndex from '@/components/pages/ProjectsIndex'
+import ProjectEdit from '@/components/pages/ProjectEdit'
+import ProjectShow from '@/components/pages/ProjectShow'
 
 
 

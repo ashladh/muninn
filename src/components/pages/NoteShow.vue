@@ -10,8 +10,8 @@
 
 
 <script>
-import Note from '../models/note'
-import router from '../router'
+import Note from '@/models/note'
+import router from '@/router'
 import FaIcon from '@/components/FaIcon'
 import NotePreview from '@/components/NotePreview'
 

@@ -7,8 +7,8 @@
 
 <script>
 
-import Note from '../models/note'
-import router from '../router'
+import Note from '@/models/note'
+import router from '@/router'
 
 export default {
     name:'NoteEdit',

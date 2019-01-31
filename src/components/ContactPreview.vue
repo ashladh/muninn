@@ -14,7 +14,7 @@
 
 <script>
 import FaIcon from '@/components/FaIcon'
-import Contact from '../models/contact'
+import Contact from '@/models/contact'
 
 export default {
     name: 'ContactPreview',

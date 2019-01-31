@@ -13,10 +13,9 @@
 
 
 <script>
-import store from '../store'
+import store from '@/store'
 import ContactNew from '@/components/ContactNew'
 import ContactPreview from '@/components/ContactPreview'
-import ContactEdit from '@/components/ContactEdit'
 
 export default {
     name: 'ContactsIndex',
@@ -26,7 +25,7 @@ export default {
         contacts: store.contacts
       }
     },
-    components: {ContactNew, ContactPreview, ContactEdit},
+    components: {ContactNew, ContactPreview},
     methods: {
       onContactAdded: function () {
         this.displayNewContactForm = false

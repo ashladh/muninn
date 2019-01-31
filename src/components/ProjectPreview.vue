@@ -13,7 +13,7 @@
 
 <script>
 import FaIcon from '@/components/FaIcon'
-import Project from '../models/project'
+import Project from '@/models/project'
 
 export default {
     name: 'ProjectPreview',

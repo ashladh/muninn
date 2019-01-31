@@ -16,8 +16,8 @@
 
 
 <script>
-import Contact from '../models/contact'
-import router from '../router'
+import Contact from '@/models/contact'
+import router from '@/router'
 import FaIcon from '@/components/FaIcon'
 import ContactPreview from '@/components/ContactPreview'
 

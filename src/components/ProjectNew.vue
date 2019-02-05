@@ -21,7 +21,7 @@ export default {
     },
     methods: {
         addProject: function () {
-            var project = new Project({title: this.project.itle, content: this.project.content})
+            var project = new Project({title: this.project.title, content: this.project.content})
             this.projects.push(project)
             Project.saveToLocalStorage()
             this.project.title = ''

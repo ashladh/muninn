@@ -1,17 +1,16 @@
 <template>
-    <div class="note-edit">
-      <textarea v-model="note.text"></textarea>
-      <button @click="saveNote">Enregistrer</button>
-    </div>
+    <note-form :note="note" @submit="saveNote"></note-form>
 </template>
 
 <script>
 
 import Note from '@/models/note'
 import router from '@/router'
+import NoteForm from '@/components/NoteForm'
 
 export default {
     name:'NoteEdit',
+    components: {NoteForm},
     methods: {
         saveNote: function () {
             this.note.update()

@@ -1,41 +1,32 @@
 <template>
-    <div id="note-form">
-        <textarea id="new-note" v-model="newNote"> </textarea>
-        <button @click="addNote">Enregistrer</button>
-    </div>
+    <note-form :note="note" @submit="addNote"></note-form>
 </template>
 
 <script>
 import store from '@/store'
 import Note from '@/models/note'
+import NoteForm from '@/components/NoteForm'
 
 export default {
     name: 'NoteNew',
+    components: {NoteForm},
     data: function () {
         return {
             notes: store.notes,
-            newNote: '',
+            note: {text:''},
         }
     },
     methods: {
         addNote: function () {
-            var note = new Note({text: this.newNote})
-            this.notes.push(note)
+            var newNote = new Note({text: this.note.text})
+            this.notes.push(newNote)
             Note.saveToLocalStorage()
-            this.newNote = ''
+            this.note.text = ''
             this.$emit('note-added')
         }
     }
 }
 </script>
 
-<style scoped>
-#new-note {
-    height: 200px;
-    width: 60%;
-    border-radius: 10px;
-    border: 5px solid #ff7657;
-    outline-style: none;
-}
-
+<style>
 </style>

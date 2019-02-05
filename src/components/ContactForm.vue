@@ -1,37 +1,61 @@
 <template>
-	<contact-form :contact="contact" @submit="saveContact"></contact-form>
+    <div class="contact-form">
+        <span class="input input--jiro">
+            <input class="input__field input__field--jiro" type="text" v-model="contact.lastname" />
+            <label class="input__label input__label--jiro" for="input-10">
+            <span class="input__label-content input__label-content--jiro">Nom</span>
+            </label>
+        </span>
+
+        <span class="input input--jiro">
+            <input class="input__field input__field--jiro" type="text" v-model="contact.firstname" />
+            <label class="input__label input__label--jiro" for="input-10">
+            <span class="input__label-content input__label-content--jiro">Prénom</span>
+            </label>
+        </span>
+
+
+        <span class="input input--jiro">
+            <input class="input__field input__field--jiro" type="text" v-model="contact.email" />
+            <label class="input__label input__label--jiro" for="input-10">
+            <span class="input__label-content input__label-content--jiro">Email</span>
+            </label>
+        </span>
+
+        <span class="input input--jiro">
+            <input class="input__field input__field--jiro" type="text" v-model="contact.phone" />
+            <label class="input__label input__label--jiro" for="input-10">
+            <span class="input__label-content input__label-content--jiro">Téléphone</span>
+            </label>
+        </span>
+
+        <span class="input input--jiro">
+            <textarea class="input__field input__field--jiro" type="text" v-model="contact.misc"></textarea>
+            <label class="input__label input__label--jiro" for="input-10">
+            <span class="input__label-content input__label-content--jiro">Informations diverses</span>
+            </label>
+        </span>
+        <button @click="contactSubmit">Enregistrer</button>
+    </div>
 </template>
 
 <script>
 import store from '@/store'
 import Contact from '@/models/contact'
 import router from '@/router'
-import ContactForm from '@/components/ContactForm'
 
 export default {
-	name:'ContactEdit',
-	components: {ContactForm},
+    name:'ContactForm',
+    props: ['contact'],
     methods: {
-        saveContact: function () {
-            this.contact.update()
-            Contact.saveToLocalStorage()
-            router.push({name: 'ContactsIndex'})
-        }
-    },
-    computed: {
-        contact: function () {
-            return Contact.find(this.$route.params.id)
+        contactSubmit: function () {
+            this.$emit('submit', this.contact)
         }
     }
 }
 </script>
 
 <style>
-.contact-edit {
-    background-color: white;
-}
-
-.bgcolor-7 { background: white }
 .input {
 	position: relative;
 	display: inline-block;

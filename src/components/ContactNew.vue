@@ -76,13 +76,6 @@ export default {
 }
 </script>
 
-<style scoped>
-#new-contact {
-    height: 200px;
-    width: 60%;
-    border-radius: 10px;
-    border: 5px solid #ff7657;
-    outline-style: none;
-}
+<style>
 
 </style>

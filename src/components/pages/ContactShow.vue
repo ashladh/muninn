@@ -4,7 +4,7 @@
             <router-link :to="{ name: 'ContactEdit', params: { id: contact.id }}"><fa-icon name="edit"></fa-icon></router-link>
             <span class="delete-button" @click="deleteContact(contact)"><fa-icon name="trash-alt"></fa-icon></span>
         </div>
-        <div id="contact-display" class="displayed-contact-content" >
+        <div class="contact-display">
             <div class="contact-display-lastname">{{ contact.lastname }}</div>
             <div class="contact-display-firstname">{{ contact.firstname }}</div>
             <div class="contact-display-email">{{ contact.email }}</div>
@@ -40,7 +40,7 @@ export default {
 
 
 <style scoped>
-#note-display {
+.note-display {
     border-radius: 10px;
     border: 5px solid #ff7657;
     background-color: white;

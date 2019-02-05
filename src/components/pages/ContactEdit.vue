@@ -1,5 +1,5 @@
 <template>
-    <div id="contact-edit">
+    <div class="contact-edit">
         <span class="input input--jiro">
             <input class="input__field input__field--jiro" type="text" v-model="contact.lastname" />
             <label class="input__label input__label--jiro" for="input-10">
@@ -62,7 +62,7 @@ export default {
 </script>
 
 <style>
-#contact-edit {
+.contact-edit {
     background-color: white;
 }
 

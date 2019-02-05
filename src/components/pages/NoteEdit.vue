@@ -1,5 +1,5 @@
 <template>
-    <div id="note-edit">
+    <div class="note-edit">
       <textarea v-model="note.text"></textarea>
       <button @click="saveNote">Enregistrer</button>
     </div>
@@ -28,7 +28,7 @@ export default {
 </script>
 
 <style scoped>
-#note-edit textarea {
+.note-edit textarea {
     height: 200px;
     width: 60%;
     border-radius: 10px;

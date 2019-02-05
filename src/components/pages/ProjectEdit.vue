@@ -1,5 +1,5 @@
 <template>
-    <div id="project-edit">
+    <div class="project-edit">
         <input v-model="project.title">
         <textarea v-model="project.content"></textarea>
         <button @click="saveProject">Enregistrer</button>
@@ -29,13 +29,13 @@ export default {
 </script>
 
 <style scoped>
-#project-edit input {
+.project-edit input {
     border-radius: 10px;
     height: 50px;
     border: 3px solid #ff7657;
 }
 
-#project-edit textarea {
+.project-edit textarea {
     height: 200px;
     width: 60%;
     border-radius: 10px;

@@ -4,7 +4,7 @@
             <router-link :to="{ name: 'ProjectEdit', params: { id: project.id }}"><fa-icon name="edit"></fa-icon></router-link>
             <span class="delete-button" @click="deleteProject(project)"><fa-icon name="trash-alt"></fa-icon></span>
         </div>
-        <div id="project-display" class="displayed-project-content" v-markdown-to-html>
+        <div class="project-display" v-markdown-to-html>
             <div class="project-display-title">
                 {{project.title}}
             </div>
@@ -41,7 +41,7 @@ export default {
 
 
 <style scoped>
-#project-display {
+.project-display {
     border-radius: 10px;
     border: 5px solid #ff7657;
     background-color: white;

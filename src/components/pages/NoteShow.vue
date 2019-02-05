@@ -4,7 +4,7 @@
             <router-link :to="{ name: 'NoteEdit', params: { id: note.id }}"><fa-icon name="edit"></fa-icon></router-link>
             <span class="delete-button" @click="deleteNote(note)"><fa-icon name="trash-alt"></fa-icon></span>
         </div>
-        <div id="note-display" class="displayed-note-content" v-markdown-to-html>{{ note.text }}</div>
+        <div class="note-display" v-markdown-to-html>{{ note.text }}</div>
     </div>
 </template>
 
@@ -34,7 +34,7 @@ export default {
 
 
 <style scoped>
-#note-display {
+.note-display {
     border-radius: 10px;
     border: 5px solid #ff7657;
     background-color: white;

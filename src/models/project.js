@@ -1,5 +1,6 @@
 import store from '../store'
-import {DateTime} from 'luxon'
+import addLocalStorageCapabilities from './local_storage_capabilities'
+import addTimestampCapabilities from './timestamp_capabilities'
 
 function Project (params) {
     this.title = params.title
@@ -11,23 +12,12 @@ function Project (params) {
         this.id = getNextId()
     }
 
-    if ('updatedAt' in params) {
-        this.updatedAt = params.updatedAt
-    }
-    else {
-        this.updatedAt = DateTime.local().toISO()
-    }
-    if ('createdAt' in params) {
-        this.createdAt = params.createdAt
-    }
-    else {
-        this.createdAt = DateTime.local().toISO()
-    }
+    addTimestampCapabilities(this, params)
 }
 
 
 Project.prototype.update = function () {
-    this.updatedAt = DateTime.local().toISO()
+    this.touch()
 }
 
 
@@ -54,19 +44,7 @@ Project.find = function (id) {
 }
 
 
-Project.importFromLocalStorage = function () {
-    var stringProjects = localStorage.getItem('projects')
-    var projects = stringProjects ? JSON.parse(stringProjects) : []
-
-    projects.forEach(function (projectData) {
-        store.projects.push(new Project(projectData))
-    })
-}
-
-
-Project.saveToLocalStorage = function () {
-    localStorage.setItem('projects', JSON.stringify(store.projects))
-}
+addLocalStorageCapabilities(Project, 'projects')
 
 
 

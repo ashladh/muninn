@@ -1,5 +1,6 @@
 import store from '../store'
-import {DateTime} from 'luxon'
+import addLocalStorageCapabilities from './local_storage_capabilities'
+import addTimestampCapabilities from './timestamp_capabilities'
 
 function Note (params) {
     this.text = params.text
@@ -10,23 +11,12 @@ function Note (params) {
         this.id = getNextId()
     }
 
-    if ('updatedAt' in params) {
-        this.updatedAt = params.updatedAt
-    }
-    else {
-        this.updatedAt = DateTime.local().toISO()
-    }
-    if ('createdAt' in params) {
-        this.createdAt = params.createdAt
-    }
-    else {
-        this.createdAt = DateTime.local().toISO()
-    }
+    addTimestampCapabilities(this, params)
 }
 
 
 Note.prototype.update = function () {
-    this.updatedAt = DateTime.local().toISO()
+    this.touch()
 }
 
 
@@ -51,20 +41,7 @@ Note.find = function (id) {
     return foundNote
 }
 
-
-Note.importFromLocalStorage = function () {
-    var stringNotes = localStorage.getItem('notes')
-    var notes = stringNotes ? JSON.parse(stringNotes) : []
-
-    notes.forEach(function (noteData) {
-        store.notes.push(new Note(noteData))
-    })
-}
-
-
-Note.saveToLocalStorage = function () {
-    localStorage.setItem('notes', JSON.stringify(store.notes))
-}
+addLocalStorageCapabilities(Note, 'notes')
 
 
 

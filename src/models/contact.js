@@ -1,5 +1,6 @@
 import store from '../store'
-import {DateTime} from 'luxon'
+import addLocalStorageCapabilities from './local_storage_capabilities'
+import addTimestampCapabilities from './timestamp_capabilities'
 
 var attributes = ['lastname', 'firstname', 'email', 'phone', 'misc']
 
@@ -16,23 +17,12 @@ function Contact (params) {
         this.id = getNextId()
     }
 
-    if ('updatedAt' in params) {
-        this.updatedAt = params.updatedAt
-    }
-    else {
-        this.updatedAt = DateTime.local().toISO()
-    }
-    if ('createdAt' in params) {
-        this.createdAt = params.createdAt
-    }
-    else {
-        this.createdAt = DateTime.local().toISO()
-    }
+    addTimestampCapabilities(this, params)
 }
 
 
 Contact.prototype.update = function () {
-    this.updatedAt = DateTime.local().toISO()
+    this.touch()
 }
 
 Contact.delete = function (contact) {
@@ -53,21 +43,7 @@ Contact.find = function (id) {
     return foundContact
 }
 
-
-Contact.importFromLocalStorage = function () {
-    var stringContacts = localStorage.getItem('contacts')
-    var contacts = stringContacts ? JSON.parse(stringContacts) : []
-
-    contacts.forEach(function (contactData) {
-        store.contacts.push(new Contact(contactData))
-    })
-}
-
-
-Contact.saveToLocalStorage = function () {
-    localStorage.setItem('contacts', JSON.stringify(store.contacts))
-}
-
+addLocalStorageCapabilities(Contact, 'contacts')
 
 
 function getNextId () {
@@ -79,6 +55,7 @@ function getNextId () {
     localStorage.setItem('currentId', currentId)
     return currentId
 }
+
 
 
 export default Contact

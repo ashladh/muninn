@@ -1,18 +1,16 @@
 <template>
-    <div class="project-edit">
-        <input v-model="project.title">
-        <textarea v-model="project.content"></textarea>
-        <button @click="saveProject">Enregistrer</button>
-    </div>
+    <project-form :project="project" @submit="saveProject"></project-form>
 </template>
 
 <script>
 
 import Project from '@/models/project'
 import router from '@/router'
+import ProjectForm from '@/components/ProjectForm'
 
 export default {
     name:'ProjectEdit',
+    components: {ProjectForm},
     methods: {
         saveProject: function () {
             this.project.update()

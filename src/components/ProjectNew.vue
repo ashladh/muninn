@@ -1,30 +1,31 @@
 <template>
-    <div id="project-form">
-        <input id="new-project-title" v-model="newProjectTitle" placeholder="Titre">
-        <textarea id="new-project-content" v-model="newProjectContent" placeholder="Description"></textarea>
-        <button @click="addProject">Enregistrer</button>
-    </div>
+    <project-form :project="project" @submit="addProject"></project-form>
 </template>
 
 <script>
 import store from '@/store'
 import Project from '@/models/project'
+import ProjectForm from '@/components/ProjectForm'
 
 export default {
     name: 'ProjectNew',
+    components: {ProjectForm},
     data: function () {
         return {
             projects: store.projects,
-            newProjectTitle: '',
-            newProjectContent: ''
+            project: {
+                title: '',
+                content: ''
+            }
         }
     },
     methods: {
         addProject: function () {
-            var project = new Project({title: this.newProjectTitle, content: this.newProjectContent})
+            var project = new Project({title: this.project.itle, content: this.project.content})
             this.projects.push(project)
             Project.saveToLocalStorage()
-            this.newProjectContent = ''
+            this.project.title = ''
+            this.project.content = ''
             this.$emit('project-added')
         }
     }

@@ -1,19 +1,14 @@
-import addModelCapabilities from './capabilities/model_capabilities'
-import addLocalStorageCapabilities from './capabilities/local_storage_capabilities'
-import addTimestampCapabilities from './capabilities/timestamp_capabilities'
-import addIdCapabilities from './capabilities/id_capabilities'
+import Model from './model'
 
-function Note (params) {
-    this.text = params.text
 
-    addIdCapabilities(this, params, 'notes')
-    addTimestampCapabilities(this, params)
+class Note extends Model {
+    constructor (params) {
+        super(params)
+        this.text = params.text
+    }
 }
 
-
-addModelCapabilities(Note, 'notes')
-addLocalStorageCapabilities(Note, 'notes')
-
+Note.storeKey = 'notes'
 
 
 export default Note

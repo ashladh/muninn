@@ -1,4 +1,3 @@
-import addLocalStorageCapabilities from './capabilities/local_storage_capabilities'
 import Model from './model'
 
 
@@ -13,6 +12,7 @@ class Contact extends Model {
     }
 }
 
-addLocalStorageCapabilities(Contact, 'contacts')
+Contact.storeKey = 'contacts'
+
 
 export default Contact

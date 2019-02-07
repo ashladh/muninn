@@ -14,8 +14,6 @@ function Project (params) {
 }
 
 
-
-
 addModelCapabilities(Project, 'projects')
 addLocalStorageCapabilities(Project, 'projects')
 

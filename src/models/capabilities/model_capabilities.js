@@ -1,4 +1,4 @@
-import store from '../store'
+import store from '../../store'
 
 function addModelCapabilities (Model, key) {
     Model.prototype.update = function () {

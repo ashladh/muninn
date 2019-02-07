@@ -1,7 +1,7 @@
-import addModelCapabilities from './model_capabilities'
-import addLocalStorageCapabilities from './local_storage_capabilities'
-import addTimestampCapabilities from './timestamp_capabilities'
-import addIdCapabilities from './id_capabilities'
+import addModelCapabilities from './capabilities/model_capabilities'
+import addLocalStorageCapabilities from './capabilities/local_storage_capabilities'
+import addTimestampCapabilities from './capabilities/timestamp_capabilities'
+import addIdCapabilities from './capabilities/id_capabilities'
 
 function Contact (params) {
     this.lastname = params.lastname

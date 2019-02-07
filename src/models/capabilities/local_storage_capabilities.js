@@ -1,4 +1,4 @@
-import store from '../store'
+import store from '../../store'
 
 function addLocalStorageCapabilities (Model, key) {
     Model.importFromLocalStorage = function () {

@@ -12,8 +12,8 @@
 <script>
 import Note from '@/models/note'
 import router from '@/router'
-import FaIcon from '@/components/FaIcon'
-import NotePreview from '@/components/NotePreview'
+import FaIcon from '@/components/shared/_fa_icon'
+import NotePreview from '@/components/notes/_preview'
 
 export default {
     components: {FaIcon, NotePreview},

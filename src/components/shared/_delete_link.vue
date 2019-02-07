@@ -4,7 +4,7 @@
 
 
 <script>
-import FaIcon from '@/components/FaIcon'
+import FaIcon from '@/components/shared/_fa_icon'
 
 export default {
     name: 'DeleteLink',

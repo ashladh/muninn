@@ -19,8 +19,8 @@
 <script>
 import Project from '@/models/project'
 import router from '@/router'
-import FaIcon from '@/components/FaIcon'
-import ProjectPreview from '@/components/ProjectPreview'
+import FaIcon from '@/components/shared/_fa_icon'
+import ProjectPreview from '@/components/projects/_preview'
 
 export default {
     components: {FaIcon, ProjectPreview},

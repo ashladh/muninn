@@ -6,7 +6,7 @@
 
 import Note from '@/models/note'
 import router from '@/router'
-import NoteForm from '@/components/NoteForm'
+import NoteForm from '@/components/notes/_form'
 
 export default {
     name:'NoteEdit',

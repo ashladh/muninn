@@ -6,7 +6,7 @@
 
 import Project from '@/models/project'
 import router from '@/router'
-import ProjectForm from '@/components/ProjectForm'
+import ProjectForm from '@/components/projects/_form'
 
 export default {
     name:'ProjectEdit',

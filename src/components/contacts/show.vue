@@ -18,8 +18,8 @@
 <script>
 import Contact from '@/models/contact'
 import router from '@/router'
-import FaIcon from '@/components/FaIcon'
-import ContactPreview from '@/components/ContactPreview'
+import FaIcon from '@/components/shared/_fa_icon'
+import ContactPreview from '@/components/contacts/_preview'
 
 export default {
     components: {FaIcon, ContactPreview},

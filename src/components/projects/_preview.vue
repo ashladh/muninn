@@ -12,8 +12,8 @@
 </template>
 
 <script>
-import FaIcon from '@/components/FaIcon'
-import DeleteLink from '@/components/DeleteLink'
+import FaIcon from '@/components/shared/_fa_icon'
+import DeleteLink from '@/components/shared/_delete_link'
 import Project from '@/models/project'
 
 export default {

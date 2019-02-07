@@ -14,8 +14,8 @@
 
 <script>
 import store from '@/store'
-import ContactNew from '@/components/ContactNew'
-import ContactPreview from '@/components/ContactPreview'
+import ContactNew from '@/components/contacts/_new'
+import ContactPreview from '@/components/contacts/_preview'
 
 export default {
     name: 'ContactsIndex',

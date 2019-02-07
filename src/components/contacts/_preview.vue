@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import FaIcon from '@/components/FaIcon'
+import FaIcon from '@/components/shared/_fa_icon'
 import Contact from '@/models/contact'
 
 export default {

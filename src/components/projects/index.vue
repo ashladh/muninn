@@ -17,8 +17,8 @@
 <script>
 import store from '@/store'
 import Project from '@/models/project'
-import ProjectPreview from '@/components/ProjectPreview'
-import ProjectNew from '@/components/ProjectNew'
+import ProjectPreview from '@/components/projects/_preview'
+import ProjectNew from '@/components/projects/_new'
 
 
 export default {

@@ -17,8 +17,8 @@
 <script>
 import store from '@/store'
 import Note from '@/models/note'
-import NotePreview from '@/components/NotePreview'
-import NoteNew from '@/components/NoteNew'
+import NotePreview from '@/components/notes/_preview'
+import NoteNew from '@/components/notes/_new'
 
 
 export default {

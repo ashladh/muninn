@@ -5,7 +5,7 @@
 <script>
 import store from '@/store'
 import Project from '@/models/project'
-import ProjectForm from '@/components/ProjectForm'
+import ProjectForm from '@/components/projects/_form'
 
 export default {
     name: 'ProjectNew',

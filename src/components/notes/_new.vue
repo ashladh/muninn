@@ -5,7 +5,7 @@
 <script>
 import store from '@/store'
 import Note from '@/models/note'
-import NoteForm from '@/components/NoteForm'
+import NoteForm from '@/components/notes/_form'
 
 export default {
     name: 'NoteNew',

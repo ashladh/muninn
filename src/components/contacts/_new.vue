@@ -5,7 +5,7 @@
 <script>
 import store from '@/store'
 import Contact from '@/models/contact'
-import ContactForm from '@/components/ContactForm'
+import ContactForm from '@/components/contacts/_form'
 
 export default {
     name: 'ContactNew',

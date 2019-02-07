@@ -4,18 +4,19 @@
         <span><router-link :to="{ name: 'NoteEdit', params: { id: note.id }}"><fa-icon name="edit"></fa-icon></router-link></span>
         <delete-link :item="note"></delete-link>
         <div class="note-content" v-markdown-to-html>{{ note.text }}</div>
-        <span class="update">créé le {{ note.createdAt | formatDate }}, mis à jour le  {{ note.updatedAt | formatDate }}</span>
+        <human-timestamps :item="note"></human-timestamps>
     </div>
 </template>
 
 <script>
 import FaIcon from '@/components/shared/_fa_icon'
 import DeleteLink from '@/components/shared/_delete_link'
+import HumanTimestamps from '@/components/shared/_human_timestamps'
 import Note from '@/models/note'
 
 export default {
     name: 'NotePreview',
-    components: {FaIcon, DeleteLink},
+    components: {FaIcon, DeleteLink, HumanTimestamps},
     props: ['note'],
     methods: {
         deleteNote: function (note) {

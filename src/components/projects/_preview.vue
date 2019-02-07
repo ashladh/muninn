@@ -7,18 +7,19 @@
             <div class="project-content-title">{{ project.title }}</div>
             <div class="project-content-text">{{ project.content }}</div>
         </div>
-        <span class="update">créé le {{ project.createdAt | formatDate }}, mis à jour le  {{ project.updatedAt | formatDate }}</span>
+        <human-timestamps :item="project"></human-timestamps>
     </div>
 </template>
 
 <script>
 import FaIcon from '@/components/shared/_fa_icon'
 import DeleteLink from '@/components/shared/_delete_link'
+import HumanTimestamps from '@/components/shared/_human_timestamps'
 import Project from '@/models/project'
 
 export default {
     name: 'ProjectPreview',
-    components: {FaIcon, DeleteLink},
+    components: {FaIcon, DeleteLink, HumanTimestamps},
     props: ['project']
 
 }

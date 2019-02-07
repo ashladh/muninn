@@ -2,23 +2,25 @@
   <div class="indiv-contact">
         <span><router-link :to="{ name: 'ContactShow', params: { id: contact.id }}"><fa-icon name="eye"></fa-icon></router-link></span>
         <span><router-link :to="{ name: 'ContactEdit', params: { id: contact.id }}"><fa-icon name="edit"></fa-icon></router-link></span>
-        <span class="delete-button" @click="deleteContact(contact)"><fa-icon name="trash-alt"></fa-icon></span>
+        <delete-link :item="contact"></delete-link>
         <div class="contact-content">
             <div class="contact-lastname">{{ contact.lastname }}</div>
             <div class="contact-firstname">{{ contact.firstname}}</div>
             <div class="contact-email">{{ contact.email }}</div>
         </div>
-        <span class="update">créé le {{ contact.createdAt | formatDate }}, mis à jour le  {{ contact.updatedAt | formatDate }}</span>
+        <human-timestamps :item="contact"></human-timestamps>
     </div>
 </template>
 
 <script>
 import FaIcon from '@/components/shared/_fa_icon'
+import DeleteLink from '@/components/shared/_delete_link'
+import HumanTimestamps from '@/components/shared/_human_timestamps'
 import Contact from '@/models/contact'
 
 export default {
     name: 'ContactPreview',
-    components: {FaIcon},
+    components: {FaIcon, HumanTimestamps, DeleteLink},
     props: ['contact'],
     methods: {
         deleteContact: function (contact) {
@@ -29,7 +31,7 @@ export default {
 </script>
 
 
-<style scoped>
+<style>
 
 
 .indiv-contact .update {

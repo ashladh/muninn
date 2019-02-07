@@ -1,8 +1,6 @@
 <template>
-  <div class="indiv-project" v-if="project.title !== ''">
-        <span><router-link :to="{ name: 'ProjectShow', params: { id: project.id }}"><fa-icon name="eye"></fa-icon></router-link></span>
-        <span><router-link :to="{ name: 'ProjectEdit', params: { id: project.id }}"><fa-icon name="edit"></fa-icon></router-link></span>
-        <delete-link :item="project"></delete-link>
+    <div class="project" v-if="project.title !== ''">
+        <item-actions :item="project" name="Project"></item-actions>
         <div class="project-content" v-markdown-to-html>
             <div class="project-content-title">{{ project.title }}</div>
             <div class="project-content-text">{{ project.content }}</div>
@@ -12,14 +10,13 @@
 </template>
 
 <script>
-import FaIcon from '@/components/shared/_fa_icon'
-import DeleteLink from '@/components/shared/_delete_link'
 import HumanTimestamps from '@/components/shared/_human_timestamps'
+import ItemActions from '@/components/shared/_item_actions'
 import Project from '@/models/project'
 
 export default {
     name: 'ProjectPreview',
-    components: {FaIcon, DeleteLink, HumanTimestamps},
+    components: {HumanTimestamps, ItemActions},
     props: ['project']
 
 }
@@ -27,30 +24,22 @@ export default {
 
 
 <style>
-.indiv-project .update {
-    font-style: italic;
-    font-size: 0.6em;
-    float: right;
-    padding-right: 5px;
+.project {
+    background-color: white;
+    border-radius: 10px;
+    height: 100px;
+    width: 60%;
+    padding-left: 15px;
+    margin: 10px;
+    border-left: 5px solid #ff7657;
+    border-right: 5px solid #ff7657;
+    list-style-type: none;
+    overflow: auto;
 }
 
-.indiv-project .project-content {
+.project .project-content {
     height: 80px;
     overflow: hidden;
-}
-
-.indiv-project .far {
-    float: right;
-    padding-right: 5px;
-    font-size: 2em;
-    color: #ffba5a;
-}
-
-.indiv-project .fas {
-    float: right;
-    padding-right: 5px;
-    font-size: 2em;
-    color: #ffba5a;
 }
 
 .project-content-title {

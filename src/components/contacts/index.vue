@@ -1,8 +1,8 @@
 <template>
 <div>
-    <button @click="displayContactForm" v-if="!displayNewContactForm">Nouveau contact <i class="fas fa-plus"></i></button>
-
-    <contact-new  v-show="displayNewContactForm" v-on:contact-added="onContactAdded"></contact-new>
+    <span>
+      <router-link :to="{name: 'ContactNew'}"> Nouveau contact <i class="fas fa-plus"></i></router-link>
+    </span>
 
     <div id="contacts-container">
       <contact-preview v-for="contact in contacts" v-bind:contact="contact" :key="contact.id"></contact-preview>
@@ -14,26 +14,17 @@
 
 <script>
 import store from '@/store'
-import ContactNew from '@/components/contacts/_new'
+import ContactNew from '@/components/contacts/new'
 import ContactPreview from '@/components/contacts/_preview'
 
 export default {
     name: 'ContactsIndex',
     data: function () {
       return {
-        displayNewContactForm: false,
         contacts: store.contacts
       }
     },
-    components: {ContactNew, ContactPreview},
-    methods: {
-      onContactAdded: function () {
-        this.displayNewContactForm = false
-      },
-      displayContactForm: function () {
-        this.displayNewContactForm = true
-      }
-    }
+    components: {ContactNew, ContactPreview}
 }
 </script>
 

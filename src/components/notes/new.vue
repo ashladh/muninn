@@ -4,6 +4,7 @@
 
 <script>
 import store from '@/store'
+import router from '@/router'
 import Note from '@/models/note'
 import NoteForm from '@/components/notes/_form'
 
@@ -13,7 +14,7 @@ export default {
     data: function () {
         return {
             notes: store.notes,
-            note: {text:''},
+            note: {text:''}
         }
     },
     methods: {
@@ -22,7 +23,7 @@ export default {
             this.notes.push(newNote)
             Note.saveToLocalStorage()
             this.note.text = ''
-            this.$emit('note-added')
+            router.push({name: 'NotesIndex'})
         }
     }
 }

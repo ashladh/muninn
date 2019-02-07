@@ -4,6 +4,7 @@
 
 <script>
 import store from '@/store'
+import router from '@/router'
 import Project from '@/models/project'
 import ProjectForm from '@/components/projects/_form'
 
@@ -26,7 +27,7 @@ export default {
             Project.saveToLocalStorage()
             this.project.title = ''
             this.project.content = ''
-            this.$emit('project-added')
+            router.push({name: 'ProjectsIndex'})
         }
     }
 }

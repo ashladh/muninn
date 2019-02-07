@@ -1,11 +1,8 @@
 <template>
   <div>
-
-    <button @click="displayNoteForm" v-if="!displayNewNoteForm">Nouvelle note <i class="fas fa-plus"></i></button>
-
-    <note-new  v-show="displayNewNoteForm" v-on:note-added="onNoteAdded"></note-new>
-
-    <div id="note-display" v-if="displayMode"></div>
+    <span>
+        <router-link :to="{name: 'NoteNew'}"> Nouvelle note <i class="fas fa-plus"></i></router-link>
+    </span>
 
     <div id="notes-container">
       <note-preview v-for="note in notes" v-bind:note="note" :key="note.id"></note-preview>
@@ -16,44 +13,18 @@
 
 <script>
 import store from '@/store'
+import router from '@/router'
 import Note from '@/models/note'
 import NotePreview from '@/components/notes/_preview'
-import NoteNew from '@/components/notes/_new'
 
 
 export default {
     name: 'NotesIndex',
-    components: {NotePreview, NoteNew},
+    components: {NotePreview},
     data: function () {
         return {
-            notes: store.notes,
-            newNote: '',
-            displayNewNoteForm: false,
-            displayMode: false,
-            displayedNote: false
+            notes: store.notes
         }
-    },
-
-    methods: {
-        onNoteAdded: function () {
-            this.displayNewNoteForm = false
-        },
-
-        displayNoteForm: function () {
-            this.displayNewNoteForm = true
-        },
-
-        deleteNote: function (note) {
-           var index = this.notes.indexOf(note)
-           this.notes.splice(index, 1)
-           Note.saveToLocalStorage()
-        },
-
-        displayNote: function (note) {
-            this.displayMode = true
-            this.displayedNote = note
-        }
-
     }
 }
 </script>

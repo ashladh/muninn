@@ -4,6 +4,7 @@
 
 <script>
 import store from '@/store'
+import router from '@/router'
 import Contact from '@/models/contact'
 import ContactForm from '@/components/contacts/_form'
 
@@ -33,12 +34,11 @@ export default {
             })
             this.contacts.push(contact)
             Contact.saveToLocalStorage()
-            this.$emit('contact-added')
+            router.push({name: 'ContactsIndex'})
         }
     }
 }
 </script>
 
 <style>
-
 </style>

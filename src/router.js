@@ -4,12 +4,17 @@ import Router from 'vue-router'
 import NotesIndex from '@/components/notes/index'
 import NoteShow from '@/components/notes/show'
 import NoteEdit from '@/components/notes/edit'
+import NoteNew from '@/components/notes/new'
+
 import ContactsIndex from '@/components/contacts/index'
 import ContactEdit from '@/components/contacts/edit'
 import ContactShow from '@/components/contacts/show'
+import ContactNew from '@/components/contacts/new'
+
 import ProjectsIndex from '@/components/projects/index'
 import ProjectEdit from '@/components/projects/edit'
 import ProjectShow from '@/components/projects/show'
+import ProjectNew from '@/components/projects/new'
 
 
 
@@ -34,6 +39,12 @@ export default new Router({
         name: 'NoteEdit',
         component: NoteEdit
     }, {
+        path:'/notes/new',
+        name: 'NoteNew',
+        component: NoteNew
+    },
+
+    {
         path: '/contacts',
         name: 'ContactsIndex',
         component: ContactsIndex
@@ -46,6 +57,12 @@ export default new Router({
         name: 'ContactShow',
         component: ContactShow
     }, {
+        path:'/contacts/new',
+        name: 'ContactNew',
+        component: ContactNew
+    },
+
+    {
         path:'/projects',
         name: 'ProjectsIndex',
         component: ProjectsIndex
@@ -57,6 +74,10 @@ export default new Router({
         path:'/projects/:id',
         name: 'ProjectShow',
         component: ProjectShow
+    }, {
+        path:'/projects/new',
+        name: 'ProjectNew',
+        component: ProjectNew
     }]
 })
 

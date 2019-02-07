@@ -1,8 +1,8 @@
 <template>
     <div class="actions">
-        <span><router-link :to="{ name: name + 'Show', params: { id: item.id }}"><fa-icon name="eye"></fa-icon></router-link></span>
-        <span><router-link :to="{ name: name + 'Edit', params: { id: item.id }}"><fa-icon name="edit"></fa-icon></router-link></span>
         <delete-link :item="item"></delete-link>
+        <span><router-link :to="{ name: name + 'Edit', params: { id: item.id }}"><fa-icon name="edit"></fa-icon></router-link></span>
+        <span><router-link :to="{ name: name + 'Show', params: { id: item.id }}"><fa-icon name="eye"></fa-icon></router-link></span>
     </div>
 </template>
 

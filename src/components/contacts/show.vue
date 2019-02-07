@@ -1,9 +1,6 @@
 <template>
     <div>
-        <div class="showmode-icons">
-            <router-link :to="{ name: 'ContactEdit', params: { id: contact.id }}"><fa-icon name="edit"></fa-icon></router-link>
-            <span class="delete-button" @click="deleteContact(contact)"><fa-icon name="trash-alt"></fa-icon></span>
-        </div>
+        <item-actions :item="contact" name="Contact"></item-actions>
         <div class="contact-display">
             <div class="contact-display-lastname">{{ contact.lastname }}</div>
             <div class="contact-display-firstname">{{ contact.firstname }}</div>
@@ -18,11 +15,11 @@
 <script>
 import Contact from '@/models/contact'
 import router from '@/router'
-import FaIcon from '@/components/shared/_fa_icon'
+import ItemActions from '@/components/shared/_item_actions'
 import ContactPreview from '@/components/contacts/_preview'
 
 export default {
-    components: {FaIcon, ContactPreview},
+    components: {ItemActions, ContactPreview},
     name: 'ContactShow',
     computed: {
         contact: function () {
@@ -40,7 +37,7 @@ export default {
 
 
 <style scoped>
-.note-display {
+.contact-display {
     border-radius: 10px;
     border: 5px solid #ff7657;
     background-color: white;
@@ -48,10 +45,6 @@ export default {
     width: 60%;
     padding: 10px;
     margin: auto;
-}
-.far {
-    font-size: 2em;
-    color:#ff7657;
 }
 
 .showmode-icons {

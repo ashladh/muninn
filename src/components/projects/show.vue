@@ -1,9 +1,6 @@
 <template>
     <div>
-        <div class="showmode-icons">
-            <router-link :to="{ name: 'ProjectEdit', params: { id: project.id }}"><fa-icon name="edit"></fa-icon></router-link>
-            <span class="delete-button" @click="deleteProject(project)"><fa-icon name="trash-alt"></fa-icon></span>
-        </div>
+        <item-actions :item="project" name="Project"></item-actions>
         <div class="project-display" v-markdown-to-html>
             <div class="project-display-title">
                 {{project.title}}
@@ -19,11 +16,11 @@
 <script>
 import Project from '@/models/project'
 import router from '@/router'
-import FaIcon from '@/components/shared/_fa_icon'
+import ItemActions from '@/components/shared/_item_actions'
 import ProjectPreview from '@/components/projects/_preview'
 
 export default {
-    components: {FaIcon, ProjectPreview},
+    components: {ItemActions, ProjectPreview},
     name: 'ProjectShow',
     computed: {
         project: function () {

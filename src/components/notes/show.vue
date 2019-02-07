@@ -1,9 +1,6 @@
 <template>
     <div>
-        <div class="showmode-icons">
-            <router-link :to="{ name: 'NoteEdit', params: { id: note.id }}"><fa-icon name="edit"></fa-icon></router-link>
-            <span class="delete-button" @click="deleteNote(note)"><fa-icon name="trash-alt"></fa-icon></span>
-        </div>
+        <item-actions :item="note" name="Note"></item-actions>
         <div class="note-display" v-markdown-to-html>{{ note.text }}</div>
     </div>
 </template>
@@ -12,11 +9,11 @@
 <script>
 import Note from '@/models/note'
 import router from '@/router'
-import FaIcon from '@/components/shared/_fa_icon'
+import ItemActions from '@/components/shared/_item_actions'
 import NotePreview from '@/components/notes/_preview'
 
 export default {
-    components: {FaIcon, NotePreview},
+    components: {ItemActions, NotePreview},
     name: 'NoteShow',
     computed: {
         note: function () {

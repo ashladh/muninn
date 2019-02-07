@@ -1,6 +1,6 @@
 <template>
   <div class="indiv-contact">
-        <item-actions :item="contact" name="Contact"></item-actions>
+        <item-actions :item="contact" name="Contact" :display-show-link="true"></item-actions>
         <div class="contact-content">
             <div class="contact-lastname">{{ contact.lastname }}</div>
             <div class="contact-firstname">{{ contact.firstname}}</div>

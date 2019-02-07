@@ -1,6 +1,6 @@
 <template>
     <div class="project" v-if="project.title !== ''">
-        <item-actions :item="project" name="Project"></item-actions>
+        <item-actions :item="project" name="Project" :display-show-link="true"></item-actions>
         <div class="project-content" v-markdown-to-html>
             <div class="project-content-title">{{ project.title }}</div>
             <div class="project-content-text">{{ project.content }}</div>

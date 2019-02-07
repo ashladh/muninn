@@ -1,6 +1,6 @@
 <template>
   <div class="indiv-note" v-if="note.text !== ''">
-        <item-actions :item="note" name="Note"></item-actions>
+        <item-actions :item="note" name="Note" :display-show-link="true"></item-actions>
         <div class="note-content" v-markdown-to-html>{{ note.text }}</div>
         <human-timestamps :item="note"></human-timestamps>
     </div>

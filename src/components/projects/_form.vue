@@ -21,7 +21,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 .form-project-title {
     border-radius: 10px;
     height: 50px;

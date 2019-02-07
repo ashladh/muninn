@@ -33,19 +33,5 @@ export default {
 }
 </script>
 
-<style scoped>
-#new-project-title {
-    border-radius: 10px;
-    height: 50px;
-    border: 3px solid #ff7657;
-}
-
-#new-project-content {
-    height: 200px;
-    width: 60%;
-    border-radius: 10px;
-    border: 5px solid #ff7657;
-    outline-style: none;
-}
-
+<style>
 </style>

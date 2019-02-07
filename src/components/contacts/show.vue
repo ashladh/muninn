@@ -35,7 +35,7 @@ export default {
 </script>
 
 
-<style scoped>
+<style>
 .contact-display {
     border-radius: 10px;
     border: 5px solid #ff7657;
@@ -45,14 +45,4 @@ export default {
     padding: 10px;
     margin: auto;
 }
-
-.showmode-icons {
-    margin: auto;
-    width: 95%;
-    text-align: center;
-    padding-bottom: 30px;
-    padding-top: 15px;
-    display: inline-block;
-}
-
 </style>

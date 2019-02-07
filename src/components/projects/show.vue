@@ -17,10 +17,9 @@
 import Project from '@/models/project'
 import router from '@/router'
 import ItemActions from '@/components/shared/_item_actions'
-import ProjectPreview from '@/components/projects/_preview'
 
 export default {
-    components: {ItemActions, ProjectPreview},
+    components: {ItemActions},
     name: 'ProjectShow',
     computed: {
         project: function () {

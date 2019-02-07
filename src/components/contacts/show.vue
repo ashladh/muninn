@@ -16,10 +16,9 @@
 import Contact from '@/models/contact'
 import router from '@/router'
 import ItemActions from '@/components/shared/_item_actions'
-import ContactPreview from '@/components/contacts/_preview'
 
 export default {
-    components: {ItemActions, ContactPreview},
+    components: {ItemActions},
     name: 'ContactShow',
     computed: {
         contact: function () {

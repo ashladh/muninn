@@ -10,10 +10,9 @@
 import Note from '@/models/note'
 import router from '@/router'
 import ItemActions from '@/components/shared/_item_actions'
-import NotePreview from '@/components/notes/_preview'
 
 export default {
-    components: {ItemActions, NotePreview},
+    components: {ItemActions},
     name: 'NoteShow',
     computed: {
         note: function () {

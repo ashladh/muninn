@@ -6,9 +6,6 @@
 </template>
 
 <script>
-import store from '@/store'
-import Note from '@/models/note'
-
 export default {
     name: 'NoteForm',
     props: ['note'],
@@ -28,5 +25,4 @@ export default {
     border: 5px solid #ff7657;
     outline-style: none;
 }
-
 </style>

@@ -13,8 +13,6 @@
 
 <script>
 import store from '@/store'
-import router from '@/router'
-import Note from '@/models/note'
 import NotePreview from '@/components/notes/_preview'
 
 

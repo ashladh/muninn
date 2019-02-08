@@ -12,7 +12,6 @@
 <script>
 import HumanTimestamps from '@/components/shared/_human_timestamps'
 import ItemActions from '@/components/shared/_item_actions'
-import Project from '@/models/project'
 
 export default {
     name: 'ProjectPreview',

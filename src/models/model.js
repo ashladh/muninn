@@ -1,6 +1,7 @@
 import addTimestampCapabilities from './capabilities/timestamp_capabilities'
 import addIdCapabilities from './capabilities/id_capabilities'
 import store from '../store'
+import utils from '../utils'
 
 
 class Model {
@@ -43,7 +44,7 @@ class Model {
         var storeKey = this.storeKey
         var Constructor = this
 
-        var stringModels = localStorage.getItem(storeKey)
+        var stringModels = utils.storage.getItem(storeKey)
         var models = stringModels ? JSON.parse(stringModels) : []
 
         models.forEach(function (data) {
@@ -52,7 +53,7 @@ class Model {
     }
 
     static saveToLocalStorage () {
-        localStorage.setItem(this.storeKey, JSON.stringify(store[this.storeKey]))
+        utils.storage.setItem(this.storeKey, JSON.stringify(store[this.storeKey]))
     }
 
 }

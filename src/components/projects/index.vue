@@ -13,7 +13,6 @@
 
 <script>
 import store from '@/store'
-import Project from '@/models/project'
 import ProjectPreview from '@/components/projects/_preview'
 
 

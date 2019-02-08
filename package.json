@@ -6,7 +6,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "test":  "mocha --require babel-core/register test/*/*.spec.js"
+    "test": "mocha --require babel-core/register test/*/*.spec.js"
   },
   "dependencies": {
     "luxon": "^1.10.0",

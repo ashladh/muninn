@@ -3,7 +3,6 @@
 </template>
 
 <script>
-import store from '@/store'
 import Contact from '@/models/contact'
 import router from '@/router'
 import ContactForm from '@/components/contacts/_form'

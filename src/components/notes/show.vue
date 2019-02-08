@@ -39,18 +39,4 @@ export default {
     padding: 10px;
     margin: auto;
 }
-.far {
-    font-size: 2em;
-    color:#ff7657;
-}
-
-.showmode-icons {
-    margin: auto;
-    width: 95%;
-    text-align: center;
-    padding-bottom: 30px;
-    padding-top: 15px;
-    display: inline-block;
-}
-
 </style>

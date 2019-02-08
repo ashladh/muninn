@@ -1,5 +1,5 @@
 <template>
-    <div class="project" v-if="project.title !== ''">
+    <div class="project-preview" v-if="project.title !== ''">
         <item-actions :item="project" name="Project" :display-show-link="true"></item-actions>
         <div class="project-content" v-markdown-to-html>
             <div class="project-content-title">{{ project.title }}</div>
@@ -24,7 +24,7 @@ export default {
 
 
 <style>
-.project {
+.project-preview {
     background-color: white;
     border-radius: 10px;
     height: 100px;
@@ -33,11 +33,10 @@ export default {
     margin: 10px;
     border-left: 5px solid #ff7657;
     border-right: 5px solid #ff7657;
-    list-style-type: none;
     overflow: auto;
 }
 
-.project .project-content {
+.project-preview .project-content {
     height: 80px;
     overflow: hidden;
 }

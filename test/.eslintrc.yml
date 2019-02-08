@@ -1,0 +1,5 @@
+---
+  env:
+    browser: true
+    mocha:   true
+    es6:     true

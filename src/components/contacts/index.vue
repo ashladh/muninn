@@ -14,7 +14,6 @@
 
 <script>
 import store from '@/store'
-import ContactNew from '@/components/contacts/new'
 import ContactPreview from '@/components/contacts/_preview'
 
 export default {
@@ -24,7 +23,7 @@ export default {
         contacts: store.contacts
       }
     },
-    components: {ContactNew, ContactPreview}
+    components: {ContactPreview}
 }
 </script>
 

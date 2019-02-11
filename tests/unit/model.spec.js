@@ -1,15 +1,30 @@
 import Model from '@/models/model'
+import store from '@/store'
+import {expect} from 'chai'
+store.people = []
 
-var expect = require('chai').expect
+class Person extends Model {
+    constructor (params) {
+        super(params)
+        this.lastname = params.lastname
+        this.firstname = params.firstname
+    }
+}
+
+Person.storeKey = 'people'
+
+
 
 describe('Model', function () {
 
-    describe('instance', function () {
-        it('should have timestamps', function () {
-            var model = new Model({})
-            var createdAt = new Date(model.createdAt).getTime()
-            expect(createdAt).to.not.be.NaN
+    it('should create a model', function () {
+        var person = new Person({
+            lastname: 'Snow',
+            firstname: 'Jon'
         })
+        expect(person.lastname).to.equal('Snow')
+        expect(person.firstname).to.equal('Jon')
+        expect(person).to.have.property('id')
     })
 
 })

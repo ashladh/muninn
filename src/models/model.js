@@ -28,6 +28,10 @@ class Model {
         }
     }
 
+    saveToLocalStorage () {
+        store[this.storeKey].push(this)
+        this.constructor.saveToLocalStorage()
+    }
 
     static find (id) {
         var foundModel

@@ -13,7 +13,6 @@ export default {
     components: {ProjectForm},
     data: function () {
         return {
-            projects: store.projects,
             project: {
                 title: '',
                 content: ''
@@ -23,8 +22,7 @@ export default {
     methods: {
         addProject: function () {
             var project = new Project({title: this.project.title, content: this.project.content})
-            this.projects.push(project)
-            Project.saveToLocalStorage()
+            project.saveToLocalStorage()
             this.project.title = ''
             this.project.content = ''
             router.push({name: 'ProjectsIndex'})

@@ -73,7 +73,7 @@ describe('Model', function () {
         expect(foundPerson.lastname).to.equal('person1')
     })
 
-    it('should save to local storage', function () {
+    it('should save all to local storage', function () {
         var person2 = new Person({
             lastname: 'Baratheon',
             firstname: 'Stannis'
@@ -81,10 +81,23 @@ describe('Model', function () {
         store.people.push(person2)
 
         Person.saveToLocalStorage()
-        
+
         var data = JSON.parse(utils.storage.getItem('people'))
 
         expect(data.length).to.equal(2)
         expect(data[0].lastname).to.equal('Snow')
+    })
+
+    it('should save instance to local storage', function () {
+        var person2 = new Person({
+            lastname: 'Baratheon',
+            firstname: 'Stannis'
+        })
+        person2.saveToLocalStorage()
+
+        var data = JSON.parse(utils.storage.getItem('people'))
+
+        expect(data.length).to.equal(2)
+        expect(data[1].lastname).to.equal('Baratheon')
     })
 })

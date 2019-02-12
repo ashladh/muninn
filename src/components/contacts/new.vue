@@ -32,8 +32,7 @@ export default {
                 phone: this.contact.phone,
                 misc: this.contact.misc
             })
-            this.contacts.push(contact)
-            Contact.saveToLocalStorage()
+            contact.saveToLocalStorage()
             router.push({name: 'ContactsIndex'})
         }
     }

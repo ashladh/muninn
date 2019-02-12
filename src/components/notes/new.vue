@@ -20,8 +20,7 @@ export default {
     methods: {
         addNote: function () {
             var newNote = new Note({text: this.note.text})
-            this.notes.push(newNote)
-            Note.saveToLocalStorage()
+            newNote.saveToLocalStorage()
             this.note.text = ''
             router.push({name: 'NotesIndex'})
         }

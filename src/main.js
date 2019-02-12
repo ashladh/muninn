@@ -9,9 +9,19 @@ import Project from './models/project'
 
 Vue.config.productionTip = false
 
+Vue.filter('formatDate', function (date) {
+  return DateTime.fromISO(date).toRelative()
+})
+
+Vue.directive('markdown-to-html', function(el) {
+  var markdown = el.innerHTML
+  var converter = new showdown.Converter()
+  el.innerHTML = converter.makeHtml(markdown)
+})
+
 new Vue({
   router,
-  mounted: function () {
+  created: function () {
     Note.importFromLocalStorage()
     Contact.importFromLocalStorage()
     Project.importFromLocalStorage()
@@ -20,12 +30,3 @@ new Vue({
 }).$mount('#app')
 
 
-Vue.filter('formatDate', function (date) {
-    return DateTime.fromISO(date).toRelative()
-})
-
-Vue.directive('markdown-to-html', function(el) {
-    var markdown = el.innerHTML
-    var converter = new showdown.Converter()
-    el.innerHTML = converter.makeHtml(markdown)
-})

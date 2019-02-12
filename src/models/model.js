@@ -36,7 +36,7 @@ class Model {
     static find (id) {
         var foundModel
         store[this.storeKey].forEach(function (model) {
-            if (model.id === id) {
+            if (model.id === Number(id)) {
                foundModel = model
             }
         })

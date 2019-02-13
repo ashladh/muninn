@@ -1,11 +1,11 @@
 <template>
     <div>
         <item-actions :item="project" name="Project"></item-actions>
-        <div class="project-display" v-markdown-to-html>
+        <div class="project-display">
             <div class="project-display-title">
                 {{project.title}}
             </div>
-            <div class="project-display-content">
+            <div class="project-display-content" v-markdown-to-html>
                 {{ project.content }}
             </div>
         </div>

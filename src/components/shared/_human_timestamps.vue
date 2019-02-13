@@ -1,5 +1,5 @@
 <template>
-    <span class="timestamps">créé le {{ item.createdAt | formatDate }}, mis à jour le  {{ item.updatedAt | formatDate }}</span>
+    <span class="timestamps">créé {{ item.createdAt | formatDate }}, mis à jour  {{ item.updatedAt | formatDate }}</span>
 </template>
 
 

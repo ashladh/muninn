@@ -8,7 +8,7 @@
         <li><router-link to="/notes" exact>Notes</router-link></li>
         <li><router-link to="/contacts" exact>Contacts</router-link></li>
         <li><router-link to="/projects" exact>Projects</router-link></li>
-        <li><a href="#">Todos</a></li>
+        <li><router-link to="/devtools" exact>DevTools</router-link></li>
         <li><a href="#">About</a></li>
       </ul>
     </header>

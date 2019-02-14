@@ -27,11 +27,4 @@ export default {
 </script>
 
 <style scoped>
-.note-edit textarea {
-    height: 200px;
-    width: 60%;
-    border-radius: 10px;
-    border: 3px solid #ff7657;
-    outline-style: none;
-}
 </style>

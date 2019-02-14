@@ -1,6 +1,8 @@
 <template>
-    <div class="note-form">
-        <textarea class="form-note-content" v-model="note.text"> </textarea>
+    <div class="form">
+        <span class="input">
+            <textarea v-model="note.text"></textarea>
+        </span>
         <button @click="noteSubmit">Enregistrer</button>
     </div>
 </template>
@@ -18,11 +20,4 @@ export default {
 </script>
 
 <style>
-.form-note-content {
-    height: 200px;
-    width: 60%;
-    border-radius: 10px;
-    border: 5px solid #ff7657;
-    outline-style: none;
-}
 </style>

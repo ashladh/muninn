@@ -1,7 +1,7 @@
 <template>
     <div>
         <item-actions :item="contact" name="Contact"></item-actions>
-        <div class="contact-display">
+        <div class="box">
             <div class="contact-display-lastname">{{ contact.lastname }}</div>
             <div class="contact-display-firstname">{{ contact.firstname }}</div>
             <div class="contact-display-email">{{ contact.email }}</div>
@@ -36,13 +36,4 @@ export default {
 
 
 <style>
-.contact-display {
-    border-radius: 10px;
-    border: 5px solid #ff7657;
-    background-color: white;
-    height: auto;
-    width: 60%;
-    padding: 10px;
-    margin: auto;
-}
 </style>

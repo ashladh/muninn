@@ -1,5 +1,5 @@
 <template>
-<div>
+<div class="container">
     <span>
       <router-link :to="{name: 'ContactNew'}"> Nouveau contact <i class="fas fa-plus"></i></router-link>
     </span>

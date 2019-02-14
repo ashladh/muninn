@@ -1,5 +1,5 @@
 <template>
-    <div class="contact-form">
+    <div class="form">
         <span class="input">
             <input type="text" v-model="contact.lastname" />
             <span>Nom</span>
@@ -25,6 +25,7 @@
             <textarea v-model="contact.misc"></textarea>
             <span>Informations diverses</span>
         </span>
+        
         <button @click="contactSubmit">Enregistrer</button>
     </div>
 </template>
@@ -42,11 +43,4 @@ export default {
 </script>
 
 <style>
-.input {
-	position: relative;
-	display: inline-block;
-	margin: 1em;
-	max-width: 400px;
-	width: 10%;
-}
 </style>

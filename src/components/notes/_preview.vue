@@ -1,5 +1,5 @@
 <template>
-  <div class="note-preview" v-if="note.text !== ''">
+  <div class="preview note-preview" v-if="note.text !== ''">
         <item-actions :item="note" name="Note" :display-show-link="true"></item-actions>
         <div class="note-content" v-markdown-to-html>{{ note.text }}</div>
         <human-timestamps :item="note"></human-timestamps>
@@ -31,14 +31,6 @@ export default {
 }
 
 .note-preview {
-    background-color: white;
-    border-radius: 10px;
-    height: 100px;
     width: 60%;
-    padding-left: 15px;
-    margin: 10px;
-    border-left: 5px solid #ff7657;
-    border-right: 5px solid #ff7657;
-    overflow: auto;
 }
 </style>

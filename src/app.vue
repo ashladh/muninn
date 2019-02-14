@@ -1,9 +1,10 @@
 <template>
   <div id="app">
-    <header>
-
-      <ul id="navbar">
-        <img id="logo" src="../muninn-logo01-color.png" alt="logo">
+    <header id="navbar">
+      <div class="logo">
+        <img src="../muninn-logo01-color.png" alt="logo">
+      </div>
+      <ul class="navbar-links">
         <li><router-link to="/" exact>Home</router-link></li>
         <li><router-link to="/notes" exact>Notes</router-link></li>
         <li><router-link to="/contacts" exact>Contacts</router-link></li>
@@ -30,26 +31,28 @@ body {
     background-color: #fbeed7;
     font-family: 'Raleway', sans-serif;
     font-size: 17px;
+    margin: 0;
 }
 
 #navbar {
-    background-color: #ffba5a;
-    position: absolute;
-    height: 50px;
-    width: 100%;
+  position: absolute;
+  background-color: #ffba5a;
+  height: 50px;
+  width: 100%;
+}
+
+.navbar-links {
     color: white;
     list-style-type: none;
     margin: 0;
     padding: 0;
-    top: 0;
-    left: 0;
 }
 
-#navbar li {
+.navbar-links li {
     float: left;
 }
 
-#navbar li a {
+.navbar-links li a {
     display: block;
     color: white;
     text-align: center;
@@ -59,11 +62,11 @@ body {
     transition-duration: 0.4s;
 }
 
-#navbar li a:hover {
+.navbar-links li a:hover {
     background-color: #ff7657;
 }
 
-#navbar .router-link-active {
+.navbar-links .router-link-active {
     background-color: #665c84;
 }
 
@@ -91,10 +94,54 @@ button i {
     float: right;
 }
 
-#logo {
-    height: 50px;
+.logo {
     float: left;
     margin: 3px;
+}
+
+.logo img {
+    height: 50px;
+}
+
+.container {
+  margin: 1em;
+}
+
+.preview {
+  background-color: white;
+  border-radius: 10px;
+  height: 120px;
+  padding-left: 15px;
+  margin: 10px;
+  border-left: 5px solid #ff7657;
+  border-right: 5px solid #ff7657;
+  overflow: auto;
+}
+
+.form textarea {
+    height: 200px;
+    width: 60%;
+    border-radius: 10px;
+    border: 5px solid #ff7657;
+    outline-style: none;
+}
+
+.form .input {
+  position: relative;
+	display: inline-block;
+	margin: 1em;
+	max-width: 400px;
+	width: 10%;
+}
+
+.box {
+  border-radius: 10px;
+  border: 5px solid #ff7657;
+  background-color: white;
+  height: auto;
+  width: 60%;
+  padding: 10px;
+  margin: auto;
 }
 
 .delete-button {

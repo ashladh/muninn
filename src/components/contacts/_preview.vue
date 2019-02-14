@@ -1,5 +1,5 @@
 <template>
-  <div class="contact-preview">
+  <div class="preview contact-preview">
         <item-actions :item="contact" name="Contact" :display-show-link="true"></item-actions>
         <div class="contact-content">
             <div class="contact-lastname">{{ contact.lastname }}</div>
@@ -34,14 +34,6 @@ export default {
 }
 
 .contact-preview {
-  background-color: white;
-  border-radius: 10px;
-  height: 120px;
   width: 40%;
-  padding-left: 15px;
-  margin: 10px;
-  border-left: 5px solid #ff7657;
-  border-right: 5px solid #ff7657;
-  overflow: auto;
 }
 </style>

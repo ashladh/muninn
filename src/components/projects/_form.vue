@@ -1,7 +1,15 @@
 <template>
     <div id="project-form">
-        <input class="form-project-title" v-model="project.title" placeholder="Titre">
-        <textarea class="form-project-content" v-model="project.content" placeholder="Description"></textarea>
+        <span class="input">
+            <input type="text" v-model="project.title" />
+            <span>Titre</span>
+        </span>
+
+        <span class="input">
+            <textarea v-model="project.content"></textarea>
+            <span>Description</span>
+        </span>
+
         <button @click="projectSubmit">Enregistrer</button>
     </div>
 </template>
@@ -19,18 +27,4 @@ export default {
 </script>
 
 <style>
-.form-project-title {
-    border-radius: 10px;
-    height: 50px;
-    border: 3px solid #ff7657;
-}
-
-.form-project-content {
-    height: 200px;
-    width: 60%;
-    border-radius: 10px;
-    border: 5px solid #ff7657;
-    outline-style: none;
-}
-
 </style>

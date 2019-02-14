@@ -3,7 +3,6 @@
 </template>
 
 <script>
-import store from '@/store'
 import router from '@/router'
 import Note from '@/models/note'
 import NoteForm from '@/components/notes/_form'
@@ -13,7 +12,6 @@ export default {
     components: {NoteForm},
     data: function () {
         return {
-            notes: store.notes,
             note: {text:''}
         }
     },

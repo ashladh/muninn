@@ -3,7 +3,6 @@
 </template>
 
 <script>
-import store from '@/store'
 import router from '@/router'
 import Project from '@/models/project'
 import ProjectForm from '@/components/projects/_form'

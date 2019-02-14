@@ -6,7 +6,6 @@
             <div class="contact-firstname">{{ contact.firstname}}</div>
             <div class="contact-email">{{ contact.email }}</div>
         </div>
-        <human-timestamps :item="contact"></human-timestamps>
     </div>
 </template>
 
@@ -31,9 +30,5 @@ export default {
 <style>
 .contact-preview .contact-content {
     overflow: hidden;
-}
-
-.contact-preview {
-  width: 40%;
 }
 </style>

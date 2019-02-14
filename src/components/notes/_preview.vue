@@ -2,7 +2,6 @@
   <div class="preview note-preview" v-if="note.text !== ''">
         <item-actions :item="note" name="Note" :display-show-link="true"></item-actions>
         <div class="note-content" v-markdown-to-html>{{ note.text }}</div>
-        <human-timestamps :item="note"></human-timestamps>
     </div>
 </template>
 
@@ -26,11 +25,6 @@ export default {
 
 <style>
 .note-preview .note-content {
-    height: 80px;
     overflow: hidden;
-}
-
-.note-preview {
-    width: 60%;
 }
 </style>

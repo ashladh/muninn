@@ -5,7 +5,6 @@
             <div class="project-content-title">{{ project.title }}</div>
             <div class="project-content-text" v-markdown-to-html>{{ project.content }}</div>
         </div>
-        <human-timestamps :item="project"></human-timestamps>
     </div>
 </template>
 
@@ -26,13 +25,11 @@ export default {
 .project-preview {
     background-color: white;
     border-radius: 10px;
-    height: 100px;
-    width: 60%;
     padding-left: 15px;
     margin: 10px;
     border-left: 5px solid #ff7657;
     border-right: 5px solid #ff7657;
-    overflow: auto;
+    font-size: 0.8em;
 }
 
 .project-preview .project-content {
@@ -43,5 +40,9 @@ export default {
 .project-content-title {
     font-size: 1.5em;
     color: #665c84;
+}
+
+.project-content-text {
+    font-size: 0.8em;
 }
 </style>

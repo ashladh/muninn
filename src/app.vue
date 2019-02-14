@@ -1,18 +1,20 @@
 <template>
   <div id="app">
-    <header id="navbar">
+    <div class="header-wrapper">
       <div class="logo">
-        <img src="../muninn-logo01-color.png" alt="logo">
+          <img src="../muninn-logo01-color.png" alt="logo">
       </div>
-      <ul class="navbar-links">
-        <li><router-link to="/" exact>Home</router-link></li>
-        <li><router-link to="/notes" exact>Notes</router-link></li>
-        <li><router-link to="/contacts" exact>Contacts</router-link></li>
-        <li><router-link to="/projects" exact>Projects</router-link></li>
-        <li><router-link to="/devtools" exact>DevTools</router-link></li>
-        <li><a href="#">About</a></li>
-      </ul>
-    </header>
+      <div id="navbar">
+        <ul class="navbar-links">
+          <li><router-link to="/" exact>Home</router-link></li>
+          <li><router-link to="/notes" exact>Notes</router-link></li>
+          <li><router-link to="/contacts" exact>Contacts</router-link></li>
+          <li><router-link to="/projects" exact>Projects</router-link></li>
+          <li><router-link to="/devtools" exact>DevTools</router-link></li>
+          <li><a href="#">About</a></li>
+        </ul>
+      </div>
+    </div>
     <div id="wrapper">
       <router-view></router-view>
     </div>
@@ -28,79 +30,104 @@ export default {
 
 <style>
 body {
-    background-color: #fbeed7;
-    font-family: 'Raleway', sans-serif;
-    font-size: 17px;
-    margin: 0;
+  background-color: #ffba5a;
+  font-family: 'Raleway', sans-serif;
+  font-size: 17px;
+  margin: 0;
+  padding: 0;
+}
+
+.header-wrapper {
+  position: relative;
+  height: 150px;
+  width: 960px;
+  margin: auto;
 }
 
 #navbar {
-  position: absolute;
-  background-color: #ffba5a;
   height: 50px;
-  width: 100%;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding: 0;
+  margin: -2px;
 }
 
 .navbar-links {
-    color: white;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+  color: white;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  float: right;
 }
 
 .navbar-links li {
-    float: left;
+  float: left;
+  padding: 0;
 }
 
 .navbar-links li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    -webkit-transition-duration: 0.4s; /* Safari */
-    transition-duration: 0.4s;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
 }
 
 .navbar-links li a:hover {
-    background-color: #ff7657;
+  background-color: #ff7657;
 }
 
 .navbar-links .router-link-active {
-    background-color: #665c84;
+  background-color: #665c84;
 }
 
 
 #wrapper {
-    position: absolute;
-    top: 50px;
-    left: 0;
-    width: 100%;
+  border-top: 20px solid #665c84;
+  background-color: #fbeed7;
+  align-content: center;
+  width: 960px;
+  height: 800px;
+  margin: auto;
+  clear: both;
+  padding: 10px;
 }
 
 
-button {
-    display: block;
-    height: 50px;
-    width: 150px;
-    background-color: #ff7657;
-    color: white;
-    text-transform: uppercase;
-    border-radius: 10px;
-    border: none;
+.index-actions {
+  text-align: center;
 }
 
-button i {
-    float: right;
+.button {
+  display: inline-block;
+  padding-right: 10px;
+  background-color: #ff7657;
+  border-radius: 10px;
+  border: none;
+  position: relative;
+  text-decoration: none;
+  color: white;
+  margin: auto;
+  padding: 10px;
+}
+
+.button-text{
+  text-transform: uppercase;
+  font-size: 0.8em;
 }
 
 .logo {
-    float: left;
-    margin: 3px;
+  height: 120px;
+  position: absolute;
+  left: 30%;
+  bottom: 0;
 }
 
 .logo img {
-    height: 50px;
+  height: 100%;
 }
 
 .container {
@@ -118,12 +145,14 @@ button i {
   overflow: auto;
 }
 
+
+
 .form textarea {
-    height: 200px;
-    width: 60%;
-    border-radius: 10px;
-    border: 5px solid #ff7657;
-    outline-style: none;
+  height: 200px;
+  width: 60%;
+  border-radius: 10px;
+  border: 5px solid #ff7657;
+  outline-style: none;
 }
 
 .form .input {
@@ -144,7 +173,8 @@ button i {
   margin: auto;
 }
 
+
 .delete-button {
-    cursor: pointer;
+  cursor: pointer;
 }
 </style>

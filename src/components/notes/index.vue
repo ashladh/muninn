@@ -1,8 +1,11 @@
 <template>
   <div>
-    <span>
-        <router-link :to="{name: 'NoteNew'}"> Nouvelle note <i class="fas fa-plus"></i></router-link>
-    </span>
+    <div class="index-actions">
+        <router-link :to="{name: 'NoteNew'}" class="button">
+          <span class="button-text"> Nouvelle note </span>
+          <i class="fas fa-plus"></i>
+        </router-link>
+    </div>
 
     <div id="notes-container">
       <note-preview v-for="note in notes" v-bind:note="note" :key="note.id"></note-preview>

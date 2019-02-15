@@ -1,9 +1,10 @@
 <template>
     <div class="form">
+        <h1>Nouvelle note</h1>
         <span class="input">
             <textarea v-model="note.text"></textarea>
         </span>
-        <button @click="noteSubmit">Enregistrer</button>
+        <button @click="noteSubmit" class="button button-text">Enregistrer</button>
     </div>
 </template>
 

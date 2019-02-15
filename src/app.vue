@@ -112,6 +112,8 @@ body {
   color: white;
   margin: auto;
   padding: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .button-text{
@@ -119,10 +121,14 @@ body {
   font-size: 0.8em;
 }
 
+.button:hover {
+  background-color: #665c84;
+}
+
 .logo {
   height: 120px;
   position: absolute;
-  left: 30%;
+  left: 15%;
   bottom: 0;
 }
 
@@ -147,20 +153,60 @@ body {
 
 
 
+.form h1 {
+  text-align: center;
+  text-transform: uppercase;
+  color: #665c84;
+  font-size: 1.4em;
+}
+
 .form textarea {
   height: 200px;
-  width: 60%;
-  border-radius: 10px;
-  border: 5px solid #ff7657;
-  outline-style: none;
+  width: 100%;
+  outline: none;
+  background: none;
+  border: 0;
 }
 
 .form .input {
   position: relative;
-	display: block;
-	margin: 1em;
-	max-width: 50%;
+	margin: auto;
+  width: 40%;
+  display: block;
+  border-bottom: 1px solid #ff7657;
+  outline: none;
+  padding: 5px 0;
 }
+
+.form input {
+  background: none;
+  outline: none;
+  border: 0;
+  width: 100%;
+}
+
+.form .input span {
+  text-transform: uppercase;
+  font-size: 0.7em;
+  color: #ff7657;
+  font-weight: 10px;
+  margin: 0 5px 0 5px;
+  display: block;
+}
+
+.form input:focus, textarea:focus {
+  background: rgba(255, 186, 90, .3);
+  border-radius: 5px;
+  outline: none;
+}
+
+.form button {
+  display: block;
+  margin: auto;
+  margin-top: 10px;
+}
+
+
 
 .box {
   border-radius: 10px;
@@ -171,6 +217,7 @@ body {
   padding: 10px;
   margin: auto;
 }
+
 
 
 .delete-button {

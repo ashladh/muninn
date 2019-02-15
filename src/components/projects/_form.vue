@@ -1,16 +1,17 @@
 <template>
     <div id="project-form" class="form">
+        <h1>Nouveau projet</h1>
         <span class="input">
-            <input type="text" v-model="project.title" />
             <span>Titre</span>
+            <input type="text" v-model="project.title" />
         </span>
 
         <span class="input">
-            <textarea v-model="project.content"></textarea>
             <span>Description</span>
+            <textarea v-model="project.content"></textarea>
         </span>
 
-        <button @click="projectSubmit">Enregistrer</button>
+        <button @click="projectSubmit" class="button button-text">Enregistrer</button>
     </div>
 </template>
 

@@ -9,12 +9,11 @@
 </template>
 
 <script>
-import HumanTimestamps from '@/components/shared/_human_timestamps'
 import ItemActions from '@/components/shared/_item_actions'
 
 export default {
     name: 'ProjectPreview',
-    components: {HumanTimestamps, ItemActions},
+    components: {ItemActions},
     props: ['project']
 
 }

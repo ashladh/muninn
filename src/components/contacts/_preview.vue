@@ -11,12 +11,11 @@
 
 <script>
 import ItemActions from '@/components/shared/_item_actions'
-import HumanTimestamps from '@/components/shared/_human_timestamps'
 import Contact from '@/models/contact'
 
 export default {
     name: 'ContactPreview',
-    components: {ItemActions, HumanTimestamps},
+    components: {ItemActions},
     props: ['contact'],
     methods: {
         deleteContact: function (contact) {

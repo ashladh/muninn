@@ -7,12 +7,11 @@
 
 <script>
 import ItemActions from '@/components/shared/_item_actions'
-import HumanTimestamps from '@/components/shared/_human_timestamps'
 import Note from '@/models/note'
 
 export default {
     name: 'NotePreview',
-    components: {ItemActions, HumanTimestamps},
+    components: {ItemActions},
     props: ['note'],
     methods: {
         deleteNote: function (note) {

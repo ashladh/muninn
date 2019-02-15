@@ -1,5 +1,5 @@
 <template>
-    <div id="project-form">
+    <div id="project-form" class="form">
         <span class="input">
             <input type="text" v-model="project.title" />
             <span>Titre</span>

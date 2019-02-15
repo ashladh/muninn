@@ -157,10 +157,9 @@ body {
 
 .form .input {
   position: relative;
-	display: inline-block;
+	display: block;
 	margin: 1em;
-	max-width: 400px;
-	width: 10%;
+	max-width: 50%;
 }
 
 .box {

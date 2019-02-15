@@ -22,6 +22,7 @@ export default {
 <style>
 .actions .far, .actions .fas {
     padding-right: 5px;
+    padding-top: 5px;
     font-size: 1.5em;
     color: #ffba5a;
 }

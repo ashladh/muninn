@@ -1,32 +1,33 @@
 <template>
     <div class="form">
+        <h1>Nouveau contact</h1>
         <span class="input">
-            <input type="text" v-model="contact.lastname" />
             <span>Nom</span>
+            <input type="text" v-model="contact.lastname" />
         </span>
 
         <span class="input">
-            <input type="text" v-model="contact.firstname" />
             <span>Prénom</span>
+            <input type="text" v-model="contact.firstname" />
         </span>
 
 
         <span class="input">
-            <input type="text" v-model="contact.email" />
             <span>Email</span>
+            <input type="text" v-model="contact.email" />
         </span>
 
         <span class="input">
-            <input type="text" v-model="contact.phone" />
             <span>Téléphone</span>
+            <input type="text" v-model="contact.phone" />
         </span>
 
         <span class="input">
-            <textarea v-model="contact.misc"></textarea>
             <span>Informations diverses</span>
+            <textarea v-model="contact.misc"></textarea>
         </span>
-        
-        <button @click="contactSubmit">Enregistrer</button>
+
+        <button @click="contactSubmit" class="button button-text">Enregistrer</button>
     </div>
 </template>
 

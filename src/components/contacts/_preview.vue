@@ -31,4 +31,14 @@ export default {
 .contact-preview .contact-content {
     overflow: hidden;
 }
+
+.contact-preview {
+    width: 25%;
+    display: inline-block;
+}
+
+.contact-lastname {
+    font-weight: 25px;
+    color: #665c84;
+}
 </style>

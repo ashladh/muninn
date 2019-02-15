@@ -27,8 +27,8 @@ export default {
     border-radius: 10px;
     padding-left: 15px;
     margin: 10px;
-    border-left: 5px solid #ff7657;
-    border-right: 5px solid #ff7657;
+    border-left: 5px solid #e8aa8c;
+    border-right: 5px solid #e8aa8c;
     font-size: 0.8em;
 }
 
@@ -39,10 +39,14 @@ export default {
 
 .project-content-title {
     font-size: 1.5em;
-    color: #665c84;
+    color: #5e616a;
 }
 
 .project-content-text {
     font-size: 0.8em;
+}
+
+.actions {
+    padding: 0;
 }
 </style>

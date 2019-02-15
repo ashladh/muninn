@@ -37,8 +37,15 @@ export default {
     display: inline-block;
 }
 
-.contact-lastname {
-    font-weight: 25px;
-    color: #665c84;
+.contact-lastname, .contact-firstname {
+    display: inline-block;
+    font-weight: bold;
+    color: #5e616a;
+    padding-right: 5px;
+    padding-top: 30px;
+}
+
+.contact-email {
+    color: rgba(94, 97, 106, .7);
 }
 </style>

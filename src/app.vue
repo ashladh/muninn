@@ -30,7 +30,7 @@ export default {
 
 <style>
 body {
-  background-color: #ffba5a;
+  background-color: #e2dcd5;
   font-family: 'Raleway', sans-serif;
   font-size: 17px;
   margin: 0;
@@ -77,17 +77,17 @@ body {
 }
 
 .navbar-links li a:hover {
-  background-color: #ff7657;
+  background-color: #e8aa8c;
 }
 
 .navbar-links .router-link-active {
-  background-color: #665c84;
+  background-color: #5e616a;
 }
 
 
 #wrapper {
-  border-top: 20px solid #665c84;
-  background-color: #fbeed7;
+  border-top: 20px solid #5e616a;
+  background-color: #f9f3e6;
   align-content: center;
   width: 960px;
   height: 800px;
@@ -104,7 +104,7 @@ body {
 .button {
   display: inline-block;
   padding-right: 10px;
-  background-color: #ff7657;
+  background-color: #e8aa8c;
   border-radius: 10px;
   border: none;
   position: relative;
@@ -122,7 +122,7 @@ body {
 }
 
 .button:hover {
-  background-color: #665c84;
+  background-color: #5e616a;
 }
 
 .logo {
@@ -146,8 +146,8 @@ body {
   height: 120px;
   padding-left: 15px;
   margin: 10px;
-  border-left: 5px solid #ff7657;
-  border-right: 5px solid #ff7657;
+  border-left: 5px solid #e8aa8c;
+  border-right: 5px solid #e8aa8c;
   overflow: auto;
 }
 
@@ -156,7 +156,7 @@ body {
 .form h1 {
   text-align: center;
   text-transform: uppercase;
-  color: #665c84;
+  color: #5e616a;
   font-size: 1.4em;
 }
 
@@ -173,7 +173,7 @@ body {
 	margin: auto;
   width: 40%;
   display: block;
-  border-bottom: 1px solid #ff7657;
+  border-bottom: 1px solid #e8aa8c;
   outline: none;
   padding: 5px 0;
 }
@@ -188,7 +188,7 @@ body {
 .form .input span {
   text-transform: uppercase;
   font-size: 0.7em;
-  color: #ff7657;
+  color: #e8aa8c;
   font-weight: 10px;
   margin: 0 5px 0 5px;
   display: block;
@@ -210,7 +210,7 @@ body {
 
 .box {
   border-radius: 10px;
-  border: 5px solid #ff7657;
+  border: 5px solid #e8aa8c;
   background-color: white;
   height: auto;
   width: 60%;

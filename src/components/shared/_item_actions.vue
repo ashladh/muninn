@@ -24,7 +24,7 @@ export default {
     padding-right: 5px;
     padding-top: 5px;
     font-size: 1.5em;
-    color: #ffba5a;
+    color: #e8aa8c;
 }
 
 .actions {

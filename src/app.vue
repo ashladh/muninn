@@ -149,6 +149,7 @@ body {
   border-left: 5px solid #e8aa8c;
   border-right: 5px solid #e8aa8c;
   overflow: auto;
+  box-sizing: border-box;
 }
 
 

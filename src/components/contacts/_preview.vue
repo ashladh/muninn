@@ -32,8 +32,8 @@ export default {
 }
 
 .contact-preview {
-    width: 25%;
     display: inline-block;
+    width: calc(33% - 20px);
 }
 
 .contact-lastname, .contact-firstname {

@@ -1,6 +1,13 @@
-
-// FIXME Move this
 import utils from '../../utils'
+import store from '@/store'
+
+
+var ids = utils.storage.getItem('currentIds')
+if (ids) {
+    var parsedIds = JSON.parse(ids)
+    store.currentIds = parsedIds
+}
+
 
 function addIdCapabilities (model, params, key) {
     if('id' in params) {
@@ -12,12 +19,11 @@ function addIdCapabilities (model, params, key) {
 }
 
 function getNextId (key) {
-    var currentId = utils.storage.getItem(key + 'CurrentId')
-    if(!currentId) {
-        currentId = 0
-    }
+    var currentId = store.currentIds[key]
     currentId++
-    utils.storage.setItem(key + 'CurrentId', currentId)
+    store.currentIds[key] = currentId
+
+    utils.storage.setItem('currentIds', JSON.stringify(store.currentIds))
     return currentId
 }
 

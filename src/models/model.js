@@ -49,10 +49,10 @@ class Model {
         var Constructor = this
 
         var stringModels = utils.storage.getItem(storeKey)
-        var models = stringModels ? JSON.parse(stringModels) : []
+        var modelsData = stringModels ? JSON.parse(stringModels) : []
 
-        models.forEach(function (data) {
-            store[storeKey].push(new Constructor(data))
+        modelsData.forEach(function (modelData) {
+            store[storeKey].push(new Constructor(modelData))
         })
     }
 

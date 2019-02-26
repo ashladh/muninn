@@ -27,4 +27,5 @@ function getNextId (key) {
     return currentId
 }
 
+
 export default addIdCapabilities

@@ -5,6 +5,7 @@ import NotesIndex from '@/components/notes/index'
 import NoteShow from '@/components/notes/show'
 import NoteEdit from '@/components/notes/edit'
 import NoteNew from '@/components/notes/new'
+
 import DevTools from '@/components/devtools/dev_tools'
 
 import ContactsIndex from '@/components/contacts/index'
@@ -16,6 +17,11 @@ import ProjectsIndex from '@/components/projects/index'
 import ProjectEdit from '@/components/projects/edit'
 import ProjectShow from '@/components/projects/show'
 import ProjectNew from '@/components/projects/new'
+
+import TasksIndex from '@/components/tasks/index'
+import TaskEdit from '@/components/tasks/edit'
+import TaskShow from '@/components/tasks/show'
+import TaskNew from '@/components/tasks/new'
 
 
 
@@ -81,6 +87,24 @@ export default new Router({
         path:'/projects/new',
         name: 'ProjectNew',
         component: ProjectNew
+    },
+
+    {
+        path:'/tasks',
+        name: 'TasksIndex',
+        component: TasksIndex
+    }, {
+        path:'/tasks/:id/edit',
+        name: 'TaskEdit',
+        component: TaskEdit
+    }, {
+        path:'/tasks/:id',
+        name: 'TaskShow',
+        component: TaskShow
+    }, {
+        path:'/tasks/new',
+        name: 'TaskNew',
+        component: TaskNew
     },
 
     {

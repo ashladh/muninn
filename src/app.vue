@@ -222,6 +222,59 @@ body {
 
 
 
+.checkbox-wrapper {
+  position: relative;
+}
+
+.checkbox-wrapper label {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  cursor: pointer;
+  height: 28px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 28px;
+}
+
+.checkbox-wrapper label:after {
+  border: 2px solid #fff;
+  border-top: none;
+  border-right: none;
+  content: "";
+  height: 6px;
+  left: 7px;
+  opacity: 0;
+  position: absolute;
+  top: 8px;
+  transform: rotate(-45deg);
+  width: 12px;
+}
+
+.checkbox-wrapper input[type="checkbox"] {
+  visibility: hidden;
+}
+
+.checkbox-wrapper input[type="checkbox"]:checked + label {
+  background-color: #e8aa8c;
+  border-color: #e8aa8c;
+}
+
+.checkbox-wrapper input[type="checkbox"]:checked + label:after {
+  opacity: 1;
+}
+
+.taskcompleted {
+    text-decoration: line-through;
+    font-style: italic;
+}
+
+.checkbox-label {
+    font-size: 0.6em;
+}
+
+
 .delete-button {
   cursor: pointer;
 }

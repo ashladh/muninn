@@ -3,7 +3,10 @@
         <h1>Nouvelle tâche</h1>
         <span class="input">
             <textarea v-model="task.text"></textarea>
-            <input type="checkbox" v-model="task.completed">Accomplie
+            <div class="checkbox-wrapper">
+                <input type="checkbox" v-model="task.completed" id="task-checkbox">
+                <label for="task-checkbox" class="checkbox-label">Accomplie</label>
+            </div>
         </span>
         <button @click="taskSubmit" class="button button-text">Enregistrer</button>
     </div>

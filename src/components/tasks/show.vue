@@ -1,8 +1,11 @@
 <template>
     <div>
         <item-actions :item="task" name="Task"></item-actions>
-        <div class="box" v-markdown-to-html>{{ task.text }}</div>
-        <div v-if="task.completed">Accomplie</div>
+        <div class="box" v-markdown-to-html v-bind:class="{ taskcompleted: task.completed }">{{ task.text }}</div>
+        <div class="checkbox-wrapper">
+            <input type="checkbox" v-model="task.completed" id="task-checkbox">
+            <label for="task-checkbox" class="checkbox-label">Accomplie</label>
+        </div>
     </div>
 </template>
 

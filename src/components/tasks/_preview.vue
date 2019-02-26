@@ -1,8 +1,11 @@
 <template>
   <div class="preview task-preview" v-if="task.text !== ''">
         <item-actions :item="task" name="Task" :display-show-link="true"></item-actions>
-        <div class="task-content" v-bind:class="{ completed: task.completed }" v-markdown-to-html>{{ task.text }}</div>
-        <input type="checkbox" v-model="task.completed">Accomplie
+        <div class="task-content" v-bind:class="{ taskcompleted: task.completed }" v-markdown-to-html>{{ task.text }}</div>
+        <div class="checkbox-wrapper">
+            <input type="checkbox" v-model="task.completed" id="task-checkbox">
+            <label for="task-checkbox" class="checkbox-label">Accomplie</label>
+        </div>
     </div>
 </template>
 
@@ -31,10 +34,5 @@ export default {
 <style>
 .task-preview .task-content {
     overflow: hidden;
-}
-
-.completed {
-    text-decoration: line-through;
-    font-style: italic;
 }
 </style>

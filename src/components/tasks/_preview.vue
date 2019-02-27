@@ -3,8 +3,8 @@
         <item-actions :item="task" name="Task" :display-show-link="true"></item-actions>
         <div class="task-content" v-bind:class="{ taskcompleted: task.completed }" v-markdown-to-html>{{ task.text }}</div>
         <div class="checkbox-wrapper">
-            <input type="checkbox" v-model="task.completed" id="task-checkbox">
-            <label for="task-checkbox" class="checkbox-label">Accomplie</label>
+            <input type="checkbox" v-model="task.completed" :id="'task'+task.id">
+            <label :for="'task'+task.id" class="checkbox-label"></label>
         </div>
     </div>
 </template>

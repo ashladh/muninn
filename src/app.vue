@@ -166,7 +166,7 @@ body {
   height: 200px;
   width: 100%;
   outline: none;
-  background: none;
+  background: rgba(232, 170, 140, 0.15);
   border: 0;
 }
 
@@ -270,9 +270,6 @@ body {
     font-style: italic;
 }
 
-.checkbox-label {
-    font-size: 0.6em;
-}
 
 
 .delete-button {

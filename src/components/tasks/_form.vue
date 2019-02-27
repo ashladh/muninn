@@ -5,7 +5,7 @@
             <textarea v-model="task.text"></textarea>
             <div class="checkbox-wrapper">
                 <input type="checkbox" v-model="task.completed" id="task-checkbox">
-                <label for="task-checkbox" class="checkbox-label">Accomplie</label>
+                <label for="task-checkbox" class="checkbox-label"></label>
             </div>
         </span>
         <button @click="taskSubmit" class="button button-text">Enregistrer</button>

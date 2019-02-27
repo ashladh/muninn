@@ -17,7 +17,7 @@ export default {
     },
     methods: {
         addTask: function () {
-            var newTask = new Task({text: this.task.text})
+            var newTask = new Task({text: this.task.text, completed: this.task.completed})
             newTask.saveToLocalStorage()
             this.task.text = ''
             router.push({name: 'TasksIndex'})

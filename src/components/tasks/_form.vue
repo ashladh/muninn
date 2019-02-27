@@ -24,5 +24,14 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+.checkbox-wrapper {
+    padding-bottom: 10px;
+    width: 100%;
+    margin: auto;
+}
+
+.checkbox-wrapper label {
+    left: calc(50% - 14px);
+}
 </style>

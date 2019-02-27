@@ -42,6 +42,10 @@ export default new Router({
         name: 'NotesIndex',
         component: NotesIndex
     }, {
+        path:'/notes/new',
+        name: 'NoteNew',
+        component: NoteNew
+    }, {
         path: '/notes/:id',
         name: 'NoteShow',
         component: NoteShow
@@ -49,16 +53,16 @@ export default new Router({
         path: '/notes/:id/edit',
         name: 'NoteEdit',
         component: NoteEdit
-    }, {
-        path:'/notes/new',
-        name: 'NoteNew',
-        component: NoteNew
     },
 
     {
         path: '/contacts',
         name: 'ContactsIndex',
         component: ContactsIndex
+    }, {
+        path:'/contacts/new',
+        name: 'ContactNew',
+        component: ContactNew
     }, {
         path: '/contacts/:id/edit',
         name: 'ContactEdit',
@@ -67,16 +71,16 @@ export default new Router({
         path: '/contacts/:id',
         name: 'ContactShow',
         component: ContactShow
-    }, {
-        path:'/contacts/new',
-        name: 'ContactNew',
-        component: ContactNew
     },
 
     {
         path:'/projects',
         name: 'ProjectsIndex',
         component: ProjectsIndex
+    }, {
+        path:'/projects/new',
+        name: 'ProjectNew',
+        component: ProjectNew
     }, {
         path:'/projects/:id/edit',
         name: 'ProjectEdit',
@@ -85,16 +89,16 @@ export default new Router({
         path:'/projects/:id',
         name: 'ProjectShow',
         component: ProjectShow
-    }, {
-        path:'/projects/new',
-        name: 'ProjectNew',
-        component: ProjectNew
     },
 
     {
         path:'/tasks',
         name: 'TasksIndex',
         component: TasksIndex
+    }, {
+        path:'/tasks/new',
+        name: 'TaskNew',
+        component: TaskNew
     }, {
         path:'/tasks/:id/edit',
         name: 'TaskEdit',
@@ -103,10 +107,6 @@ export default new Router({
         path:'/tasks/:id',
         name: 'TaskShow',
         component: TaskShow
-    }, {
-        path:'/tasks/new',
-        name: 'TaskNew',
-        component: TaskNew
     },
 
     {

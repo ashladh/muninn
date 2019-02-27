@@ -12,7 +12,7 @@ export default {
     components: {TaskForm},
     data: function () {
         return {
-            task: {text:''}
+            task: {text:'', completed: false}
         }
     },
     methods: {

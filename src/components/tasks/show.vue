@@ -4,7 +4,7 @@
         <div class="box" v-markdown-to-html v-bind:class="{ taskcompleted: task.completed }">{{ task.text }}</div>
         <div class="checkbox-wrapper">
             <input type="checkbox" v-model="task.completed" id="task-checkbox">
-            <label for="task-checkbox" class="checkbox-label">Accomplie</label>
+            <label for="task-checkbox" class="checkbox-label"></label>
         </div>
     </div>
 </template>
@@ -34,4 +34,16 @@ export default {
 
 
 <style scoped>
+.box {
+    margin-bottom: 10px;
+}
+
+.checkbox-wrapper {
+    width: 100%;
+    margin: auto;
+}
+
+.checkbox-wrapper label {
+    left: calc(50% - 14px);
+}
 </style>

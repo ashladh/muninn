@@ -212,7 +212,7 @@ body {
 
 .box {
   border-radius: 10px;
-  border: 5px solid #e8aa8c;
+  border: 2px solid #e8aa8c;
   background-color: white;
   height: auto;
   width: 60%;

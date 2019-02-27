@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
+import HomePage from '@/components/home/index'
+
 import NotesIndex from '@/components/notes/index'
 import NoteShow from '@/components/notes/show'
 import NoteEdit from '@/components/notes/edit'
@@ -32,7 +34,7 @@ export default new Router({
     routes: [{
         path: '/',
         name: 'Homepage',
-        component: NotesIndex
+        component: HomePage
     },
 
     {

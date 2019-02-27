@@ -91,7 +91,7 @@ body {
   background-color: #f9f3e6;
   align-content: center;
   width: 960px;
-  height: 800px;
+  min-height: 800px;
   margin: auto;
   clear: both;
   padding: 10px;
@@ -155,7 +155,7 @@ body {
 
 
 
-.form h1 {
+.form h1, .homepage-wrapper h1 {
   text-align: center;
   text-transform: uppercase;
   color: #5e616a;

@@ -2,7 +2,7 @@
   <div id="app">
     <div class="header-wrapper">
       <div class="logo">
-          <img src="../muninn-logo01-color.png" alt="logo">
+          <img src="../muninn-logo01-color2.png" alt="logo">
       </div>
       <div id="navbar">
         <ul class="navbar-links">

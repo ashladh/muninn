@@ -129,7 +129,7 @@ body {
 .logo {
   height: 120px;
   position: absolute;
-  left: 15%;
+  left: 11%;
   bottom: 0;
 }
 

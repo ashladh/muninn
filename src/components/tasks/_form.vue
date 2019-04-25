@@ -8,14 +8,28 @@
                 <label for="task-checkbox" class="checkbox-label"></label>
             </div>
         </span>
+
+        Projet: 
+        <select v-model="task.projectId">
+            <option value=""></option>
+            <option v-for="project in projects" :project="project" :key="project.id" :value="project.id">{{ project.title }}</option>
+        </select>
+
         <button @click="taskSubmit" class="button button-text">Enregistrer</button>
     </div>
 </template>
 
 <script>
+import store from '@/store'
+
 export default {
     name: 'TaskForm',
     props: ['task'],
+    data () {
+        return {
+            projects: store.projects
+        }
+    },
     methods: {
         taskSubmit: function () {
             this.$emit('submit', this.task)

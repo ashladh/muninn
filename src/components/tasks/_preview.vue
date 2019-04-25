@@ -23,7 +23,7 @@ export default {
         }
     },
     watch: {
-        'task.completed': function (completed) {
+        'task.completed': function () {
             Task.saveToLocalStorage()
         }
     }

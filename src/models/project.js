@@ -1,5 +1,5 @@
 import Model from './model'
-import Task from './model'
+import Task from './task'
 
 class Project extends Model {
     constructor (params) {

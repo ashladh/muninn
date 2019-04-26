@@ -210,6 +210,7 @@ body {
 
 
 
+
 .box {
   border-radius: 10px;
   border: 2px solid #e8aa8c;

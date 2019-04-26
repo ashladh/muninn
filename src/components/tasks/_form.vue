@@ -9,12 +9,14 @@
             </div>
         </span>
 
-        Projet: 
-        <select v-model="task.projectId">
-            <option value=""></option>
-            <option v-for="project in projects" :project="project" :key="project.id" :value="project.id">{{ project.title }}</option>
-        </select>
-
+        <div class="input">
+            Projet:
+            <select v-model="task.projectId">
+                <option value=""></option>
+                <option v-for="project in projects" :project="project" :key="project.id" :value="project.id">{{ project.title }}</option>
+            </select>
+        </div>
+        
         <button @click="taskSubmit" class="button button-text">Enregistrer</button>
     </div>
 </template>

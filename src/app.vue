@@ -208,7 +208,15 @@ body {
   margin-top: 10px;
 }
 
+.select-title {
+  text-align: center;
+}
 
+.form .input select {
+  height: 2em;
+  display: block;
+  margin: 0 auto;
+}
 
 
 .box {

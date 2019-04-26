@@ -229,6 +229,11 @@ body {
   margin: auto;
 }
 
+#tasks-container {
+  height: auto;
+  width: 60%;
+  margin: auto;
+}
 
 
 .checkbox-wrapper {

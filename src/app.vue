@@ -1,24 +1,27 @@
 <template>
   <div id="app">
     <div class="header-wrapper">
+    </div>
+
+    <div id="navbar">
       <div class="logo">
           <img src="../muninn-logo01-color2.png" alt="logo">
       </div>
-      <div id="navbar">
-        <ul class="navbar-links">
-          <li><router-link to="/" exact>Home</router-link></li>
-          <li><router-link to="/notes" exact>Notes</router-link></li>
-          <li><router-link to="/contacts" exact>Contacts</router-link></li>
-          <li><router-link to="/projects" exact>Projects</router-link></li>
-          <li><router-link to="/tasks" exact>Tasks</router-link></li>
-          <li><router-link to="/devtools" exact>DevTools</router-link></li>
-          <li><a href="#">About</a></li>
-        </ul>
-      </div>
+      <ul class="navbar-links">
+        <li><router-link to="/" exact>Home</router-link></li>
+        <li><router-link to="/notes" exact>Notes</router-link></li>
+        <li><router-link to="/contacts" exact>Contacts</router-link></li>
+        <li><router-link to="/projects" exact>Projects</router-link></li>
+        <li><router-link to="/tasks" exact>Tasks</router-link></li>
+        <li><router-link to="/devtools" exact>DevTools</router-link></li>
+        <li><a href="#">About</a></li>
+      </ul>
     </div>
+
     <div id="wrapper">
       <router-view></router-view>
     </div>
+
   </div>
 </template>
 
@@ -40,22 +43,30 @@ body {
 
 .header-wrapper {
   position: relative;
-  height: 150px;
+  height: 50px;
   width: 960px;
-  margin: auto;
 }
 
 #navbar {
-  height: 50px;
+  height: 100%;
+  width: 200px;
   position: absolute;
-  right: 0;
-  bottom: 0;
-  padding: 0;
-  margin: -2px;
+  top: 0;
+  left: 0;
+}
+
+.logo {
+  height: 120px;
+  position: relative;
+  left: 45%;
+}
+
+.logo img {
+  height: 100%;
 }
 
 .navbar-links {
-  color: white;
+  color: #5e616a;
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -63,13 +74,12 @@ body {
 }
 
 .navbar-links li {
-  float: left;
   padding: 0;
 }
 
 .navbar-links li a {
   display: block;
-  color: white;
+  color: #5e616a;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -83,6 +93,7 @@ body {
 
 .navbar-links .router-link-active {
   background-color: #5e616a;
+  color: white;
 }
 
 
@@ -126,16 +137,6 @@ body {
   background-color: #5e616a;
 }
 
-.logo {
-  height: 120px;
-  position: absolute;
-  left: 11%;
-  bottom: 0;
-}
-
-.logo img {
-  height: 100%;
-}
 
 .container {
   margin: 1em;

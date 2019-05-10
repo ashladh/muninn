@@ -36,12 +36,14 @@ export default {
 }
 
 .project-content-title {
-    font-size: 3em;
+    font-size: 2em;
     color: #5e616a;
 }
 
 .project-content-text {
     font-size: 0.8em;
+    padding: 15px;
+    padding-top: 0;
 }
 
 .actions {

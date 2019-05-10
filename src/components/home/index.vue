@@ -1,6 +1,6 @@
 <template>
   <div class="homepage-wrapper">
-    <h1>Notes</h1>
+    <h1><router-link class="home-link" to="/notes" exact>Notes</router-link></h1>
     <div id="notes-container">
       <note-preview v-for="note in notes" v-bind:note="note" :key="note.id"></note-preview>
     </div>
@@ -48,4 +48,8 @@ export default {
 
 
 <style>
+.home-link {
+  text-decoration: none;
+  color: #5e616a;
+}
 </style>

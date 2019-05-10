@@ -42,4 +42,9 @@ export default {
 
 
 <style>
+.project-display-title {
+    font-size: 2em;
+    color: #5e616a;
+    text-align: center;
+}
 </style>

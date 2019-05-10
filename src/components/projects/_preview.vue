@@ -26,7 +26,7 @@ export default {
     border-radius: 10px;
     padding-left: 15px;
     margin: 10px;
-    box-shadow: 5px 5px 5px lightgrey;
+    box-shadow: 5px 5px 5px #e8e8e8;
     font-size: 0.8em;
 }
 
@@ -36,7 +36,7 @@ export default {
 }
 
 .project-content-title {
-    font-size: 1.5em;
+    font-size: 3em;
     color: #5e616a;
 }
 

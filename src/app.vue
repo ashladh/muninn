@@ -52,16 +52,16 @@ body {
 
 #navbar {
   height: 100%;
-  width: 200px;
+  width: 10%;
   position: absolute;
   top: 10%;
-  left: 0;
+  left: 5%;
 }
 
 .logo {
   height: 120px;
   position: relative;
-  left: 45%;
+  left: -5%;
 }
 
 .logo img {
@@ -73,7 +73,7 @@ body {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  float: right;
+  float: left;
 }
 
 .navbar-links li {
@@ -101,12 +101,13 @@ body {
 
 
 #wrapper {
-  background-color: #f8f8f8;
+  background-color: white;
   align-content: center;
-  width: 1000px;
+  width: 100%;
   min-height: 800px;
   margin: auto;
   margin-top: 0;
+  margin-right: 20px;
   clear: both;
   padding: 10px;
 }
@@ -163,13 +164,16 @@ body {
   text-transform: uppercase;
   color: #5e616a;
   font-size: 1.4em;
+  background-color: #f8f8f8;
+  padding: 10px;
+  border-radius: 5px;
 }
 
 .form textarea {
   height: 200px;
   width: 100%;
   outline: none;
-  background: rgba(232, 170, 140, 0.15);
+  background: #f8f8f8;
   border: 0;
 }
 
@@ -178,7 +182,7 @@ body {
 	margin: auto;
   width: 40%;
   display: block;
-  border-bottom: 1px solid #e8aa8c;
+  border-bottom: 1px solid lightgrey;
   outline: none;
   padding: 5px 0;
 }
@@ -193,14 +197,15 @@ body {
 .form .input span {
   text-transform: uppercase;
   font-size: 0.7em;
-  color: #e8aa8c;
+  color: #5e616a;
   font-weight: 10px;
   margin: 0 5px 0 5px;
   display: block;
+  padding: 5px;
 }
 
 .form input:focus, textarea:focus {
-  background: rgba(255, 186, 90, .3);
+  background: #f8f8f8;
   border-radius: 5px;
   outline: none;
 }
@@ -224,7 +229,7 @@ body {
 
 .box {
   border-radius: 10px;
-  border: 2px solid #e8aa8c;
+  box-shadow: 5px 5px 5px lightgrey;
   background-color: white;
   height: auto;
   width: 60%;
@@ -292,4 +297,34 @@ body {
 .delete-button {
   cursor: pointer;
 }
+
+
+
+@media (min-width: 576px) {
+  #wrapper {
+    width: 430px;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  #wrapper {
+    width: 700px;
+  }
+}
+
+/* Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) {
+  #wrapper {
+    width: 900px;
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) {
+  #wrapper {
+    width: 1200px;
+  }
+}
+
 </style>

@@ -35,7 +35,8 @@ export default {
     props: ['task'],
     data () {
         return {
-            projects: store.projects
+            projects: store.projects,
+            contacts: store.contacts
         }
     },
     methods: {

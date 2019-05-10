@@ -10,6 +10,7 @@ class Contact extends Model {
         this.email = params.email
         this.phone = params.phone
         this.misc = params.misc
+        this.taskIds = []
     }
 
     addTask (task) {

@@ -15,6 +15,12 @@
                 <option value=""></option>
                 <option v-for="project in projects" :project="project" :key="project.id" :value="project.id">{{ project.title }}</option>
             </select>
+
+            <span class="select-title">Contact :</span>
+            <select v-model="task.contactId">
+                <option value=""></option>
+                <option v-for="contact in contacts" :contact="contact" :key="contact.id" :value="contact.id">{{ contact.lastname }} {{ contact.firstname }}</option>
+            </select>
         </div>
 
         <button @click="taskSubmit" class="button button-text">Enregistrer</button>

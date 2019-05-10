@@ -1,7 +1,6 @@
 <template>
   <div id="app">
-    <div class="header-wrapper">
-    </div>
+
 
     <div id="navbar">
       <div class="logo">
@@ -34,24 +33,28 @@ export default {
 
 <style>
 body {
-  background-color: #e2dcd5;
+  background-color: #E8E8E8;
   font-family: 'Raleway', sans-serif;
   font-size: 17px;
   margin: 0;
   padding: 0;
 }
 
-.header-wrapper {
-  position: relative;
-  height: 50px;
-  width: 960px;
+#app {
+  background-color: white;
+  height: 95%;
+  width: 95%;
+  border-radius: 20px;
+  margin: auto;
+  margin-top: 2.5%;
+  margin-bottom: 2.5%;
 }
 
 #navbar {
   height: 100%;
   width: 200px;
   position: absolute;
-  top: 0;
+  top: 10%;
   left: 0;
 }
 
@@ -98,12 +101,12 @@ body {
 
 
 #wrapper {
-  border-top: 20px solid #5e616a;
-  background-color: #f9f3e6;
+  background-color: #f8f8f8;
   align-content: center;
-  width: 960px;
+  width: 1000px;
   min-height: 800px;
   margin: auto;
+  margin-top: 0;
   clear: both;
   padding: 10px;
 }
@@ -148,8 +151,7 @@ body {
   height: 120px;
   padding-left: 15px;
   margin: 10px;
-  border-left: 5px solid #e8aa8c;
-  border-right: 5px solid #e8aa8c;
+  box-shadow: 5px 5px 5px lightgrey;
   overflow: auto;
   box-sizing: border-box;
 }

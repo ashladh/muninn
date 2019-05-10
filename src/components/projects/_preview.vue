@@ -26,8 +26,7 @@ export default {
     border-radius: 10px;
     padding-left: 15px;
     margin: 10px;
-    border-left: 5px solid #e8aa8c;
-    border-right: 5px solid #e8aa8c;
+    box-shadow: 5px 5px 5px lightgrey;
     font-size: 0.8em;
 }
 

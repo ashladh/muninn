@@ -32,12 +32,15 @@
 </template>
 
 <script>
+import utils from '@/utils'
+
 export default {
     name:'ContactForm',
     props: ['contact'],
     methods: {
         contactSubmit: function () {
-            this.$emit('submit', this.contact)
+            const params = utils.permit(this.contact, ['lastname', 'firstname', 'email', 'phone', 'misc'])
+            this.$emit('submit', params)
         }
     }
 }

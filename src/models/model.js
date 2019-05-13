@@ -15,7 +15,12 @@ class Model {
         return this.constructor.storeKey
     }
 
-    update () {
+    forEdition () {
+        return Object.assign({}, this)
+    }
+
+    update (params) {
+        Object.assign(this, params)
         this.touch()
     }
 

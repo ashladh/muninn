@@ -1,5 +1,5 @@
 <template>
-    <project-form :project="project" @submit="saveProject"></project-form>
+    <project-form :project="project.forEdition()" @submit="saveProject"></project-form>
 </template>
 
 <script>
@@ -12,8 +12,8 @@ export default {
     name:'ProjectEdit',
     components: {ProjectForm},
     methods: {
-        saveProject: function () {
-            this.project.update()
+        saveProject: function (params) {
+            this.project.update(params)
             Project.saveToLocalStorage()
             router.push({name: 'ProjectsIndex'})
         }

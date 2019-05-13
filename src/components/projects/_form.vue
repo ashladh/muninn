@@ -16,12 +16,16 @@
 </template>
 
 <script>
+import utils from '@/utils'
+
+
 export default {
     name: 'ProjectForm',
     props: ['project'],
     methods: {
         projectSubmit: function () {
-            this.$emit('submit', this.project)
+            const params = utils.permit(this.project, ['title', 'content'])
+            this.$emit('submit', params)
         }
     }
 }

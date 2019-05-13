@@ -1,5 +1,5 @@
 <template>
-    <task-form :task="task" @submit="saveTask"></task-form>
+    <task-form :task="task.forEdition()" @submit="saveTask"></task-form>
 </template>
 
 <script>
@@ -12,8 +12,8 @@ export default {
     name:'TaskEdit',
     components: {TaskForm},
     methods: {
-        saveTask: function () {
-            this.task.update()
+        saveTask: function (params) {
+            this.task.update(params)
             Task.saveToLocalStorage()
             router.push({name: 'TasksIndex'})
         }

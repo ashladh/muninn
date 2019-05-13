@@ -15,4 +15,20 @@ if (typeof localStorage === 'undefined') {
     storage = localStorage
 }
 
-export default {storage}
+
+
+function permit (object, keys) {
+    const result = {}
+
+    keys.forEach(function (key) {
+        result[key] = object[key]
+    })
+
+    return result
+}
+
+
+export default {
+    storage,
+    permit
+}

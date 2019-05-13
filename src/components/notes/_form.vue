@@ -9,12 +9,15 @@
 </template>
 
 <script>
+import utils from '@/utils'
+
 export default {
     name: 'NoteForm',
     props: ['note'],
     methods: {
         noteSubmit: function () {
-            this.$emit('submit', this.note)
+            const params = utils.permit(this.note, ['text'])
+            this.$emit('submit', params)
         }
     }
 }

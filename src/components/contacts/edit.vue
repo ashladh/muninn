@@ -1,5 +1,5 @@
 <template>
-	<contact-form :contact="contact" @submit="saveContact"></contact-form>
+	<contact-form :contact="contact.forEdition()" @submit="saveContact"></contact-form>
 </template>
 
 <script>
@@ -11,8 +11,8 @@ export default {
 	name:'ContactEdit',
 	components: {ContactForm},
     methods: {
-        saveContact: function () {
-            this.contact.update()
+        saveContact: function (params) {
+            this.contact.update(params)
             Contact.saveToLocalStorage()
             router.push({name: 'ContactsIndex'})
         }

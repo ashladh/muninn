@@ -29,6 +29,7 @@
 
 <script>
 import store from '@/store'
+import utils from '@/utils'
 
 export default {
     name: 'TaskForm',
@@ -41,7 +42,9 @@ export default {
     },
     methods: {
         taskSubmit: function () {
-            this.$emit('submit', this.task)
+            const taskParams = utils.permit(this.task, ['text', 'completed', 'projectId', 'contactId'])
+
+            this.$emit('submit', taskParams)
         }
     }
 }

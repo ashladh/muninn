@@ -1,5 +1,5 @@
 <template>
-    <note-form :note="note" @submit="saveNote"></note-form>
+    <note-form :note="note.forEdition()" @submit="saveNote"></note-form>
 </template>
 
 <script>
@@ -12,8 +12,8 @@ export default {
     name:'NoteEdit',
     components: {NoteForm},
     methods: {
-        saveNote: function () {
-            this.note.update()
+        saveNote: function (params) {
+            this.note.update(params)
             Note.saveToLocalStorage()
             router.push({name: 'NotesIndex'})
         }

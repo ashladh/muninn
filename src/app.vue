@@ -301,10 +301,6 @@ body {
   #app {
     width: 430px;
   }
-
-  #wrapper {
-
-  }
 }
 
 /* Medium devices (tablets, 768px and up) */

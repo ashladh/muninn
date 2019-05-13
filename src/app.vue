@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" class="clearfix">
 
 
     <div id="navbar">
@@ -42,20 +42,18 @@ body {
 
 #app {
   background-color: white;
-  height: 95%;
-  width: 95%;
   border-radius: 20px;
-  margin: auto;
-  margin-top: 2.5%;
-  margin-bottom: 2.5%;
+  width: calc(100% - 80px);
+  margin: 40px auto;
+  position: relative;
 }
 
 #navbar {
-  height: 100%;
-  width: 10%;
-  position: absolute;
-  top: 10%;
-  left: 5%;
+  width: 100%;
+  float: left;
+  box-sizing: border-box;
+  padding: 20px;
+  text-align: center;
 }
 
 .logo {
@@ -78,6 +76,7 @@ body {
 
 .navbar-links li {
   padding: 0;
+  display: inline-block;
 }
 
 .navbar-links li a {
@@ -99,17 +98,20 @@ body {
   color: white;
 }
 
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
 
 #wrapper {
-  background-color: white;
   align-content: center;
   width: 100%;
   min-height: 800px;
-  margin: auto;
-  margin-top: 0;
-  margin-right: 20px;
-  clear: both;
-  padding: 10px;
+  float: left;
+  box-sizing: border-box;
+  padding: 20px 20px 0 20px;
 }
 
 
@@ -151,10 +153,12 @@ body {
   border-radius: 10px;
   height: 120px;
   padding-left: 15px;
-  margin: 10px;
-  box-shadow: 5px 5px 5px #e8e8e8;
+  margin: 0 10px 10px 0;
+  box-shadow: 0 5px 5px #e8e8e8;
   overflow: auto;
   box-sizing: border-box;
+  width: calc(50% - 10px);
+  float: left;
 }
 
 
@@ -229,19 +233,12 @@ body {
 
 .box {
   border-radius: 10px;
-  box-shadow: 5px 5px 5px lightgrey;
+  box-shadow: 0 5px 5px #e8e8e8;
   background-color: white;
-  height: auto;
-  width: 60%;
   padding: 10px;
-  margin: auto;
+  margin-bottom: 20px;
 }
 
-#tasks-container {
-  height: auto;
-  width: 60%;
-  margin: auto;
-}
 
 
 .checkbox-wrapper {
@@ -301,28 +298,41 @@ body {
 
 
 @media (min-width: 576px) {
-  #wrapper {
+  #app {
     width: 430px;
+  }
+
+  #wrapper {
+
   }
 }
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
-  #wrapper {
+  #app {
     width: 700px;
+  }
+
+  #navbar {
+    width: 140px;
+  }
+
+  #wrapper {
+    width: calc(100% - 140px);
+    margin-top: 20px;
   }
 }
 
 /* Large devices (desktops, 992px and up)*/
 @media (min-width: 992px) {
-  #wrapper {
+  #app {
     width: 900px;
   }
 }
 
 /* Extra large devices (large desktops, 1200px and up)*/
 @media (min-width: 1200px) {
-  #wrapper {
+  #app {
     width: 1200px;
   }
 }

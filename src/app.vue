@@ -56,6 +56,10 @@ body {
   text-align: center;
 }
 
+h1 {
+  clear: both;
+}
+
 .logo {
   height: 120px;
   position: relative;

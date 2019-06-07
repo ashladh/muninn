@@ -44,7 +44,12 @@ export default {
     padding-top: 30px;
 }
 
+.contact-firstname {
+    padding-top: 0;
+}
+
 .contact-email {
     color: rgba(94, 97, 106, .7);
+    font-size: 12px;
 }
 </style>

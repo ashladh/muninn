@@ -1,7 +1,7 @@
 <template>
     <div>
         <item-actions :item="note" name="Note"></item-actions>
-        <div class="box" v-markdown-to-html>{{ note.text }}</div>
+        <div class="box note-show-box" v-markdown-to-html>{{ note.text }}</div>
     </div>
 </template>
 
@@ -29,5 +29,5 @@ export default {
 </script>
 
 
-<style scoped>
+<style>
 </style>

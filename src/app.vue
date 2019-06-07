@@ -33,7 +33,8 @@ export default {
 
 <style>
 body {
-  background-color: #E8E8E8;
+  background-color: #f0f0f5;
+  color: #1f1f2e;
   font-family: 'Raleway', sans-serif;
   font-size: 17px;
   margin: 0;
@@ -123,6 +124,7 @@ h1 {
   text-align: center;
 }
 
+
 .button {
   display: inline-block;
   padding-right: 10px;
@@ -158,7 +160,7 @@ h1 {
   height: 120px;
   padding-left: 15px;
   margin: 0 10px 10px 0;
-  box-shadow: 0 5px 5px #e8e8e8;
+  box-shadow: 0 5px 5px #e0e0eb;
   overflow: auto;
   box-sizing: border-box;
   width: calc(50% - 10px);
@@ -172,7 +174,7 @@ h1 {
   text-transform: uppercase;
   color: #5e616a;
   font-size: 1.4em;
-  background-color: #f8f8f8;
+  background-color: #f0f0f5;
   padding: 10px;
   border-radius: 5px;
 }
@@ -181,8 +183,9 @@ h1 {
   height: 200px;
   width: 100%;
   outline: none;
-  background: #f8f8f8;
+  background: #f0f0f5;
   border: 0;
+  padding: 10px;
 }
 
 .form .input {
@@ -237,12 +240,24 @@ h1 {
 
 .box {
   border-radius: 10px;
-  box-shadow: 0 5px 5px #e8e8e8;
+  box-shadow: 0 5px 5px #e0e0eb;
   background-color: white;
   padding: 10px;
   margin-bottom: 20px;
 }
 
+.contact-show-box, .note-show-box {
+  width: 40%;
+  margin: auto;
+}
+
+.project-content-text h1 {
+  background-color: white;
+}
+
+.note-preview .note-content, .task-preview .task-content {
+  font-size: 13px;
+}
 
 
 .checkbox-wrapper {

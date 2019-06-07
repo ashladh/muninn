@@ -1,8 +1,8 @@
 <template>
     <div class="actions">
-        <span class="actions-vertical"><delete-link :item="item"></delete-link></span>
         <span class="actions-vertical"><router-link :to="{ name: name + 'Edit', params: { id: item.id }}"><fa-icon name="edit"></fa-icon></router-link></span>
         <span v-if="displayShowLink"><router-link :to="{ name: name + 'Show', params: { id: item.id }}" class="actions-vertical"><fa-icon name="eye"></fa-icon></router-link></span>
+        <span class="actions-vertical"><delete-link :item="item"></delete-link></span>
     </div>
 </template>
 

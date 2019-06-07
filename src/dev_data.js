@@ -4,19 +4,19 @@ var devData = {
             "id": 4,
             "updatedAt": "2019-02-12T14:22:17.466+01:00",
             "createdAt": "2019-02-12T14:22:17.468+01:00",
-            "text": "Ce matin j'ai fait caca 2 fois."
+            "text": "Ceci est une note courte."
         },
         {
             "id": 5,
             "updatedAt": "2019-02-12T14:23:15.317+01:00",
             "createdAt": "2019-02-12T14:23:01.556+01:00",
-            "text": "##Pour la classe de Louis : \n\npréparer des silhouettes cartonnées pour les faire travailler sur le fond en peinture."
+            "text": "##Markdown inclus : \n\nLes notes et projets peuvent être mis en page grâce au Markdown."
         },
         {
             "id": 6,
             "updatedAt": "2019-02-12T14:23:58.895+01:00",
             "createdAt": "2019-02-12T14:23:58.896+01:00",
-            "text": "Penser à racheter du parmesan et des champignons."
+            "text": "Ceci est une note longue, comprenant un certain nombre de caractères et occupant une place plus importante."
         }
     ],
     "contacts": [
@@ -67,7 +67,7 @@ var devData = {
             "updatedAt": "2019-02-12T14:36:05.739+01:00",
             "createdAt": "2019-02-12T14:36:05.739+01:00",
             "title": "Make the Horde great again",
-            "content": "#1. Kill Sylvanas   \nShut that bitch down.         \n\n#2. Res Vol'Jin      \nAnd pray."
+            "content": "# 1. Kill Sylvanas   \nShut that bitch down.         \n\n# 2. Res Vol'Jin      \nAnd pray."
         },
         {
             "id": 4,

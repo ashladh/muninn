@@ -1,7 +1,7 @@
 <template>
   <div class="preview task-preview" v-if="task.text !== ''">
         <item-actions :item="task" name="Task" :display-show-link="true"></item-actions>
-        <div v-if="task.project">Projet : {{ task.project.title }}</div>
+        <div v-if="task.project" class="task-project-associated">Projet : {{ task.project.title }}</div>
         <div class="task-content" v-bind:class="{ taskcompleted: task.completed }" v-markdown-to-html>{{ task.text }}</div>
         <div class="checkbox-wrapper">
             <input type="checkbox" v-model="task.completed" :id="'task'+task.id">
@@ -36,5 +36,11 @@ export default {
 <style>
 .task-preview .task-content {
     overflow: hidden;
+}
+
+.task-project-associated {
+    font-size: 12px;
+    color: #b3b3cc;
+    font-style: italic;
 }
 </style>

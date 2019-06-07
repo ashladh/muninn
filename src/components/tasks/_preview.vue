@@ -37,10 +37,4 @@ export default {
 .task-preview .task-content {
     overflow: hidden;
 }
-
-.task-project-associated {
-    font-size: 12px;
-    color: #b3b3cc;
-    font-style: italic;
-}
 </style>

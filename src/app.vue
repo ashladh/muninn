@@ -309,6 +309,14 @@ h1 {
 }
 
 
+.task-project-associated, .task-contact-associated {
+    font-size: 12px;
+    color: #b3b3cc;
+    font-style: italic;
+    padding-top: 5px;
+    text-align: center;
+}
+
 
 .delete-button {
   cursor: pointer;

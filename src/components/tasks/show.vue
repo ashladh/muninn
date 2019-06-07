@@ -1,6 +1,8 @@
 <template>
     <div>
         <item-actions :item="task" name="Task"></item-actions>
+        <div v-if="task.project" class="task-project-associated">Projet : {{ task.project.title }}</div>
+        <div v-if="task.contact" class="task-contact-associated">Contact : {{ task.contact.lastname }} {{ task.contact.firstname }}</div>
         <div class="box" v-markdown-to-html v-bind:class="{ taskcompleted: task.completed }">{{ task.text }}</div>
         <div class="checkbox-wrapper">
             <input type="checkbox" v-model="task.completed" id="task-checkbox">
@@ -35,15 +37,21 @@ export default {
 
 <style scoped>
 .box {
-    margin-bottom: 10px;
+    width: 60%;
+    margin: auto;
 }
 
 .checkbox-wrapper {
     width: 100%;
     margin: auto;
+    margin-top: 10px;
 }
 
 .checkbox-wrapper label {
     left: calc(50% - 14px);
+}
+
+.task-project-associated, .task-contact-associated {
+    text-align: center;
 }
 </style>

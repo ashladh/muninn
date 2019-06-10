@@ -92,6 +92,7 @@ h1 {
   text-decoration: none;
   -webkit-transition-duration: 0.4s; /* Safari */
   transition-duration: 0.4s;
+  border-radius: 10px;
 }
 
 .navbar-links li a:hover {
@@ -259,6 +260,10 @@ h1 {
   font-size: 13px;
 }
 
+.task-preview {
+  width: 100%;
+}
+
 
 .checkbox-wrapper {
   position: relative;
@@ -323,11 +328,38 @@ h1 {
 }
 
 
+.contact-preview .contact-content {
+    overflow: hidden;
+}
+
+.contact-preview {
+    display: block;
+    width: 100%;
+}
+
+.contact-lastname, .contact-firstname {
+    display: inline-block;
+    font-weight: bold;
+    color: #5e616a;
+    padding-right: 5px;
+    padding-top: 30px;
+}
+
+.contact-firstname {
+    padding-top: 0;
+}
+
+.contact-email {
+    color: rgba(94, 97, 106, .7);
+    font-size: 12px;
+}
 
 @media (min-width: 576px) {
   #app {
     width: 430px;
   }
+
+
 }
 
 /* Medium devices (tablets, 768px and up) */
@@ -351,12 +383,33 @@ h1 {
   #app {
     width: 900px;
   }
+
+  .contact-preview {
+    display: inline-block;
+    width: calc(33% - 20px);
+  }
 }
 
 /* Extra large devices (large desktops, 1200px and up)*/
 @media (min-width: 1200px) {
   #app {
     width: 1200px;
+  }
+
+  #wrapper {
+    width: 80%;
+  }
+
+  .contact-preview {
+    display: inline-block;
+    width: calc(33% - 20px);
+  }
+
+  .task-preview {
+    display: inline-block;
+    width: calc(50% - 20px);
+    text-align: center;
+
   }
 }
 

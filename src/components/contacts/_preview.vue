@@ -27,29 +27,5 @@ export default {
 
 
 <style>
-.contact-preview .contact-content {
-    overflow: hidden;
-}
 
-.contact-preview {
-    display: inline-block;
-    width: calc(33% - 20px);
-}
-
-.contact-lastname, .contact-firstname {
-    display: inline-block;
-    font-weight: bold;
-    color: #5e616a;
-    padding-right: 5px;
-    padding-top: 30px;
-}
-
-.contact-firstname {
-    padding-top: 0;
-}
-
-.contact-email {
-    color: rgba(94, 97, 106, .7);
-    font-size: 12px;
-}
 </style>

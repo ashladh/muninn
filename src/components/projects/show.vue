@@ -11,6 +11,7 @@
         </div>
 
         <div id="tasks-container">
+            <div class="associated-label">Tâches associées : </div>
             <task-preview v-for="task in project.tasks" v-bind:task="task" :key="task.id"></task-preview>
         </div>
     </div>

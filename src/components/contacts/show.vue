@@ -8,6 +8,11 @@
             <span class="contact-display-text">Informations diverses :</span><div class="contact-display-misc">{{ contact.misc }}</div>
         </div>
         <item-actions :item="contact" name="Contact" class="item-actions-show"></item-actions>
+        <div id="tasks-container">
+            <div class="associated-label">Tâches associées : </div>
+            <task-preview v-for="task in contact.tasks" v-bind:task="task" :key="task.id"></task-preview>
+        </div>
+
     </div>
 </template>
 
@@ -16,9 +21,10 @@
 import Contact from '@/models/contact'
 import router from '@/router'
 import ItemActions from '@/components/shared/_item_actions'
+import TaskPreview from '@/components/tasks/_preview'
 
 export default {
-    components: {ItemActions},
+    components: {ItemActions, TaskPreview},
     name: 'ContactShow',
     computed: {
         contact: function () {

@@ -160,11 +160,11 @@ h1 {
   border-radius: 10px;
   height: 120px;
   padding-left: 15px;
-  margin: 0 10px 10px 0;
+  margin: 0 10px 10px 10px;
   box-shadow: 0 5px 5px #e0e0eb;
   overflow: auto;
   box-sizing: border-box;
-  width: calc(50% - 10px);
+  width: calc(50% - 20px);
   float: left;
 }
 
@@ -267,6 +267,7 @@ h1 {
 
 .checkbox-wrapper {
   position: relative;
+  width: 30px;
 }
 
 .checkbox-wrapper label {
@@ -354,12 +355,17 @@ h1 {
     font-size: 12px;
 }
 
+.associated-label {
+  font-size: 12px;
+  color: #b3b3cc;
+  font-style: italic;
+  margin-bottom: 20px;
+}
+
 @media (min-width: 576px) {
   #app {
     width: 430px;
   }
-
-
 }
 
 /* Medium devices (tablets, 768px and up) */
@@ -388,6 +394,11 @@ h1 {
     display: inline-block;
     width: calc(33% - 20px);
   }
+
+  .task-preview {
+    display: inline-block;
+    width: calc(50% - 20px);
+  }
 }
 
 /* Extra large devices (large desktops, 1200px and up)*/
@@ -409,8 +420,6 @@ h1 {
     display: inline-block;
     width: calc(50% - 20px);
     text-align: center;
-
   }
 }
-
 </style>

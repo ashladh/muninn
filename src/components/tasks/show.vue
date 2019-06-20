@@ -1,8 +1,9 @@
 <template>
     <div>
         <item-actions :item="task" name="Task"></item-actions>
-        <div v-if="task.project" class="task-project-associated">Projet : {{ task.project.title }}</div>
-        <div v-if="task.contact" class="task-contact-associated">Contact : {{ task.contact.lastname }} {{ task.contact.firstname }}</div>
+        <div v-if="task.project" class="task-project-associated">Projet : <router-link :to="{ name: 'ProjectShow', params: { id: task.project.id }}" class=" router-link-associated" > {{ task.project.title }}</router-link></div>
+
+        <div v-if="task.contact" class="task-contact-associated">Contact : <router-link :to="{ name: 'ContactShow', params: { id: task.contact.id }}" class=" router-link-associated" >{{ task.contact.lastname }} {{ task.contact.firstname }}</router-link></div>
         <div class="box" v-markdown-to-html v-bind:class="{ taskcompleted: task.completed }">{{ task.text }}</div>
         <div class="checkbox-wrapper">
             <input type="checkbox" v-model="task.completed" id="task-checkbox">

@@ -13,7 +13,6 @@
         <li><router-link to="/projects" exact>Projects</router-link></li>
         <li><router-link to="/tasks" exact>Tasks</router-link></li>
         <li><router-link to="/devtools" exact>DevTools</router-link></li>
-        <li><a href="#">About</a></li>
       </ul>
     </div>
 
@@ -250,6 +249,7 @@ h1 {
 .contact-show-box, .note-show-box {
   width: 40%;
   margin: auto;
+  word-break: break-all;
 }
 
 .project-content-text h1 {
@@ -364,6 +364,11 @@ h1 {
   margin-bottom: 20px;
   margin-top: 20px;
   text-align: center;
+}
+
+.router-link-associated {
+  text-decoration: none;
+  color: #e8aa8c;
 }
 
 

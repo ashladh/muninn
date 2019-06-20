@@ -362,6 +362,8 @@ h1 {
   color: #b3b3cc;
   font-style: italic;
   margin-bottom: 20px;
+  margin-top: 20px;
+  text-align: center;
 }
 
 

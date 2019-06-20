@@ -165,7 +165,7 @@ h1 {
   overflow: auto;
   box-sizing: border-box;
   width: calc(50% - 20px);
-  float: left;
+  float: none;
 }
 
 
@@ -260,8 +260,10 @@ h1 {
   font-size: 13px;
 }
 
-.task-preview {
-  width: 100%;
+.task-preview, .note-preview {
+  width: 70%;
+  margin: auto;
+  margin-bottom: 15px;
 }
 
 
@@ -362,6 +364,8 @@ h1 {
   margin-bottom: 20px;
 }
 
+
+
 @media (min-width: 576px) {
   #app {
     width: 430px;
@@ -394,11 +398,6 @@ h1 {
     display: inline-block;
     width: calc(33% - 20px);
   }
-
-  .task-preview {
-    display: inline-block;
-    width: calc(50% - 20px);
-  }
 }
 
 /* Extra large devices (large desktops, 1200px and up)*/
@@ -414,12 +413,6 @@ h1 {
   .contact-preview {
     display: inline-block;
     width: calc(33% - 20px);
-  }
-
-  .task-preview {
-    display: inline-block;
-    width: calc(50% - 20px);
-    text-align: center;
   }
 }
 </style>

@@ -7,11 +7,11 @@
           <img src="../muninn-logo01-color2.png" alt="logo">
       </div>
       <ul class="navbar-links">
-        <li><router-link to="/" exact>Home</router-link></li>
+        <li><router-link to="/" exact>Accueil</router-link></li>
         <li><router-link to="/notes" exact>Notes</router-link></li>
         <li><router-link to="/contacts" exact>Contacts</router-link></li>
-        <li><router-link to="/projects" exact>Projects</router-link></li>
-        <li><router-link to="/tasks" exact>Tasks</router-link></li>
+        <li><router-link to="/projects" exact>Projets</router-link></li>
+        <li><router-link to="/tasks" exact>Tâches</router-link></li>
         <li><router-link to="/devtools" exact>DevTools</router-link></li>
       </ul>
     </div>

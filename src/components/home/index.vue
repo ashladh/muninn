@@ -5,17 +5,17 @@
       <note-preview v-for="note in notes" v-bind:note="note" :key="note.id"></note-preview>
     </div>
 
-    <h1>Contacts</h1>
+    <h1><router-link class="home-link" to="/contacts" exact>Contacts</router-link></h1>
     <div id="contacts-container">
         <contact-preview v-for="contact in contacts" v-bind:contact="contact" :key="contact.id"></contact-preview>
     </div>
 
-    <h1>Projets</h1>
+    <h1><router-link class="home-link" to="/projects" exact>Projets</router-link></h1>
     <div id="projects-container">
       <project-preview v-for="project in projects" :project="project" :key="project.id"></project-preview>
     </div>
 
-    <h1>Tâches</h1>
+    <h1><router-link class="home-link" to="/tasks" exact>Tâches</router-link></h1>
     <div id="tasks-container">
         <task-preview v-for="task in tasks" v-bind:task="task" :key="task.id"></task-preview>
     </div>
